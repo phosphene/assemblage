@@ -22,6 +22,14 @@ class AssemblageGraph:
     def add_link(self, src: str, dst: str, kind: str = "genealogical", weight: float = 1.0):
         self.g.add_edge(src, dst, key=kind, kind=kind, weight=weight)
 
+    def has_link(self, src: str, dst: str, kind: str = None) -> bool:
+        """Check if directed edge exists from src to dst, optionally filtered by kind."""
+        if not self.g.has_edge(src, dst):
+            return False
+        if kind is None:
+            return True
+        return any(d.get("kind") == kind for d in self.g.get_edge_data(src, dst).values())
+
     def find_cross_links(self) -> List[Tuple[str, str, Dict[str, Any]]]:
         """Return all edges classified as transversal cross-links."""
         return [(u, v, d) for u, v, d in self.g.edges(data=True) if d.get("kind") == "transversal-cross-link"]

@@ -5,11 +5,13 @@ Graph invariant testing for AssemblageGraph:
 - Data-driven topological parametrization across DAGs, self-loops, 2-cycles, disjoint cycles, and directed 3-cycles
 - Canonical directed cycle representation (lexicographical minimum rotation) to preserve cycle orientation
 - Strict decoupling: node attribute set algebra tested separately from topological edge classification
+- Property-based testing via hypothesis: validating cycle vertex uniqueness and closed-walk connectivity
 - Edge cases: disconnected nodes, empty sets, parallel edges, and non-existent nodes
 """
 
 from typing import Any
 import pytest
+from hypothesis import given, strategies as st
 from assemblage.graph import AssemblageGraph
 
 
@@ -112,33 +114,72 @@ def test_simple_cycles_topologies(edges, expected_canonical_cycles):
     assert canonical_results == expected_set
 
 
-# --- 2. Decoupled Node Attribute Algebra (Trait Set Operations) ---
+def test_directed_3_cycle_orientation():
+    """Explicitly verify that forward and reverse 3-cycles have distinct canonical signatures."""
+    g_fwd = build_graph([("a", "b", {}), ("b", "c", {}), ("c", "a", {})])
+    g_rev = build_graph([("a", "c", {}), ("c", "b", {}), ("b", "a", {})])
+
+    cycles_fwd = {canonical_cycle(c) for c in g_fwd.simple_cycles()}
+    cycles_rev = {canonical_cycle(c) for c in g_rev.simple_cycles()}
+
+    assert cycles_fwd == {("a", "b", "c")}
+    assert cycles_rev == {("a", "c", "b")}
+    assert cycles_fwd != cycles_rev
+
+
+# --- 2. Property-Based Testing via Hypothesis ---
+
+@given(
+    st.lists(
+        st.tuples(st.integers(0, 8), st.integers(0, 8)),
+        max_size=25,
+    )
+)
+def test_every_detected_cycle_is_valid_closed_walk(edge_pairs):
+    """
+    Mathematical Invariant: Every simple cycle detected must be an elementary closed walk
+    with unique vertices and valid directed edges between consecutive pairs.
+    """
+    g = AssemblageGraph()
+    for u, v in edge_pairs:
+        g.add_element(str(u))
+        g.add_element(str(v))
+        g.add_link(str(u), str(v))
+
+    for cycle in g.simple_cycles():
+        # Invariant 1: Simple cycles have no repeated vertices
+        assert len(cycle) == len(set(cycle))
+        # Invariant 2: Every consecutive pair (and wrap-around) is an actual edge
+        for i in range(len(cycle)):
+            src = cycle[i]
+            dst = cycle[(i + 1) % len(cycle)]
+            assert g.has_link(src, dst)
+
+
+# --- 3. Decoupled Node Attribute Algebra (Trait Set Operations) ---
+
+@pytest.fixture
+def trait_graph() -> AssemblageGraph:
+    g = AssemblageGraph()
+    g.add_element("n1", traits={"t1", "t2"}, level=1)
+    g.add_element("n2", traits={"t2", "t3"}, level=1)
+    g.add_element("n3", traits=set(), level=2)
+    return g
+
 
 @pytest.mark.parametrize(
-    "traits_u, traits_v, expected_intersection",
+    "u, v, expected",
     [
-        ({"t1", "t2"}, {"t2", "t3"}, {"t2"}),
-        ({"t1", "t2"}, {"t3", "t4"}, set()),
-        (set(), {"t1"}, set()),
-        (set(), set(), set()),
-        ({"shared", "a"}, {"shared", "b"}, {"shared"}),
+        ("n1", "n2", {"t2"}),
+        ("n1", "n3", set()),
+        ("n1", "n1", {"t1", "t2"}),
     ],
-    ids=[
-        "partial-overlap",
-        "disjoint-traits",
-        "one-empty",
-        "both-empty",
-        "common-element",
-    ],
+    ids=["partial-overlap", "disjoint-empty", "reflexive-identity"],
 )
-def test_shared_traits_algebra(traits_u, traits_v, expected_intersection):
-    g = AssemblageGraph()
-    g.add_element("u", traits=traits_u)
-    g.add_element("v", traits=traits_v)
-
+def test_shared_traits(trait_graph, u, v, expected):
     # Invariant: Commutativity (u ∩ v == v ∩ u == expected)
-    assert g.shared_traits("u", "v") == expected_intersection
-    assert g.shared_traits("v", "u") == expected_intersection
+    assert trait_graph.shared_traits(u, v) == expected
+    assert trait_graph.shared_traits(v, u) == expected
 
 
 def test_shared_traits_nonexistent_nodes():
@@ -150,7 +191,7 @@ def test_shared_traits_nonexistent_nodes():
     assert g.shared_traits("ghost", "phantom") == set()
 
 
-# --- 3. Decoupled Topological Edge Classification (Cross-Links) ---
+# --- 4. Decoupled Topological Edge Classification (Cross-Links) ---
 
 @pytest.mark.parametrize(
     "edges, expected_cross_link_pairs",
