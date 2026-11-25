@@ -28,7 +28,8 @@
       (let [w (first witnesses)]
         (is (pos? (:witness/char-count w)))
         (is (true? (:witness/zero-ellipses? w)))
-        (is (re-find #"Four magnets are suspended" (:witness/text w)))))))
+        (is (re-find #"Four magnets are suspended" (:witness/text w)))
+        (is (s/valid? ::spec/verbatim-witnesses witnesses))))))
 
 (deftest topological-projection-lens-test
   (testing "Projecting semiotic close read into topological nodes and relations"

@@ -7,6 +7,7 @@
    - Named Paths: Disjunctions and sequences use named alternatives (s/or, s/cat).
    - Relational Function Specs: s/fdef contracts check input/output algebraic invariants."
   (:require [clojure.spec.alpha :as s]
+            [clojure.string :as str]
             [clojure.spec.gen.alpha :as gen]))
 
 ;; --- Sovereign Attribute Specifications ---
@@ -105,3 +106,16 @@
 (s/def :ast/doc
   (s/keys :req-un [:ast/type :ast/content]
           :opt-un [:ast/title :ast/toc :ast/footnotes]))
+
+
+;; --- Verbatim Witness Specifications (:convention/epistemic-witness) ---
+
+(s/def :witness/text (s/and string? (complement str/blank?)))
+(s/def :witness/char-count (s/and int? pos?))
+(s/def :witness/zero-ellipses? boolean?)
+
+(s/def ::verbatim-witness
+  (s/keys :req [:witness/text :witness/char-count :witness/zero-ellipses?]))
+
+(s/def ::verbatim-witnesses
+  (s/coll-of ::verbatim-witness :kind vector?))

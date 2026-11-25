@@ -22,6 +22,8 @@
   "Add a node with an optional set of traits and hierarchical level."
   ([asm id]
    (add-node asm id #{} 0))
+  ([asm id traits]
+   (add-node asm id traits 0))
   ([asm id traits level]
    (assoc-in asm [:nodes id] {:id id
                               :traits (set traits)
