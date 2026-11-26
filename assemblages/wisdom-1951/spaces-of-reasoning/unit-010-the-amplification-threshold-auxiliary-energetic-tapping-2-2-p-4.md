@@ -83,3 +83,14 @@ $$\text{ChainReaction} \implies \prod_i \mathcal{G}_i \to \infty$$
    :witness/char-count 615
    :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom crosses the crucial threshold separating simple feedback from amplification feedback. In simple feedback, control signals are constrained by the redirected energy of the primary drive. In amplification feedback, a microscopic control signal taps into a vast, dormant auxiliary reservoir of local potential energy—exemplified by a match igniting coal, a neutron triggering nuclear chain reactions, or a tiny grid voltage gating kilowatt plate currents.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+Section 3 formalizes simple feedback by energetic bounded ratio ($E_{\text{fb}} \le E_{\text{main}}$), while amplification feedback is governed by high power gain ($E_{\text{released}} = \mathcal{G} \cdot E_{\text{trigger}}$ with $\mathcal{G} \gg 1$). Section 4.3 translates this into `:amplification-threshold`: when a local energy source is exploited, energetic tier shifts categorically to `:amplified-local`, liberating informational control from energetic constraints.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Informational Decoupling:** Amplification allows minute informational signals (microwatts) to control massive mechanical outputs (megawatts), establishing cybernetics as an informational rather than thermodynamic science.
+2. **Instability Vulnerability:** High-gain amplification dramatically exacerbates positive feedback hazards, turning minor noise into destructive runaway.

@@ -84,3 +84,14 @@ $$\text{StableBalance} \equiv \text{ContinuousDynamicCountersteering}(\phi, \del
    :witness/char-count 251
    :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom examines unstable equilibria where dynamic maintenance replaces passive stability. Unlike a marble resting at the bottom of a bowl, a bicycle in forward motion cannot maintain vertical balance statically; left unsteered, any angular perturbation amplifies exponentially. Stability exists exclusively as a continuous process of active sensory-motor counter-steering, where falling to one side is checked by turning into the fall, inevitably throwing the rider toward the opposite lean.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+The roll-steering dynamics in Section 3 show an inherently unstable system $\ddot{\phi} = \frac{g}{h}\phi - \frac{V^2}{bh}\delta$ where balance requires the policy $\text{sgn}(\delta) = \text{sgn}(\phi)$. Counter-steering introduces centrifugal acceleration that halts the initial fall but generates momentum toward the inverse boundary. The Clojure rule `:continuous-correction` in Section 4.3 operationalizes this alternating compensation: an induced fall to the right commands a steering correction to the right, which in turn induces a controlled counter-fall to the left.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **No Static Equivalence:** The moving bicycle cannot be modeled as a stable static posture; stability is a property of the closed-loop trajectory through phase space, not of the physical geometry alone.
+2. **Human/Machine Coupling:** While mechanical self-stability can occur at specific forward velocities, Wisdom's rider represents the nervous system acting as the indispensable feedback transducer closing the loop.

@@ -82,3 +82,14 @@ $$\text{Warrant}(\text{PositiveFeedback}) \equiv \text{AutonomousControlledRamp}
    :witness/char-count 454
    :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom refutes the engineering skepticism that dismisses positive feedback as futile. Critics ask: if positive feedback merely increases energy flow, why not simply open the throttle fully from the outset? Wisdom answers with the problem of controlled pacing: sudden instantaneous step-inputs destroy mechanical linkages or derail vehicles. Positive feedback provides an autonomous ramp mechanism that progressively builds up power at a controlled, self-governing rate without requiring a human operator.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+In Section 3, a step-input $\Delta P(0) = P_{\text{max}}$ produces infinite jerk and catastrophic stress. An autonomous positive feedback loop models progressive acceleration $\dot{P} = \gamma P$, generating a smooth exponential ramp $P(t) = P_0 e^{\gamma t}$ clamped at operational limits. In Section 4.3, the rule `:controlled-ramp-necessity` asserts that when acceleration profile requires `:gradual-ramp`, positive feedback is formally warranted (`:positive-feedback-warranted`).
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Pacing Over Endpoint:** The warrant of positive feedback here is temporal trajectory control, not final energy amplitude.
+2. **Mandatory Saturation:** Autonomous positive ramping must be coupled to an external clamp or negative feedback ceiling to prevent motor burnout.

@@ -82,3 +82,14 @@ $$\text{Teleology}(\mathcal{M}) \equiv \text{NegativeFeedbackRegulator}(\mathcal
    :witness/char-count 548
    :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom articulates the central philosophical thesis of cybernetics: the chief organizing mechanism of the central nervous system is negative feedback, and this mechanism completely demystifies 'purposive' and 'adaptive' behavior. For centuries, teleology was rejected by mechanistic science as an unscientific backward causation (the future goal pulling the present action). Cybernetics rehabilitates purpose by showing that goal-directedness is mathematically identical to continuous error-compensating feedback operating in the present.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+Section 3 defines teleological actuation as $\dot{S} = -\mathbf{K} \cdot \mathcal{E}(t)$ where error $\mathcal{E}(t) = S(t) - S^*$ drives system state toward setpoint $S^*$. Because $\lim_{t \to \infty} S(t) = S^*$, the system manifests purposive trajectory without occult causes. Section 4.3 transcribes this into the canonical definition rule `:operational-teleology-definition`: a mechanism is classified as teleological/purposive if and only if its operating architecture is closed-loop negative feedback.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Demystification of Purpose:** Teleology is operationalized as error-minimization; no vitalist spirit or metaphysical entelechy is required.
+2. **Broad CNS Charter:** While negative feedback is the chief mechanism of nervous adaptation, cybernetics is explicitly not restricted to negative feedback alone, embracing positive amplification and multistable transitions.

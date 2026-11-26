@@ -81,3 +81,14 @@ $$\frac{\partial f}{\partial D} > 0 \land \frac{\partial g}{\partial P} > 0 \imp
    :witness/char-count 304
    :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom connects cybernetic mechanics directly to medical pathology: the 'vicious spiral.' When homeostatic damping fails in a complex physiological network, positive amplification transforms regulatory circuits into lethal cascades. In renal hypertension, kidney damage drives up arterial pressure, which causes microvascular destruction in the kidneys, precipitating further pressure elevations in a fatal circular escalation.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+Section 3 represents the reciprocal pathology via coupled differentials $\dot{P}_{\text{arterial}} = f(D_{\text{renal}})$ and $\dot{D}_{\text{renal}} = g(P_{\text{arterial}})$ with strictly positive partial derivatives $\frac{\partial f}{\partial D} > 0, \frac{\partial g}{\partial P} > 0$. The resulting positive real eigenvalue $\lambda > 0$ indicates uncontrollable exponential divergence. Section 4.3 translates this into the rule `:pathological-loop`: positive feedback in a physiological regulation context is conformed to a `:vicious-spiral`.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Pathology as Circuit Inversion:** Disease is here modeled not as a foreign invasion or vital exhaustion, but as a topological inversion of regulatory polarity from negative damping to positive amplification.
+2. **Terminal Inevitability:** Without external clinical intervention to interrupt the causal loop, the vicious spiral terminates deterministically in systemic failure.

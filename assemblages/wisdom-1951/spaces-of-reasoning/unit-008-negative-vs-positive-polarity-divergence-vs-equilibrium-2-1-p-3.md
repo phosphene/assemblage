@@ -81,3 +81,14 @@ $$\text{Positive}(m) \iff \text{Reinforces}(W_{fb}, F_{drive}) \implies \text{Ru
   :witness/folio 3
   :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom sets forth the fundamental polarity bifurcation of cybernetic dynamics: negative feedback produces equilibrium, while positive feedback induces runaway divergence. Negative feedback performs oppositional work that clamps explosive dissipation and confines system state to a bounded envelope. Positive feedback performs additive work that reinforces existing displacement, driving variables exponentially toward capacity limits or destruction (illustrated by the heating balloon lever opening its own gas tap).
+
+### 6.2 Dynamical Formalization & Invariant Rules
+Section 3 models this polarity through energetic alignment: $\text{Opposes}(W_{\text{fb}}, F_{\text{drive}}) \implies \text{HoveringEquilibrium}$, whereas $\text{Reinforces}(W_{\text{fb}}, F_{\text{drive}}) \implies \text{RunawayDivergence}$. The Clojure rule `:polarity-bifurcation` in Section 4.3 maps feedback polarity directly to dynamical regime: negative polarity selects `:hovering-equilibrium`, while positive polarity triggers `:runaway-divergence`.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Polarity is Dynamical, Not Normative:** Positive feedback is not an engineering error; it is a mathematical regime of explosive growth required for rapid state transitions (e.g. action potentials, controlled power ramp-up).
+2. **Destruction Threshold:** Without negative feedback damping, unconstrained positive feedback inevitably terminates in physical rupture or saturation.

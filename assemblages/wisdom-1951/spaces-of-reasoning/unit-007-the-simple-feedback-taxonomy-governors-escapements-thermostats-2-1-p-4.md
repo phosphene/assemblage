@@ -84,3 +84,14 @@ $$\text{AmplificationFeedback}(m) \iff \text{TapsLocalEnergy}(m) \land \mathcal{
   :witness/folio 3
   :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom unifies classic mechanical regulators—steam governors, clock escapements, and bi-metallic thermostats—under a rigorous definition of simple feedback. In all these devices, the energy that drives the self-regulatory loop is not supplied by an independent local generator, but is directly diverted from the main source of power driving the machine. Simple feedback is the conservative redirection of primary driving energy against or towards itself.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+The predicate calculus in Section 3 formalizes simple feedback as $\text{SimpleFeedback}(m) \iff \text{Redirect}(E_{\text{fb}}, E_{\text{source}}) \land \neg \text{TapsLocalEnergy}(m)$. Redirection that opposes the prime mover defines negative feedback; redirection that accelerates supply defines positive feedback. The Clojure rule `:simple-feedback-criterion` in Section 4.3 asserts that when energetic tier is `:simple-feed-back` and the source is `:derivative-main`, the system is classified as `:conservative-redirection`.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Conservative Energy Limit:** Simple feedback systems cannot amplify control signals beyond the total energetic budget of the main driving force.
+2. **Derivative Nature:** The feedback signal carries no energetic sovereignty; shutting off the primary drive immediately extinguishes the regulatory loop.

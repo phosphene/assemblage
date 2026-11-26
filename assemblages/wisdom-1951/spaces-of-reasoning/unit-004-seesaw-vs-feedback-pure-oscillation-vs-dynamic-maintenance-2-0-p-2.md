@@ -83,3 +83,14 @@ $$\text{Automatic}(\mathcal{M}_{\text{seesaw}}) \land \neg \text{HasFeedback}(\m
    :witness/char-count 326
    :witness/zero-ellipses? true}}
 ```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom demarcates passive mechanical periodicity from active homeostatic regulation. A seesaw or an undamped pendulum oscillates indefinitely under conservative gravitational mechanics; it is 'automatic' only in the trivial sense that potential energy continuously converts to kinetic energy without human agency. However, the seesaw possesses no capacity to perceive external displacement or re-channel energy to resist perturbation. A cybernetic system departs from Newtonian machinery by introducing an internal informational path where output trajectory directly modulates energetic drive.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+In the formal notation of Section 3, the seesaw is a conservative harmonic oscillator $\ddot{x} + \omega^2 x = 0$ yielding passive oscillation without goal-directed error correction. The cybernetic machine incorporates an error-actuated regulator $\dot{x} = f(x) - k \cdot \mathcal{E}(x, x^*)$ that dynamically drives deviations toward an equilibrium setpoint. The Clojure rule `:automaticity-demarcation` in Section 4.3 codifies this distinction: if energy redirection based on deviation is absent, the mechanism belongs strictly to the Newtonian genus; if present, it enters the cybernetic feedback class.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Periodic Oscillation is Not Feedback:** Repetitive mechanical movement is frequently conflated with regulatory control. This unit establishes that periodicity without error-sensing carries zero cybernetic warrant.
+2. **Kinematic vs Informational Limits:** The seesaw obeys pure Newtonian energy conservation; cybernetic feedback requires informational steering that is kinematically unconstrained by simple input momentum.
