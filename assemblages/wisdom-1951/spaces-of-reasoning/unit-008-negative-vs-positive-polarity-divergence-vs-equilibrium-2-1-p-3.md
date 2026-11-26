@@ -31,6 +31,7 @@ Wisdom establishes the polarity bifurcation of feedback loops:
 ## 3. Formal Predicate Logic
 
 $$\text{Negative}(m) \iff \text{Opposes}(W_{fb}, F_{drive}) \implies \text{HoveringEquilibrium}$$
+
 $$\text{Positive}(m) \iff \text{Reinforces}(W_{fb}, F_{drive}) \implies \text{RunawayDivergence}$$
 
 ## 4. Decomposed Semiotic S-Expressions

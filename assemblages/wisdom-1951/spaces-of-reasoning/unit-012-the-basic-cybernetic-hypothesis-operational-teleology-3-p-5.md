@@ -31,8 +31,11 @@ Wisdom articulates the foundational core thesis of the entire cybernetic revolut
 ## 3. Formal Predicate Logic
 
 Let $\text{TargetState}(S^*)$ and $\text{CurrentState}(S(t))$ define error $\mathcal{E}(t) = S(t) - S^*$:
+
 $$\text{TeleologicalActuation}: \frac{dS}{dt} = - \mathbf{K} \cdot \mathcal{E}(t)$$
+
 $$\lim_{t \to \infty} S(t) = S^* \implies \text{PurposiveBehavior}(\mathcal{M})$$
+
 $$\text{Teleology}(\mathcal{M}) \equiv \text{NegativeFeedbackRegulator}(\mathcal{M}, S^*)$$
 
 ## 4. Decomposed Semiotic S-Expressions

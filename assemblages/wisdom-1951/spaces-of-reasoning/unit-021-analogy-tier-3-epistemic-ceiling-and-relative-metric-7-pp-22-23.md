@@ -46,12 +46,15 @@ Let $\mathcal{O}$ be an organism and $\mathbb{M}$ be the space of physical machi
 Let $\mathcal{P}(x)$ denote the set of properties of system $x$.
 
 The Fallacy of Exclusive Predication:
+
 $$\exists M \in \mathbb{M} \, [(\mathcal{P}(M) \cap \mathcal{P}(\mathcal{O}) \neq \emptyset) \centernot\implies (\mathcal{P}(\mathcal{O}) \subseteq \mathcal{P}(M))]$$
 
 Relative topological metric on causal architectures $d_{\mathcal{K}}(\cdot, \cdot)$:
+
 $$d_{\mathcal{K}}(\mathcal{O}_{\text{brain}}, \mathcal{M}_{\text{radar/thermostat}}) < d_{\mathcal{K}}(\mathcal{O}_{\text{brain}}, \mathcal{M}_{\text{levers/gears}})$$
 
 The Epistemic Ceiling of Interim Heuristics:
+
 $$\lim_{t \to \text{present}} d_{\mathcal{K}}(\mathcal{O}_{\text{brain}}, \mathcal{M}_{\text{radar/thermostat}}) = \epsilon > 0 \quad (\text{Bounded Approximation})$$
 
 ## 4. Decomposed Semiotic S-Expressions

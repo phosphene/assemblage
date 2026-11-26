@@ -31,8 +31,11 @@ Wisdom distinguishes simple passive periodicity from active dynamic maintenance:
 ## 3. Formal Predicate Logic
 
 Let $\mathcal{M}_{\text{seesaw}}$ be a conservative harmonic oscillator and $\mathcal{M}_{\text{cybernetic}}$ be an error-actuated regulator:
+
 $$\mathcal{M}_{\text{seesaw}}: \frac{d^2 x}{dt^2} + \omega^2 x = 0 \implies \text{PassiveOscillation}$$
+
 $$\mathcal{M}_{\text{cybernetic}}: \frac{dx}{dt} = f(x) - k \cdot \mathcal{E}(x, x_{\text{target}}) \implies \text{DynamicMaintenance}$$
+
 $$\text{Automatic}(\mathcal{M}_{\text{seesaw}}) \land \neg \text{HasFeedback}(\mathcal{M}_{\text{seesaw}}) \implies \text{NonCybernetic}(\mathcal{M}_{\text{seesaw}})$$
 
 ## 4. Decomposed Semiotic S-Expressions

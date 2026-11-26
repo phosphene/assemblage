@@ -55,16 +55,21 @@ $$\mathcal{M} = \langle \text{In}, \text{Store}, \text{Select}, \text{Out} \rang
 
 1. **Intake Operator (a):**
    $$\text{In}: \Sigma_{\text{ext}} \times T \to S_{\text{input}}$$
+
 2. **Storage Operator (b):**
    $$\text{Store}: S_{\text{interim}} \times T \to \mathcal{M}_{\text{registers}}$$
+
    $$\forall t < t_{\text{final}}, \quad \text{State}(\text{calc}_i) \in \mathcal{M}_{\text{registers}}(t)$$
+
 3. **Timed Selection Operator (c):**
    $$\text{Select}: \mathcal{M}_{\text{registers}} \times \text{Context}(t) \xrightarrow{\text{timing rule}} S_{\text{active}}$$
+
    where selection depends strictly on temporal and logical appropriateness ($t = t_{\text{right}}$).
 4. **Terminal Reporting Operator (d):**
    $$\text{Out}: S_{\text{final}} \times T_{\text{final}} \to \Sigma_{\text{ext}}$$
 
 A machine satisfies the necessary functional conditions of calculation iff all four operators are realized:
+
 $$\text{CalculatingEngine}(\mathcal{M}) \iff (\text{In} \neq \emptyset) \land (\text{Store} \neq \emptyset) \land (\text{Select} \neq \emptyset) \land (\text{Out} \neq \emptyset)$$
 
 ## 4. Decomposed Semiotic S-Expressions

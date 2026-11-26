@@ -33,6 +33,7 @@ Wisdom here marks the decisive epistemological boundary between superficial beha
 Let $\mathcal{M}$ be a mechanical automaton and $\mathcal{B}$ be a neuro-mental system. Let $\text{BehSim}(\mathcal{M}, \mathcal{B})$ denote behavioral simulation (e.g. playing chess according to rules). Let $\text{SharedMech}(\mathcal{M}, \mathcal{B}, \tau)$ denote sharing an internal operational mechanism-type $\tau$:
 
 $$\text{BehSim}(\mathcal{M}, \mathcal{B}) \not\implies \text{StrikingAnalogy}(\mathcal{M}, \mathcal{B})$$
+
 $$\text{SharedMech}(\mathcal{M}, \mathcal{B}, \text{feed-back}) \implies \text{StrikingAnalogy}(\mathcal{M}, \mathcal{B})$$
 
 The warrant of cybernetic analogy rests upon mechanistic invariance rather than functional mimicry.

@@ -32,13 +32,17 @@ Wisdom connects cybernetics to mathematical logic, non-equilibrium thermodynamic
 ## 3. Formal Symbolic Logic
 
 Let $\mathcal{L}$ be a formal propositional calculus and $\mathcal{N}$ be a McCulloch-Pitts network:
+
 $$\forall \phi \in \mathcal{L}, \quad \Gamma \vdash \phi \iff \exists \mathcal{N}_{\Gamma} : \text{Output}(\mathcal{N}_{\Gamma}) = 1$$
 
 Thermodynamic open system balance (von Bertalanffy):
+
 $$\frac{dS}{dt} = \frac{d_e S}{dt} + \frac{d_i S}{dt} \quad \text{with } \frac{d_i S}{dt} \ge 0$$
+
 $$\text{SteadyState}(\mathcal{B}) \iff \frac{dS}{dt} = 0 \iff \frac{d_e S}{dt} = - \frac{d_i S}{dt} < 0 \quad (\text{Negentropy Export})$$
 
 Craik internal simulation operator $\mathcal{S}_{\text{internal}}$:
+
 $$\mathcal{S}_{\text{internal}}: \text{State}(t) \xrightarrow{\text{simulate}} \text{FutureState}(t + \Delta t) \implies \text{AnticipatoryActuation}$$
 
 ## 4. Decomposed Semiotic S-Expressions

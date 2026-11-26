@@ -46,13 +46,17 @@ Notice Wisdom's careful lexical framing: he does not yet call these machines "in
 
 Let $\mathcal{P}_{\text{calc}}$ be a ballistic or physical calculation problem requiring computational complexity $C(\mathcal{P})$.
 Let $R_{\text{human}}$ be the calculation rate of a human with pencil and paper:
+
 $$R_{\text{human}} = \frac{dC}{dt}_{\text{human}} \ll \frac{dC}{dt}_{\text{electronic}} = R_{\text{electronic}}$$
 
 Let $\tau_{\text{tactical}}$ be the time horizon within which calculated solutions remain operationally valid for attack and defence:
+
 $$\tau_{\text{human}} = \frac{C(\mathcal{P})}{R_{\text{human}}} \gg \tau_{\text{tactical}} \implies \text{Drawback}(\mathcal{P}) = \text{Obsolete}(\text{solution})$$
+
 $$\tau_{\text{machine}} = \frac{C(\mathcal{P})}{R_{\text{electronic}}} \le \tau_{\text{tactical}} \implies \text{Overcome}(\text{difficulty})$$
 
 The machine is defined functionally as a causal operator $\Omega$ mapping input parameters to equations solved within the critical bound:
+
 $$\Omega: (I, \mathcal{P}) \xrightarrow{\Delta t \le \tau_{\text{tactical}}} O$$
 
 ## 4. Decomposed Semiotic S-Expressions

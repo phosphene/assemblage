@@ -32,14 +32,18 @@ Wisdom delivers his culminating philosophical evaluation of the cybernetic movem
 ## 3. Formal Symbolic Logic
 
 Let $\mathbb{M}$ be the universal class of physical machines, partitioned into four historical genera:
+
 $$\mathbb{M} = \mathbb{M}_{\text{Newtonian}} \cup \mathbb{M}_{\text{Maxwellian}} \cup \mathbb{M}_{\text{Einsteinian}} \cup \mathbb{M}_{\text{Cybernetic}}$$ 
 
 Where cybernetic machines are uniquely defined by non-trivial circular feedback topologies:
+
 $$\mathbb{M}_{\text{Cybernetic}} = \{ m \in \mathbb{M} \mid \text{HasClosedFeedbackLoop}(m) \land \text{SelfRegulating}(m) \}$$
 
 Wisdom's anti-reductionist mind-body demarcation:
 Let $\mathcal{B}_{\text{physical}}$ be the objective neuro-somatic manifold and $\Psi_{\text{mental}}$ be subjective experience.
+
 $$\text{CyberneticModel}(\mathcal{B}_{\text{physical}}) \not\implies \Psi_{\text{mental}} \equiv \mathcal{B}_{\text{physical}}$$ 
+
 $$\text{ExplainsMechanics}(\mathbb{M}_{\text{Cybernetic}}, \mathcal{B}_{\text{physical}}) \land \text{Unmodeled}(\Psi_{\text{mental}})$$ 
 
 ## 4. Decomposed Semiotic S-Expressions

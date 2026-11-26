@@ -31,7 +31,9 @@ Wisdom completes the taxonomy of feedback energetics:
 ## 3. Formal Predicate Logic
 
 $$\text{SimpleFeedback}(m) \iff \text{Redirect}(E_{fb}, E_{source}) \land \neg \text{TapsLocalEnergy}(m)$$
+
 $$\text{Negative}(m) \equiv \text{Opposes}(E_{fb}, E_{drive}) \quad ; \quad \text{Positive}(m) \equiv \text{Augments}(E_{fb}, E_{drive})$$
+
 $$\text{AmplificationFeedback}(m) \iff \text{TapsLocalEnergy}(m) \land \mathcal{G} \gg 1$$
 
 ## 4. Decomposed Semiotic S-Expressions

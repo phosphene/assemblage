@@ -43,19 +43,22 @@ The negative method does not deploy an analogy to establish sweeping identity cl
 
 ## 3. Formal Symbolic Logic
 
-Let $\mathcal{M}_{	ext{Ashby}}$ be a machine characterized by a deterministic state transition operator:
-$$\delta_{\mathcal{M}}: S 	o S \quad 	ext{such that} \quad s_{t+1} = \delta_{\mathcal{M}}(s_t)$$
+Let $\mathcal{M}_{\text{Ashby}}$ be a machine characterized by a deterministic state transition operator:
 
-Let $\mathcal{O}_{	ext{human}}$ be an organism with non-deterministic or stochastic state transitions:
-$$\delta_{\mathcal{O}}: S 	o \mathcal{P}(S) \quad 	ext{or} \quad \delta_{\mathcal{O}}: S 	imes \Omega 	o S$$
+$$\delta_{\mathcal{M}}: S \to S \quad \text{such that} \quad s_{t+1} = \delta_{\mathcal{M}}(s_t)$$
+
+Let $\mathcal{O}_{\text{human}}$ be an organism with non-deterministic or stochastic state transitions:
+
+$$\delta_{\mathcal{O}}: S \to \mathcal{P}(S) \quad \text{or} \quad \delta_{\mathcal{O}}: S \times \Omega \to S$$
 
 The scope and residual of the mechanical analogy are formally demarcated:
-$$	ext{AnalogyScope}(\mathcal{M}_{	ext{Ashby}}, \mathcal{O}_{	ext{human}}) = \{ s \in S \mid |\delta_{\mathcal{O}}(s)| = 1 \land \delta_{\mathcal{O}}(s) = \{\delta_{\mathcal{M}}(s)\} \}$$
 
-$$	ext{Residual}(\mathcal{O}_{	ext{human}}, \mathcal{M}_{	ext{Ashby}}) = \{ s \in S \mid \delta_{\mathcal{O}}(s) 
+$$\text{AnalogyScope}(\mathcal{M}_{\text{Ashby}}, \mathcal{O}_{\text{human}}) = \{ s \in S \mid |\delta_{\mathcal{O}}(s)| = 1 \land \delta_{\mathcal{O}}(s) = \{\delta_{\mathcal{M}}(s)\} \}$$
+
+$$\text{Residual}(\mathcal{O}_{\text{human}}, \mathcal{M}_{\text{Ashby}}) = \{ s \in S \mid \delta_{\mathcal{O}}(s) 
 eq \{\delta_{\mathcal{M}}(s)\} \}$$
 
-$$	ext{NegativeMethodDemarcation}(\mathcal{M}, \mathcal{O}) \iff 	ext{Residual}(\mathcal{O}, \mathcal{M}) 
+$$\text{NegativeMethodDemarcation}(\mathcal{M}, \mathcal{O}) \iff \text{Residual}(\mathcal{O}, \mathcal{M}) 
 eq \emptyset$$
 
 ## 4. Decomposed Semiotic S-Expressions
