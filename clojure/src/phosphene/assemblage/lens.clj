@@ -13,23 +13,47 @@
 
 ;; --- Lens 1: Semiotic Close-Read Triad Projection (:convention/close-read) ---
 
+(defn read-edn-forms
+  "Reads all EDN forms from a string stream until EOF."
+  [s]
+  (let [pbr (java.io.PushbackReader. (java.io.StringReader. s))
+        sentinel (Object.)]
+    (loop [acc []]
+      (let [form (edn/read {:eof sentinel} pbr)]
+        (if (identical? form sentinel)
+          acc
+          (recur (conj acc form)))))))
+
 (defn extract-code-edn
-  "Extract and read the first clojure/edn code block from the Markdown AST.
+  "Extract and merge all clojure/edn code blocks and forms from the Markdown AST.
+   Supports decomposing semiotic triads and conceptual models into atomic S-expressions
+   distributed across Markdown sections (T-437).
    If read fails, returns a typed anomaly map rather than failing silently (E2)."
   [ast]
-  (let [blocks (or (seq (ast/code-blocks ast "clojure"))
-                   (seq (ast/code-blocks ast "edn"))
-                   (seq (ast/code-blocks ast)))]
-    (when-let [first-block (first blocks)]
-      (let [text-content (->> (:content first-block)
-                              (filter (fn [n] (= (:type n) :text)))
-                              (map :text)
-                              str/join)]
-        (try
-          (edn/read-string text-content)
-          (catch Exception e
-            {:anomaly/type :edn-parse-failure
-             :anomaly/message (ex-message e)}))))))
+  (let [blocks (concat (ast/code-blocks ast "clojure")
+                       (ast/code-blocks ast "edn"))
+        target-blocks (if (seq blocks)
+                        blocks
+                        (ast/code-blocks ast))]
+    (when (seq target-blocks)
+      (reduce (fn [acc b]
+                (let [text-content (->> (:content b)
+                                        (filter (fn [n] (= (:type n) :text)))
+                                        (map :text)
+                                        str/join)]
+                  (try
+                    (let [forms (read-edn-forms text-content)]
+                      (reduce (fn [m form]
+                                (cond
+                                  (map? form) (merge m form)
+                                  :else m))
+                              acc
+                              forms))
+                    (catch Exception e
+                      (reduced {:anomaly/type :edn-parse-failure
+                                :anomaly/message (ex-message e)})))))
+              {}
+              target-blocks))))
 
 (defn project-close-read
   "Lens morphism projecting a parsed Markdown AST into a conformed Semiotic Close-Read Triad.
