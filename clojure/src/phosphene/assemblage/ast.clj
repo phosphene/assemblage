@@ -10,6 +10,7 @@
        Tier 2: clojure.spec.alpha sequence grammar (s/cat, s/alt, s/*) resolving
                contextual structure and conforming frontmatter metadata."
   (:require [clojure.spec.alpha :as s]
+            [clojure.walk :as walk]
             [clojure.string :as str]
             [nextjournal.markdown :as md]))
 
@@ -205,8 +206,53 @@
   [ast-doc]
   (meta ast-doc))
 
+;; --- Mode-S to Mode-D Quarantine Protocol (T-434 / Pattern 5) ---
+
+(def ast-key-mapping
+  {:type :ast.node/type
+   :content :ast.node/content
+   :text :ast.text/content
+   :heading-level :ast.heading/level
+   :language :ast.code/language
+   :info :ast.code/info
+   :title :ast.doc/title
+   :attrs :ast.node/attrs
+   :toc :ast.doc/toc
+   :footnotes :ast.doc/footnotes})
+
+(defn qualify-ast-node
+  "Lift an external unqualified AST map into sovereign qualified attributes."
+  [node]
+  (if (map? node)
+    (reduce-kv (fn [m k v]
+                 (assoc m (get ast-key-mapping k k) v))
+               {}
+               node)
+    node))
+
+(defn qualify-ast
+  "Recursively lift raw nextjournal CommonMark AST into a sovereign Mode-D AST."
+  [ast]
+  (clojure.walk/postwalk qualify-ast-node ast))
+
+(defn node-type
+  "Polymorphic node type extractor supporting both Mode-D and Mode-S nodes."
+  [node]
+  (or (:ast.node/type node) (:type node)))
+
+(defn node-content
+  "Polymorphic node content extractor supporting both Mode-D and Mode-S nodes."
+  [node]
+  (or (:ast.node/content node) (:content node)))
+
+(defn node-text
+  "Polymorphic text content extractor supporting both Mode-D and Mode-S nodes."
+  [node]
+  (or (:ast.text/content node) (:text node)))
+
 (defn query-nodes
-  "Traverse AST and return all nodes satisfying (pred node)."
+  "Traverse AST and return all nodes satisfying (pred node).
+   Supports both Mode-D qualified ASTs and raw Mode-S ASTs."
   [ast pred]
   (letfn [(walk-node [node acc]
             (let [new-acc (if (pred node) (conj acc node) acc)]
@@ -215,23 +261,25 @@
                           (walk-node child inner-acc)
                           inner-acc))
                       new-acc
-                      (:content node))))]
+                      (node-content node))))]
     (walk-node ast [])))
 
 (defn code-blocks
-  "Return all code block nodes from the AST, optionally filtered by language."
+  "Return all code block nodes from the AST, optionally filtered by language.
+   Supports both Mode-D and Mode-S nodes."
   ([ast]
-   (query-nodes ast (fn [node] (= (:type node) :code))))
+   (query-nodes ast (fn [node] (= (node-type node) :code))))
   ([ast lang]
    (query-nodes ast (fn [node]
-                      (and (= (:type node) :code)
-                           (= (:language node) lang))))))
+                      (and (= (node-type node) :code)
+                           (= (or (:ast.code/language node) (:language node)) lang))))))
 
 (defn headings
-  "Return all heading nodes from the AST, optionally filtered by level."
+  "Return all heading nodes from the AST, optionally filtered by level.
+   Supports both Mode-D and Mode-S nodes."
   ([ast]
-   (query-nodes ast (fn [node] (= (:type node) :heading))))
+   (query-nodes ast (fn [node] (= (node-type node) :heading))))
   ([ast level]
    (query-nodes ast (fn [node]
-                      (and (= (:type node) :heading)
-                           (= (:heading-level node) level))))))
+                      (and (= (node-type node) :heading)
+                           (= (or (:ast.heading/level node) (:heading-level node)) level))))))

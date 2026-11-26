@@ -24,7 +24,8 @@
 ;; --- Aggregate Entity Specifications (Open World) ---
 
 (s/def :assemblage/node
-  (s/keys :req-un [:node/id :node/traits :node/level]))
+  (s/or :qualified (s/keys :req [:node/id :node/traits :node/level])
+        :unqualified (s/keys :req-un [:node/id :node/traits :node/level])))
 
 (s/def :edge/src :node/id)
 (s/def :edge/dst :node/id)
@@ -44,7 +45,8 @@
   (s/map-of :node/id (s/coll-of :node/id :kind set?)))
 
 (s/def ::assemblage
-  (s/keys :req-un [:assemblage/nodes :assemblage/edges :assemblage/hierarchy]))
+  (s/or :qualified (s/keys :req [:assemblage/nodes :assemblage/edges :assemblage/hierarchy])
+        :unqualified (s/keys :req-un [:assemblage/nodes :assemblage/edges :assemblage/hierarchy])))
 
 ;; --- Delome Thirdness Declarative Grammar (CLJ-007 / T-427) ---
 ;; Purged of executable Clojure code (do, defn, s/def).
@@ -138,32 +140,57 @@
   (s/keys :req [:close-read/id :seme/firstness :pheme/secondness]
           :opt [:close-read/title :close-read/source :delome/thirdness :term/definitions]))
 
-;; --- Markdown AST Specifications (T-637 / Initiative I-012) ---
+;; --- Markdown AST Specifications (T-637 / T-434 Sovereign Senses) ---
+;; Adheres to Mode-D quarantine: sovereign qualified attributes defined first,
+;; supporting both Mode-D (qualified attributes) and Mode-S boundary adapters.
 
-(s/def :ast/type keyword?)
-(s/def :ast/text string?)
-(s/def :ast/heading-level (s/int-in 1 7))
+(s/def :ast.node/type keyword?)
+(s/def :ast.node/content (s/coll-of any? :kind vector?))
+(s/def :ast.text/content string?)
+(s/def :ast.heading/level (s/int-in 1 7))
+(s/def :ast.code/info (s/nilable string?))
+(s/def :ast.code/language (s/nilable string?))
+(s/def :ast.doc/title (s/nilable string?))
+(s/def :ast.doc/toc (s/nilable map?))
+(s/def :ast.doc/footnotes (s/nilable (s/coll-of any? :kind vector?)))
+
+;; Unqualified boundary keys (for backward compatibility with nextjournal raw AST)
+(s/def :ast/type :ast.node/type)
+(s/def :ast/text :ast.text/content)
+(s/def :ast/heading-level :ast.heading/level)
+(s/def :ast/info :ast.code/info)
+(s/def :ast/language :ast.code/language)
+(s/def :ast/title :ast.doc/title)
+(s/def :ast/toc :ast.doc/toc)
+(s/def :ast/footnotes :ast.doc/footnotes)
 
 (s/def :ast.node/text-node
-  (s/keys :req-un [:ast/type :ast/text]))
+  (s/or :qualified (s/keys :req [:ast.node/type :ast.text/content])
+        :unqualified (s/keys :req-un [:ast/type :ast/text])))
 
 (s/def :ast.node/heading-node
-  (s/keys :req-un [:ast/type :ast/heading-level :ast/content]))
+  (s/or :qualified (s/keys :req [:ast.node/type :ast.heading/level :ast.node/content])
+        :unqualified (s/keys :req-un [:ast/type :ast/heading-level :ast/content])))
 
 (s/def :ast.node/code-node
-  (s/keys :req-un [:ast/type :ast/content]
-          :opt-un [:ast/info :ast/language]))
+  (s/or :qualified (s/keys :req [:ast.node/type :ast.node/content]
+                           :opt [:ast.code/info :ast.code/language])
+        :unqualified (s/keys :req-un [:ast/type :ast/content]
+                             :opt-un [:ast/info :ast/language])))
 
 (s/def :ast/content
   (s/coll-of (s/or :text :ast.node/text-node
                    :heading :ast.node/heading-node
                    :code :ast.node/code-node
-                   :generic (s/keys :req-un [:ast/type]))
+                   :generic (s/or :qualified (s/keys :req [:ast.node/type])
+                                  :unqualified (s/keys :req-un [:ast/type])))
              :kind vector?))
 
 (s/def :ast/doc
-  (s/keys :req-un [:ast/type :ast/content]
-          :opt-un [:ast/title :ast/toc :ast/footnotes]))
+  (s/or :qualified (s/keys :req [:ast.node/type :ast.node/content]
+                           :opt [:ast.doc/title :ast.doc/toc :ast.doc/footnotes])
+        :unqualified (s/keys :req-un [:ast/type :ast/content]
+                             :opt-un [:ast/title :ast/toc :ast/footnotes])))
 
 
 ;; --- Verbatim Witness Specifications (:convention/epistemic-witness) ---
