@@ -12,10 +12,10 @@ status: conformed
 | Invariant Metric | Count | Specification Status |
 |---|---|---|
 | **Units of Reason (Level 1 Nodes)** | 21 | Conformed to `clj-spec v1.2-Peirce-Hume-Omega` |
-| **Historical Anchors (Level 0 Nodes)** | 50 | Verified primary witnesses |
-| **Distinct Conceptual Traits** | 70 | Set-algebraic attributes |
-| **Graph Vertices Total** | 71 | Open-world `AssemblageGraph` |
-| **Directed Relations Total** | 57 | Lineage + Transversal links |
+| **Historical Anchors (Level 0 Nodes)** | 48 | Verified primary witnesses |
+| **Distinct Conceptual Traits** | 69 | Set-algebraic attributes |
+| **Graph Vertices Total** | 69 | Open-world `AssemblageGraph` |
+| **Directed Relations Total** | 55 | Lineage + Transversal links |
 | **Directed Feedback Cycles** | 0 | Elementary closed walks |
 
 ## 2. Trait Set Algebra Intersections
