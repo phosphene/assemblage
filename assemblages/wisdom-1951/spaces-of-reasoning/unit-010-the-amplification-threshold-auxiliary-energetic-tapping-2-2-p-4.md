@@ -24,10 +24,12 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A lighted paper igniting coal that fires more coal"}
  :pheme/secondness {:encounter :auxiliary-energy-tapping
                     :historical-anchors [:wisdom-1951-amplification-feed-back :chain-reaction-mechanism :wage-price-spiral]}
- :delome/thirdness (do
-                     (defn amplify [signal local-store]
-                       {:pre [(has-energy? local-store)]}
-                       (+ signal (tap local-store signal))))
+ :delome/thirdness
+ [(invariant :energy/source-mix #{:solely-main :solely-local :mixed})
+  (invariant :cascade/multiplication-factor pos?)
+  (rule :amplification-threshold
+    (implies (contains? #{:solely-local :mixed} :energy/source-mix)
+             :amplification-feed-back))]
  :term/definitions [{:term/name :amplification-feed-back
                      :term/def "Feed-back where an additional local source of energy is exploited and utilised, so that the released energy vastly exceeds the derivative, redirected energy of ordinary feed-back"}
                     {:term/name :auxiliary-energetic-tapping

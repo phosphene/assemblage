@@ -78,25 +78,20 @@ divergence — so that "instability" becomes a detectable state that can *trigge
 
  ;; Delome (Thirdness): the inferential rule
  :delome/thirdness
- (do
-    (defn arrangement-class [magnet-response]
-      (case (behaviour-type magnet-response)
-        :resist-and-return :stable-arrangement
-        :diverge-maximally :unstable-arrangement))
-
-    (defn homeostat-step [state]
-      (let [current (mains-current state)
-            limit   (instability-limit state)]
-        (if (> current limit)
-          (do (cut-off :relay-current)
-              (step-uniselectors :feed-backs))
-          state)))
-
-    (def system-order
-      {:first-order  {:variables [:magnet-positions]
-                      :parameters :fixed}
-       :second-order {:variables [:magnet-positions :feed-back-settings]
-                      :parameters :discrete-steps-via-uniselector}}))}
+ [(taxonomy :system-order
+    {:first-order  {:variables [:magnet-positions]
+                    :parameters :fixed}
+     :second-order {:variables [:magnet-positions :feed-back-settings]
+                    :parameters :discrete-steps-via-uniselector}})
+  (rule :homeostat-arrangement
+    (branch :magnet-response
+            :resist-and-return :stable-arrangement
+            :diverge-maximally :unstable-arrangement))
+  (rule :instability-trigger
+    (implies (> :mains-current :instability-limit)
+             (and (cut-off :relay-current)
+                  (step-uniselectors :feed-backs))))]
+}
 ```
 
 ## Expression & Term Definitions

@@ -99,24 +99,17 @@ textual basis for our homeostat step-function design in `scripts/ashby_homeostat
 
  ;; Delome (Thirdness): the inferential rules
  :delome/thirdness
- (do
-    (defn ultrastable-reorganisation [state]
-      (loop [s state]
-        (if (stable? s)
-          s
-          (recur (reset-feed-backs s :via :uniselectors)))))
-
-    (def descartes-refutation
-      '{:principle  (>= [reality cause] [reality effect])
-        :architect  descartes
-        :refuted-by (spontaneous-adaptation :homeostat)
-        :because    (novel-behaviour :not-foresighted-by :designer)})
-
-    (def reverting-classes
-      {:same-steady-motion {:example :blood-temperature
-                            :cannon-term :homeostasis}
-       :any-steady-motion  {:example :diet-adjustment
-                            :ashby-term :machine-with-breaks}}))}
+ [(taxonomy :reverting-classes
+    {:same-steady-motion {:example :blood-temperature :cannon-term :homeostasis}
+     :any-steady-motion  {:example :diet-adjustment :ashby-term :machine-with-breaks}})
+  (isomorphism :descartes-refutation
+    {:principle  (>= [reality cause] [reality effect])
+     :refuted-by (spontaneous-adaptation :homeostat)
+     :ground     (novel-behaviour :not-foresighted-by :designer)})
+  (rule :ultrastable-search
+    (until (stable? state)
+      (step-uniselector-parameters state)))]
+}
 ```
 
 ## Expression & Term Definitions

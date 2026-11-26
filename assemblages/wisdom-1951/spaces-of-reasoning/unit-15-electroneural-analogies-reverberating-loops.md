@@ -124,33 +124,18 @@ for §4.4) self-sustaining as a circulating impulse — the regenerative loop.
 
  ;; Delome (Thirdness): the inferential rules
  :delome/thirdness
- (do
-    (def all-or-none-principle
-      '{:device electronic-machine {:gate-state #{:open :closed}}
-        :device neuron            {:firing-state #{:fires :does-not-fire}}
-        :invariant :binary-threshold-across-substrates})
-
-    (defn routing-capacity [system routes load]
-      (cond (>= load (alt-route-threshold routes)) :widespread-dislocation
-            :else :normal-performance))
-
-    (defn requisition [neuron-pool memory]
-      {:held-circuit (select-circuit neuron-pool memory)
-       :side-effect :unavailable-for-other-use
-       :persists-until :dissipation})
-
-    (defn regenerative-loop [closed-circuit]
-      (loop [firing (first closed-circuit)]
-        (let [next (fire-neighbour firing)]
-          (if (not (starts-first? next closed-circuit))
-            (recur next)
-            (recur (fire-neighbour next))))))
-
-    (def recall-constraint
-      '{:requirement :memory-playable-more-than-once
-        :forbids :complete-discharge-on-tap
-        :needed-property :magnetic-tape-persistence
-        :status :open-whether-constructible}))}
+ [(isomorphism :all-or-none-principle
+    {:electronic-machine {:gate-state #{:open :closed}}
+     :neuron             {:firing-state #{:fires :does-not-fire}}
+     :invariant          :binary-threshold-across-substrates})
+  (rule :regenerative-loop-memory
+    (implies :closed-neural-chain
+             (sustained-reverberation :holding-trace)))
+  (invariant :recall-constraint
+    {:requirement     :memory-playable-more-than-once
+     :forbids         :complete-discharge-on-tap
+     :needed-property :magnetic-tape-persistence})]
+}
 ```
 
 ## Expression & Term Definitions

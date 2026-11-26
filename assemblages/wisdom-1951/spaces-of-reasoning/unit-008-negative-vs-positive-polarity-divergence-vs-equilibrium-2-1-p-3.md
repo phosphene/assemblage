@@ -23,18 +23,13 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A governor checking a runaway engine, holding energy expenditure hovering round a quantity"}
  :pheme/secondness {:encounter :polarity-of-feed-back-loop
                     :historical-anchors [:wisdom-1951-feed-back :cannon-1932-homeostasis :ashby-1948]}
- :delome/thirdness (do
-                     (defn feed-back-polarity [driving-force feed-back-signal]
-                       {:pre [(number? driving-force) (number? feed-back-signal)]}
-                       (let [net (+ driving-force feed-back-signal)]
-                         (if (neg? feed-back-signal)
-                           {:polarity :negative :regime :equilibrium :net net}
-                           {:polarity :positive :regime :divergence :net net})))
-                     (defn incubator-loop [heat balloon-expansion tap-opening]
-                       {:pre [(number? heat) (number? balloon-expansion)]}
-                       (let [tap (+ tap-opening balloon-expansion)
-                             heat' (+ heat tap)]
-                         (recur heat' (* balloon-expansion heat') tap))))
+ :delome/thirdness
+ [(invariant :feedback/polarity #{:negative :positive})
+  (invariant :system/regime #{:hovering-equilibrium :runaway-divergence})
+  (rule :polarity-bifurcation
+    (branch :feedback/polarity
+            :negative :hovering-equilibrium
+            :positive :runaway-divergence))]
  :term/definitions [{:term/name :negative-feed-back
                      :term/def "Feed-back whose mechanism opposes the main driving force, checking the machine and keeping energy expenditure hovering round a certain quantity"}
                     {:term/name :positive-feed-back

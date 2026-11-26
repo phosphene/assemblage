@@ -84,36 +84,18 @@ Section 4.5 closes the mental-operations loop by showing that logic does not req
 
  ;; Delome (Thirdness): formal inferential rules and ASTs
  :delome/thirdness
- (do
-    (def neural-logic-isomorphism
-      '{:electroneural-nets :regenerative-loops
-        :logical-formalism  :boolean-axiomatic-calculus
-        :isomorphic-mapping :homomorphism
-        :epistemic-status   :support-for-electroneural-hypothesis})
-
-    (defn system-thermodynamic-class [system]
-      (if (exchanges-energy-and-matter? system)
-        {:type :open-system
-         :possible-regimes #{:dissipate-to-equilibrium
-                             :absorb-and-break
-                             :unstable-oscillation
-                             :steady-motion}
-         :supports-adaptation? true
-         :permits-equifinality? true}
-        {:type :closed-system
-         :supports-steady-motion? false
-         :destination :maximum-entropy-equilibrium}))
-
-    (defn equifinal-growth [system parameters]
-      {:final-state (compute-steady-ratio (:weight parameters) (:surface-area parameters))
-       :independent-of :initial-conditions})
-
-    (def alpha-scansion-conjecture
-      '{:eeg-band        :alpha-rhythm-8-to-12-hz
-        :state-condition {:eyes-closed :present :eyes-open :blocked}
-        :cybernetic-link :carrier-wave-of-retinal-scansion
-        :epilepsy-pathology {:cause :exact-synchronization-of-out-of-step-rhythms
-                             :trigger :photic-strobe-resonance}}))}
+ [(isomorphism :neural-logic-isomorphism
+    {:electroneural-nets :regenerative-loops
+     :logical-formalism  :boolean-axiomatic-calculus
+     :isomorphic-mapping :homomorphism})
+  (taxonomy :thermodynamic-system-class
+    {:open-system   {:exchange [:energy :matter] :regimes #{:steady-motion :equifinality}}
+     :closed-system {:exchange [:energy] :destination :maximum-entropy}})
+  (invariant :alpha-rhythm-scansion
+    {:band            :8-to-12-hz
+     :carrier-wave    :retinal-scansion-frequency
+     :state-condition {:eyes-closed :present :eyes-open :blocked}})]
+}
 ```
 
 ## Expression & Term Definitions

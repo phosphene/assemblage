@@ -60,12 +60,11 @@ $$\text{StrikingAnalogy}(\mathcal{M}, \mathcal{O}) \implies \text{MechanismCarve
   :relation/opposes #{:behavioral-mimicry :black-box-equivalence}
   :relation/requires-mechanism :feed-back}
  :ast/logic
- (do
-   (defn striking-analogy? [machine organism]
-     {:pre [(map? machine) (map? organism)]}
-     (and (contains? (:mechanism/traits machine) :closed-loop/feed-back)
-          (not= (:mechanism/causal machine) :newtonian/clockwork)
-          (implements-mechanism? organism (:mechanism/traits machine)))))
+ [(invariant :analogy/tier #{:tier-1-mechanism-carve :tier-2-negative-method :tier-3-epistemic-ceiling})
+  (rule :striking-analogy-criterion
+    (iff (and (contains? :mechanism/traits :closed-loop/feed-back)
+              (not= :mechanism/causal :newtonian/clockwork))
+         :striking-analogy))]
  :lexicon/terms
  [{:term/name :striking-analogy
    :term/def "An analogy grounded in shared novel mechanism rather than superficial behavioral resemblance"}

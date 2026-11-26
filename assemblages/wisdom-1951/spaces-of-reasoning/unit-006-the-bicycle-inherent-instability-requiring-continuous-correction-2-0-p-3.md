@@ -23,16 +23,15 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A rider falling slightly to the right, wheel turned to catch the fall, only to be thrown gently over on the left"}
  :pheme/secondness {:encounter :continuous-corrective-counter-steering
                     :historical-anchors [:wisdom-1951-negative-feed-back :ashby-1948-homeostat]}
- :delome/thirdness (do
-                     (defn correct [tilt wheel-angle]
-                       {:pre [(unstable? tilt)]}
-                       (let [counter (oppose tilt)]
-                         (recur (overshoot tilt counter) counter)))
-                     (defn stabilize [system]
-                       (loop [state (perturb system)]
-                         (if (hovering? state)
-                           state
-                           (recur (correct state (steer-against state)))))))
+ :delome/thirdness
+ [(invariant :system/stability-class #{:inherently-unstable :conditionally-stable :self-stable})
+  (invariant :correction/direction #{:steer-into-error :steer-away-from-error :none})
+  (invariant :correction/tempo #{:continuous :episodic :none})
+  (invariant :loop/controller #{:living-rider :in-device-mechanism :none})
+  (rule :constitutive-correction
+    (implies (and (= :system/stability-class :inherently-unstable)
+                  (= :correction/tempo :continuous))
+             :dynamic-stability))]
  :term/definitions [{:term/name :negative-feed-back
                      :term/def "Control in which the work done by the feed-back mechanism opposes the main driving force, keeping the rate of energy expenditure hovering round a certain quantity"}
                     {:term/name :inherent-instability

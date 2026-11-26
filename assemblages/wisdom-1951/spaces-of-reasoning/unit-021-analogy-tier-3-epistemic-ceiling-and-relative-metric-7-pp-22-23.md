@@ -84,16 +84,13 @@ $$\text{EpistemicStatus}(\mathbb{M}_{\text{Cybernetic}}, \mathcal{O}) = \text{In
                               :distant-from :levers-and-gears}
   :relation/epistemic-status :interim-heuristic}
  :ast/logic
- (do
-   (defn non-exhaustion? [machine-class organism]
-     (not= (:properties machine-class) (:properties organism)))
-
-   (defn interim-approximation [organism cybernetic-model newtonian-model]
-     {:pre [(< (structural-distance organism cybernetic-model)
-               (structural-distance organism newtonian-model))]}
-     {:status :interim-heuristic
-      :resemblance-close? false
-      :awaits :superior-biological-theory}))
+ [(taxonomy :relative-topological-metric
+    {:brains-to-levers-and-gears        {:distance :vast :heuristic-value :low}
+     :brains-to-radar-and-thermostats   {:distance :moderate :heuristic-value :interim-service}
+     :brains-to-future-epistemic-model  {:distance :minimal :heuristic-value :sovereign}})
+  (rule :epistemic-ceiling
+    (implies (satisfies-machine-properties? organism)
+             (not (has-only-machine-properties? organism))))]
  :lexicon/terms
  [{:term/name :non-exhaustion-principle
    :term/def "Showing an organism has properties of a machine does not establish it has only those properties"}

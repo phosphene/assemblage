@@ -23,18 +23,13 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A governor diverting part of the steam against the rest of the steam"}
  :pheme/secondness {:encounter :simple-feedback-mechanism
                     :historical-anchors [:wisdom-1951-simple-feedback :james-clerk-maxwell-governor :watt-centrifugal-governor]}
- :delome/thirdness (do
-                     (defn simple-feedback [source-energy redirect-fraction]
-                       {:pre [(<= 0 redirect-fraction 1)]}
-                       (let [redirected (* source-energy redirect-fraction)
-                             remainder  (- source-energy redirected)]
-                         {:redirected redirected
-                          :remainder remainder
-                          :net source-energy}))
-                     (defn negative-simple-feedback [source-energy]
-                       (simple-feedback source-energy 0.5))
-                     (defn positive-simple-feedback [source-energy]
-                       (simple-feedback source-energy 0.5)))
+ :delome/thirdness
+ [(invariant :feedback/energetic-tier #{:simple-feed-back :amplification-feed-back :mixed-feed-back})
+  (invariant :feedback/energy-source #{:derivative-main :local-auxiliary :hybrid})
+  (rule :simple-feedback-criterion
+    (iff (and (= :feedback/energetic-tier :simple-feed-back)
+              (= :feedback/energy-source :derivative-main))
+         :conservative-redirection))]
  :term/definitions [{:term/name :simple-feed-back-mechanism
                      :term/def "A device that redirects some of the energy supplied by the source of power against the rest of that energy, without exploiting any local source of energy arising from the feed-back mechanism"}
                     {:term/name :negative-simple-feed-back

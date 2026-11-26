@@ -127,14 +127,17 @@ $$\text{CalculatingEngine}(\mathcal{M}) \iff (\text{In} \neq \emptyset) \land (\
 
  ;; 3. Thirdness (Delome / Governing Habit & Formal Predication):
  :delome/thirdness
- (do
-   (clojure.spec.alpha/def :arch/input-channel boolean?)
-   (clojure.spec.alpha/def :arch/memory-store boolean?)
-   (clojure.spec.alpha/def :arch/addressable-selection boolean?)
-   (clojure.spec.alpha/def :arch/output-channel boolean?)
-
-   (defn functional-calculating-automaton? [machine]
-     {:pre [(map? machine)]}
+ [(invariant :arch/input-channel boolean?)
+  (invariant :arch/memory-store boolean?)
+  (invariant :arch/addressable-selection boolean?)
+  (invariant :arch/output-channel boolean?)
+  (rule :functional-calculating-automaton
+    (iff (and (:arch/input-channel machine)
+              (:arch/memory-store machine)
+              (:arch/addressable-selection machine)
+              (:arch/output-channel machine))
+         :calculating-machine))]
+}
      (and (true? (:arch/input-channel machine))
           (true? (:arch/memory-store machine))
           (true? (:arch/addressable-selection machine))

@@ -65,16 +65,11 @@ $$\text{Breakdown}(\mathcal{M}_{\text{Ashby}}, \mathcal{O}_{\text{human}}) \iff 
   :relation/isolates-residual #{:behavioral-indeterminacy :stochastic-branching}
   :relation/anticipates :mackay-uncertainty-machine}
  :ast/logic
- (do
-   (defn deterministic-successor? [machine]
-     (:dynamics/configuration-determines-successor? machine))
-
-   (defn measure-residual [candidate-machine organism]
-     (let [mach-det? (deterministic-successor? candidate-machine)
-           org-det? (deterministic-successor? organism)]
-       {:analogy/wholly-correct? (= mach-det? org-det?)
-        :residual/unmodeled-dynamics (when (and mach-det? (not org-det?))
-                                       :non-deterministic-transitions)})))
+ [(invariant :system/determinacy #{:strictly-state-determined :non-stationary-organismic})
+  (rule :negative-method-subtraction
+    (implies (and (= :system/determinacy :non-stationary-organismic)
+                  (violates? :state-determined-successor))
+             :human-residual))]
  :lexicon/terms
  [{:term/name :negative-method-of-analogy
    :term/def "The deliberate identification of points where a mechanical analogy fails to hold against living organism dynamics"}

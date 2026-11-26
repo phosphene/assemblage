@@ -23,15 +23,12 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A cat walking forward continuously till it dies, its brakes removed"}
  :pheme/secondness {:encounter :positive-feedback-disinhibition
                     :historical-anchors [:bailey-interpeduncular-cats :thompson-1951-renal-hypertension :ashby-1948-homeostat]}
- :delome/thirdness (do
-                     (defn vicious-spiral [damage]
-                       {:pre [(pos? damage)]}
-                       (let [hypertension (amplify damage)
-                             further-damage (amplify hypertension)]
-                         (recur (+ damage further-damage))))
-                     (defn homeostat [disturbance]
-                       {:pre [(difficulty? disturbance)]}
-                       (reorganize disturbance)))
+ :delome/thirdness
+ [(invariant :pathology/mechanism #{:positive-amplification-spiral :negative-disinhibition})
+  (invariant :homeostat/essential-variables (bounded :min :max))
+  (rule :ultrastable-adaptation
+    (implies (outside-bounds? :homeostat/essential-variables)
+             :step-function-parameter-randomization))]
  :term/definitions [{:term/name :positive-amplification-feed-back
                      :term/def "Feed-back in which a disturbance is amplified through a chain of consequences, each reinforcing the next, so the deviation grows without correction"}
                     {:term/name :vicious-spiral

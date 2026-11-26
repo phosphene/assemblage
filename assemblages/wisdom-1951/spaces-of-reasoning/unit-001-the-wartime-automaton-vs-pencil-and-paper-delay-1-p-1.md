@@ -110,17 +110,13 @@ $$\Omega: (I, \mathcal{P}) \xrightarrow{\Delta t \le \tau_{\text{tactical}}} O$$
 
  ;; 3. Thirdness (Delome / Governing Habit & Formal Predication):
  :delome/thirdness
- (do
-   (clojure.spec.alpha/def :computation/wartime-pressure boolean?)
-   (clojure.spec.alpha/def :computation/latency-mode #{:discrete-hours :continuous-months})
-   (clojure.spec.alpha/def :computation/medium #{:electronic-machine :pencil-and-paper})
-
-   (defn overcomes-latency-bottleneck? [system tactical-horizon-hours]
-     {:pre [(map? system) (number? tactical-horizon-hours)]}
-     (let [run-hours (:computation/solution-time-hours system)]
-       (and (= (:computation/medium system) :electronic-machine)
-            (<= run-hours tactical-horizon-hours)))))
-
+ [(invariant :computation/wartime-pressure boolean?)
+  (invariant :computation/latency-mode #{:discrete-hours :continuous-months})
+  (invariant :computation/medium #{:electronic-machine :pencil-and-paper})
+  (rule :overcomes-latency-bottleneck
+    (implies (and (= :computation/medium :electronic-machine)
+                  (<= :computation/solution-time-hours :tactical-horizon-hours))
+             :tactical-viability))]
  :lexicon/terms
  [{:term/name :electronic-calculating-machine
    :term/def "Discrete electronic automaton solving in hours mathematical equations requiring months by pencil and paper"}

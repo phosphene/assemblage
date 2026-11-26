@@ -23,15 +23,13 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A driverless train that must not be given full power at once"}
  :pheme/secondness {:encounter :positive-feed-back-gradual-power-application
                     :historical-anchors [:wisdom-1951-futile-mechanism :driverless-train-controlled-build-up]}
- :delome/thirdness (do
-                     (defn build-up [required-state power-source]
-                       {:pre [(slow-pace-desirable? required-state)]}
-                       (loop [applied 0]
-                         (if (reached? applied required-state)
-                           applied
-                           (recur (positive-feed-back applied power-source)))))
-                     (defn positive-feed-back [applied power-source]
-                       (tap power-source (increment applied))))
+ :delome/thirdness
+ [(invariant :train/power-state (bounded 0 100))
+  (invariant :acceleration/trajectory #{:instant-step :rate-limited-ramp})
+  (rule :non-futile-positive-build-up
+    (implies (and (:requires-gradual-buildup? system)
+                  (:forbid-instant-saturation? system))
+             :rate-limited-positive-feedback))]
  :term/definitions [{:term/name :futility-objection :term/def "Objection that a mechanism is futile since the balloon could simply be removed and the tap opened for maximum flow"}
                      {:term/name :controlled-build-up :term/def "Building up a required state at a slow pace rather than at full power from the outset"}
                      {:term/name :positive-feed-back :term/def "Feed-back that keeps turning on more power gradually, its energy drawn from the given source of power driving the machine"}]}

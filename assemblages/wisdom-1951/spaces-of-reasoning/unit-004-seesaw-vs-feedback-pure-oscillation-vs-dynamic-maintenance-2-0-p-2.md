@@ -23,12 +23,14 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A seesaw rocking with no governor on its swing"}
  :pheme/secondness {:encounter :feedback-regulation-by-error-signal
                     :historical-anchors [:wisdom-1951-feedback-machines :thermostat-regulation :incubator-balloon-governor]}
- :delome/thirdness (do
-                     (defn regulate [disturbance set-point sensor actuator]
-                       {:pre [(error-signal? (- disturbance set-point))]}
-                       (actuator (correct (- disturbance set-point))))
-                     (defn seesaw [impulse]
-                       (oscillate impulse)))
+ :delome/thirdness
+ [(invariant :loop/sign #{:negative :positive :none})
+  (invariant :loop/sensor-medium #{:expanding-gas :thermal-bimetal :centrifugal-mass :none})
+  (invariant :loop/saturation boolean?)
+  (rule :feedback-governance
+    (implies (and (not= :loop/sensor-medium :none)
+                  (= :loop/sign :negative))
+             :error-opposing-maintenance))]
  :term/definitions [{:term/name :feed-back :term/def "Mechanism whereby a deviation from a condition operates to reduce that deviation, differing from purely Newtonian automatic motion such as a seesaw"}
                     {:term/name :pure-oscillation :term/def "Automatic motion lacking error-sensing correction, exemplified by the seesaw"}]}
 ```

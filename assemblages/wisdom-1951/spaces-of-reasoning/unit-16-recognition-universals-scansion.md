@@ -160,38 +160,17 @@ invariance.
 
  ;; Delome (Thirdness): the inferential rules, including the two objections
  :delome/thirdness
- (do
-    (defn centre-of-brightness-servo [retina fixation]
-      (let [centroid (double-integrate (brightness retina) :origin fixation)]
-        (if (not= fixation centroid)
-          (recur retina (move-visual-axis fixation centroid))
-          :invariant-translation-achieved)))
-
-    (def centering-objection
-      '{:claim   (implies :centered-brightness :recognition-of-squareness)
-        :verdict :non-sequitur
-        :because :centering-yields-invariance-not-recognition})
-
-    (defn scansion [retina]
-      (let [impulse-train (raster->time-series retina)]
-        {:pitch  (invariant-form impulse-train)
-         :tempo  (scale-of-impulse-spacing impulse-train)}))
-
-    (def tempo-pitch-regress
-      '{:given    [(loop-a {:pitch :same :tempo :t1})
-                   (loop-b {:pitch :same :tempo :t2})]
-        :fork     #{:synchronise :tempo-vanishes}
-        :reject   :tempo-vanishes
-        :because  :we-recognise-pitch-invariance-while-also-recognising-tempo-difference
-        :conclude :synchronise
-        :regress  {:new-problem :what-recognises-the-invariant-pitch
-                   :status :reopened}})
-
-    (def wisdom-verdict
-      '{:hypothesis-of-scansion :most-suggestive
-        :completeness           :not-regarded-as-complete
-        :closing-move           :hypotheses-connecting-pitch-similarity
-                                :with :attributing-same-form}))}
+ [(rule :scansion-transformation
+    (transforms :retinal-raster
+                :impulse-train
+                {:invariant-feature :pitch :scale-feature :tempo}))
+  (isomorphism :tempo-pitch-isomorphism
+    {:pitch :invariant-form-recognition
+     :tempo :magnitude-or-distance})
+  (rule :centering-servo
+    (until (= :fixation-axis :brightness-centroid)
+      (servo-shift :retina-origin :brightness-centroid)))]
+}
 ```
 
 ## Expression & Term Definitions

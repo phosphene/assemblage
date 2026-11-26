@@ -23,12 +23,12 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A guided anti-aircraft gun homing continuously on its target via radar"}
  :pheme/secondness {:encounter :central-nervous-system-negative-feedback
                     :historical-anchors [:wiener-rosenblueth-bigelow-1943-teleology :radar-guided-anti-aircraft-gun]}
- :delome/thirdness (do
-                     (defn purposive-step [target-state current-state]
-                       (let [error (- target-state current-state)]
-                         (if (zero? error)
-                           current-state
-                           (+ current-state (compensate-error error))))))
+ :delome/thirdness
+ [(invariant :behaviour/teleology #{:purposive :adaptive :passive :random})
+  (rule :operational-teleology
+    (iff (and (:embody-negative-feedback? device)
+              (:reduces-tracking-error? device))
+         :purposive-behavior))]
  :term/definitions [{:term/name :basic-cybernetic-hypothesis
                      :term/def "The chief mechanism of the central nervous system is one of negative feed-back"}
                     {:term/name :operational-purposiveness

@@ -23,15 +23,14 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A clock that is nearly always slightly too fast or slightly too slow, just right only in between"}
  :pheme/secondness {:encounter :negative-feed-back-correction
                     :historical-anchors [:wisdom-1951-clock-imprecision :wisdom-1951-bicycle-balance :cannon-1932-homeostasis]}
- :delome/thirdness (do
-                     (defn hover-around [rate target tolerance]
-                       {:pre [(pos? tolerance)]}
-                       (let [error (- rate target)]
-                         (if (<= (abs error) tolerance)
-                           rate
-                           (- rate (signum error)))))
-                     (defn negative-feed-back [main-force check-mechanism]
-                       (check-mechanism (main-force))))
+ :delome/thirdness
+ [(invariant :error/magnitude #{:slight :moderate :runaway})
+  (invariant :error/sign-persistence #{:oscillating :fixed :none})
+  (invariant :error/exactness-status #{:never-a-state :attained})
+  (rule :hovering-error-without-constancy
+    (implies (and (= :error/sign-persistence :oscillating)
+                  (= :error/exactness-status :never-a-state))
+             :hovering-equilibrium))]
  :term/definitions [{:term/name :negative-feed-back
                      :term/def "Control in which the work done by a feed-back mechanism opposes the main driving force, keeping the rate of energy expenditure hovering around a certain quantity and preventing the machine from running away"}
                     {:term/name :error-without-constancy

@@ -78,31 +78,20 @@ Second, the fear that cybernetics eliminates mind. Wisdom insists cybernetics is
 
  ;; Delome (Thirdness): the formal classification and demarcation rules
  :delome/thirdness
- (do
-    (def machine-species-taxonomy
-      '{:newtonian  {:calculates [:velocity :position]
-                     :governed-by :direct-conservative-forces}
-        :maxwellian {:calculates [:electrodynamic-field-flux]
-                     :governed-by :field-equations}
-        :einsteinian {:calculates [:spacetime-geodesics :energy-mass-equivalence]
-                      :governed-by :relativistic-tensor-geometry}
-        :cybernetic {:calculates [:error-signals :self-reorganisation :invariants]
-                     :governed-by :circular-causal-feedback
-                     :transcends  [:newtonian :maxwellian]
-                     :violates-none true}})
-
-    (defn evaluate-reductionism [organism machine-model]
-      (let [shared-properties (intersection (properties organism) (properties machine-model))]
-        {:valid-inference   {:has-properties shared-properties}
-         :invalid-fallacy   {:has-only-properties shared-properties}
-         :verdict :dog-or-man-vastly-different-from-calculator}))
-
-    (def mind-body-demarcation
-      '{:cybernetic-scope :physiological-and-neurological-circuits
-        :omitted-domain   :subjective-mental-aspect
-        :claim-coup-de-grace-to-mind :refuted
-        :explanation      :omits-one-party-due-to-methodological-lineage
-        :status           :unresolved-mind-body-relation}))}
+ [(taxonomy :machine-species-taxonomy
+    {:newtonian   {:calculates [:velocity :position] :governed-by :conservative-forces}
+     :maxwellian  {:calculates [:electrodynamic-flux] :governed-by :field-equations}
+     :einsteinian {:calculates [:spacetime-geodesics] :governed-by :relativistic-tensor}
+     :cybernetic  {:calculates [:error-signals :invariants] :governed-by :circular-causal-feedback}})
+  (rule :fallacy-of-reduction
+    (and (valid-inference   {:has-properties   :shared})
+         (invalid-fallacy   {:has-only-properties :shared})
+         (verdict :organism-vastly-different-from-calculator)))
+  (invariant :mind-body-demarcation
+    {:cybernetic-scope :physiological-circuits
+     :omitted-domain   :subjective-mental-aspect
+     :status           :unresolved-mind-body-relation})]
+}
 ```
 
 ## Expression & Term Definitions

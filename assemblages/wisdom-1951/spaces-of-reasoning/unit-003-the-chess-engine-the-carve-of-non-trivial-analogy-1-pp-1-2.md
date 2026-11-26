@@ -23,16 +23,14 @@ pipeline: deepseek-v4.1-flash-1017 (native EDN)
                   :perceptual/metaphor "A chessboard on which legal moves are made without a player"}
  :pheme/secondness {:encounter :analogy-carving-by-mechanism-type
                     :historical-anchors [:wisdom-1951-feed-back :newtonian-machine-contrast :seesaw-automaticity]}
- :delome/thirdness (do
-                     (defn non-trivial-analogy? [machine brain]
-                       {:pre [(rule-conforming? machine)
-                              (sound-moves? machine)]}
-                       (and (embodies? machine :feed-back)
-                            (not (merely-automatic? machine :seesaw))
-                            (differs-from? machine :newtonian)))
-                     (defn carve-analogy [machine brain]
-                       (when (non-trivial-analogy? machine brain)
-                         :striking)))
+ :delome/thirdness
+ [(invariant :analogy/machine-behavior #{:rule-conforming-sound-moves :random :illegal})
+  (invariant :analogy/mechanism-type #{:feed-back :purely-newtonian :none})
+  (invariant :analogy/warrant-tier #{:trivial :structural :phenomenal})
+  (rule :non-trivial-analogy
+    (iff (and (= :analogy/mechanism-type :feed-back)
+              (not= :analogy/warrant-tier :trivial))
+         :striking-analogy))]
  :term/definitions [{:term/name :feed-back-mechanism :term/def "A special type of mechanism embodied by electronic machines, distinct from merely automatic devices like a seesaw and from purely Newtonian machines"}
                     {:term/name :non-trivial-analogy :term/def "An analogy between machine and brain/mind that is striking because it rests on shared mechanism-type (feed-back) rather than mere rule-conformity or automaticity"}]}
 ```

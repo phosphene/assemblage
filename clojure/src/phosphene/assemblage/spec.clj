@@ -46,6 +46,64 @@
 (s/def ::assemblage
   (s/keys :req-un [:assemblage/nodes :assemblage/edges :assemblage/hierarchy]))
 
+;; --- Delome Thirdness Declarative Grammar (CLJ-007 / T-427) ---
+;; Purged of executable Clojure code (do, defn, s/def).
+;; Thirdness is Peircean Governing Habit, represented as an inert sequential AST:
+;;   - (invariant :coord predicate)
+;;   - (rule :rule-id expression)
+;;   - (isomorphism :name mapping-map)
+;;   - (taxonomy :name category-map)
+
+(s/def :delome.invariant/tag #{'invariant})
+(s/def :delome.invariant/coord (s/or :kw qualified-keyword? :simple-kw keyword?))
+(s/def :delome.invariant/predicate any?)
+
+(s/def ::delome-invariant
+  (s/cat :tag :delome.invariant/tag
+         :coord :delome.invariant/coord
+         :predicate :delome.invariant/predicate))
+
+(s/def :delome.rule/tag #{'rule})
+(s/def :delome.rule/id (s/or :kw keyword? :sym symbol?))
+(s/def :delome.rule/body any?)
+
+(s/def ::delome-rule
+  (s/cat :tag :delome.rule/tag
+         :id :delome.rule/id
+         :body :delome.rule/body))
+
+(s/def :delome.taxonomy/tag #{'taxonomy})
+(s/def :delome.taxonomy/name (s/or :kw keyword? :sym symbol?))
+(s/def :delome.taxonomy/body (s/or :map map? :coll vector?))
+
+(s/def ::delome-taxonomy
+  (s/cat :tag :delome.taxonomy/tag
+         :name :delome.taxonomy/name
+         :body :delome.taxonomy/body))
+
+(s/def :delome.isomorphism/tag #{'isomorphism})
+(s/def :delome.isomorphism/name (s/or :kw keyword? :sym symbol?))
+(s/def :delome.isomorphism/body map?)
+
+(s/def ::delome-isomorphism
+  (s/cat :tag :delome.isomorphism/tag
+         :name :delome.isomorphism/name
+         :body :delome.isomorphism/body))
+
+(s/def ::delome-clause
+  (s/alt :invariant (s/spec ::delome-invariant)
+         :rule (s/spec ::delome-rule)
+         :taxonomy (s/spec ::delome-taxonomy)
+         :isomorphism (s/spec ::delome-isomorphism)
+         :generic-form (s/spec seq?)))
+
+(s/def ::delome-thirdness
+  (s/or :declarative-vector (s/coll-of ::delome-clause :kind vector?)
+        :declarative-map (s/keys :opt [:delome/invariants :delome/habits :delome/isomorphisms])
+        :legacy-form any?))
+
+(s/def :delome/thirdness ::delome-thirdness)
+
 ;; --- Semiotic Close-Read Triad Specifications ---
 ;; Conforms to clj-spec v1.2-Peirce-Hume-Omega supporting both qualified and unqualified keys
 
