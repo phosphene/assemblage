@@ -34,9 +34,7 @@ Wisdom maps the concrete neurophysiological and clinical embodiments of cybernet
 Let $\nu_i(t) \in \{0, 1\}$ be the firing state of neuron $i$ at time $t$.
 Let $\theta_i$ be the synaptic threshold and $w_{ij}$ be the synaptic weight from neuron $j$ to neuron $i$:
 
-$$
-
-u_i(t+1) = \Theta\left(\sum_{j} w_{ij} \nu_j(t) - \theta_i\right) \quad \text{where } \Theta(z) = \begin{cases} 1 & z \ge 0 \\ 0 & z < 0 \end{cases}$$
+$$\nu_i(t+1) = \Theta\left(\sum_{j} w_{ij} \nu_j(t) - \theta_i\right) \quad \text{where } \Theta(z) = \begin{cases} 1 & z \ge 0 \\ 0 & z < 0 \end{cases}$$
 
 Let $\mathcal{C} = (V, E)$ be a closed neural circuit with directed cycle $v_1 \to v_2 \to \dots \to v_k \to v_1$.
 Persistence of circulating excitation (reverberation):

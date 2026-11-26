@@ -34,8 +34,7 @@ Let $\mathbf{x} \in \mathbb{R}^4$ be magnet states and $\mathbf{P}_k \in \mathca
 Let $\mathcal{E}(\mathbf{x}) = \|\mathbf{x}\|_{\infty}$ measure system displacement from homeostatic center.
 Let $\mathcal{B}_{\text{essential}} = \{\mathbf{x} \mid \mathcal{E}(\mathbf{x}) \le L_{\text{crit}}\}$ be the basin of essential physiological bounds.
 
-$$\mathbf{P}_{k+1} = \begin{cases} \mathbf{P}_k & \text{if } \mathbf{x}(t) \in \mathcal{B}_{\text{essential}} \ g(\mathbf{P}_k) & \text{if } \mathbf{x}(t) 
-\notin \mathcal{B}_{\text{essential}} \quad (\text{stochastic step-function})\end{cases}$$
+$$\mathbf{P}_{k+1} = \begin{cases} \mathbf{P}_k & \text{if } \mathbf{x}(t) \in \mathcal{B}_{\text{essential}} \\ g(\mathbf{P}_k) & \text{if } \mathbf{x}(t) \notin \mathcal{B}_{\text{essential}} \quad (\text{stochastic step-function}) \end{cases}$$
 
 Convergence to ultrastability:
 
@@ -43,8 +42,7 @@ $$\exists k^* < \infty \quad \text{such that} \quad \forall t > t_{k^*}, \; \mat
 
 Refutation of Cartesian foresight bound:
 
-$$\text{Behaviors}(\mathcal{M}) 
-\not\subseteq \text{Foresight}(\text{Designer})$$
+$$\text{Behaviors}(\mathcal{M}) \not\subseteq \text{Foresight}(\text{Designer})$$
 
 ## 4. Decomposed Semiotic S-Expressions
 
