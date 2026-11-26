@@ -1,42 +1,84 @@
 ---
 uri: work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-012-the-basic-cybernetic-hypothesis-operational-teleology-3-p-5
 id: CR-WISDOM-U012
-title: "CR-WISDOM-U012 — The Basic Cybernetic Hypothesis & Operational Teleology (§3, p. 4)"
-source: J. O. Wisdom, "The Hypothesis of Cybernetics", BJPS 2(5), 1951, p. 4
+title: "CR-WISDOM-U012 — The Basic Cybernetic Hypothesis: Operational Teleology and Central Nervous Mechanism (§3, p. 5)"
+source: "J. O. Wisdom, 'The Hypothesis of Cybernetics', The British Journal for the Philosophy of Science, Vol. II, No. 5, May 1951, p. 5"
 basis_tier: read-together
-standard: work/topic-98577-public-evolutionary-science/SPEC-close-reading-architecture.md (clj-spec v1.2)
-pipeline: deepseek-v4.1-flash-1017 (native EDN)
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
+corpus_locus:
+  source_file: "assemblages/wisdom-1951/primary/source-text.txt"
+  sha256: "fb29b8c188d305d98fa846df7729c1211e8b7e47d577c2abaf765f0d920a6981"
+  printed_folio: 5
+  doc_page_index: 5
 ---
 
-# CR-WISDOM-U012 — The Basic Cybernetic Hypothesis & Operational Teleology (§3, p. 4)
+# CR-WISDOM-U012 — The Basic Cybernetic Hypothesis: Operational Teleology and Central Nervous Mechanism (§3, p. 5)
 
-## Verbatim Text (zero ellipses)
+## 1. Verbatim Text (zero ellipses)
 
-> 3 The Basic Cybernetic Hypothesis We may describe machines that embody negative feed-back mechanisms as proceeding by "trial and error ", or as error- compensating ", or-best-as " self-correcting "; and we may define "a simple negative feed-back mechanism" as a mechanism by which part of the input-energy of a machine is utilised at intervals to impose a check on the output-energy. The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for " purposive " can now be defined in terms of negative feed-back. An anti-aircraft gun is 'purposive' in the sense that it is able by means of radar to follow its target.1 Predictive behaviour is also accounted for
+> The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for " purposive " can now be defined in terms of negative feed-back.
+> (§5, p. 5)
 
-## Triadic Semiotic Specification (clj-spec v1.2)
+## 2. Epistemic Gloss & Philosophical Carve
+
+Wisdom articulates the foundational core thesis of the entire cybernetic revolution:
+1. **The CNS Mechanism Thesis:** The central nervous system's chief organizing and operational principle is closed-loop negative feedback.
+2. **Operationalization of Teleology:** 'Purpose' and 'goal-seeking'—long dismissed as unscientific occult or vitalist concepts—are fully grounded in physical automata as error-compensating negative feedback towards a target state.
+
+## 3. Formal Predicate Logic
+
+Let $\text{TargetState}(S^*)$ and $\text{CurrentState}(S(t))$ define error $\mathcal{E}(t) = S(t) - S^*$:
+$$\text{TeleologicalActuation}: \frac{dS}{dt} = - \mathbf{K} \cdot \mathcal{E}(t)$$
+$$\lim_{t \to \infty} S(t) = S^* \implies \text{PurposiveBehavior}(\mathcal{M})$$
+$$\text{Teleology}(\mathcal{M}) \equiv \text{NegativeFeedbackRegulator}(\mathcal{M}, S^*)$$
+
+## 4. Decomposed Semiotic S-Expressions
+
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
 
 ```clojure
-{:close-read/id "CR-WISDOM-U012"
- :close-read/title "The Basic Cybernetic Hypothesis & Operational Teleology"
- :seme/firstness {:quality/phenomenon :teleology-reduced-to-error-compensation
-                  :perceptual/metaphor "A guided anti-aircraft gun homing continuously on its target via radar"}
- :pheme/secondness {:encounter :central-nervous-system-negative-feedback
-                    :historical-anchors [:wiener-rosenblueth-bigelow-1943-teleology :radar-guided-anti-aircraft-gun]}
- :delome/thirdness
- [(invariant :behaviour/teleology #{:purposive :adaptive :passive :random})
-  (rule :operational-teleology
-    (iff (and (:embody-negative-feedback? device)
-              (:reduces-tracking-error? device))
-         :purposive-behavior))]
- :term/definitions [{:term/name :basic-cybernetic-hypothesis
-                     :term/def "The chief mechanism of the central nervous system is one of negative feed-back"}
-                    {:term/name :operational-purposiveness
-                     :term/def "Purposive behaviour defined as error-compensation by negative feed-back"}]}
+{:seme/firstness
+ {:quality/phenomenon :error-compensation-toward-goal
+  :perceptual/metaphor "A torpedo or eye steadily closing distance on a moving target, continuously eliminating error"}}
 ```
 
-## Verify Notes
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
 
-- **Basis tier:** `read-together` — Wisdom (1951), text p. 4.
-- **Extraction:** Deterministic span extraction from Section 3 body text (Doc page 5).
-- **Spec verification:** Balanced AST bracket conformance verified.
+```clojure
+{:pheme/secondness
+ {:encounter :central-nervous-system-negative-feedback
+  :historical-anchors [:wisdom-1951-basic-hypothesis :wiener-1948-cybernetics :rosenblueth-wiener-bigelow-1943]}}
+```
+
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
+
+```clojure
+{:delome/thirdness
+ [(invariant :behaviour/type #{:teleological-purposive :ballistic-open-loop})
+  (rule :operational-teleology-definition
+    (iff (= :mechanism :negative-feed-back)
+         (= :behaviour/type :teleological-purposive)))]}
+```
+
+### 4.4 Conceptual Term Definitions
+
+```clojure
+{:term/definitions
+ [#:term{:name :basic-cybernetic-hypothesis
+         :def "The hypothesis that the chief organizing mechanism of the central nervous system is negative feed-back"}
+  #:term{:name :operational-teleology
+         :def "The definition and manifestation of goal-directed, purposive behavior via continuous error-compensating feedback"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+  {:witness/text "The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for " purposive " can now be defined in terms of negative feed-back."
+   :witness/folio 5
+   :witness/char-count 548
+   :witness/zero-ellipses? true}}
+```
