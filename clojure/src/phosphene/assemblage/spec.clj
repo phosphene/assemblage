@@ -217,6 +217,33 @@
   (s/keys :req [:close-read/id :seme/firstness :pheme/secondness]
           :opt [:close-read/title :close-read/source :delome/thirdness :term/definitions]))
 
+;; --- Non-Backtracking Reasoning Stream & Invariant Intersections (Pattern 3 / T-432) ---
+;; In accordance with Pattern 3, s/& separates the sequential stream grammar from
+;; whole-sequence semantic invariants, eliminating fragile backtracking and procedural checks.
+
+(s/def :reasoning.unit/id (s/or :kw keyword? :str string?))
+(s/def :reasoning.unit/traits (s/coll-of (s/or :kw keyword? :str string?) :kind (s/or :set set? :vec vector?)))
+(s/def :reasoning.unit/anchors (s/coll-of (s/or :kw keyword? :str string?) :kind (s/or :set set? :vec vector?)))
+(s/def :reasoning.unit/verbatim-count (s/and int? (complement neg?)))
+
+(s/def ::reasoning-unit
+  (s/keys :req [:unit/id]
+          :opt [:unit/traits :unit/anchors :unit/triad :unit/witnesses :unit/verbatim-witnesses :unit/meta :unit/title]))
+
+(s/def ::reasoning-stream
+  (s/& (s/cat :units (s/+ (s/spec ::reasoning-unit)))
+       ;; Invariant 1: Ground Empirical Anchor — at least one unit anchors into historical/empirical grounding
+       (fn [{:keys [units]}]
+         (boolean (some (fn [u] (seq (:unit/anchors u))) units)))
+       ;; Invariant 2: Identifier Uniqueness — all reasoning units have distinct IDs
+       (fn [{:keys [units]}]
+         (= (count units) (count (distinct (map :unit/id units)))))
+       ;; Invariant 3: Verbatim Witness Presence — the assemblage carries empirical textual witnesses
+       (fn [{:keys [units]}]
+         (boolean (some (fn [u] (or (pos? (count (:unit/witnesses u)))
+                                    (pos? (count (:unit/verbatim-witnesses u)))))
+                        units)))))
+
 ;; --- Markdown AST Specifications (T-637 / T-434 Sovereign Senses) ---
 ;; Adheres to Mode-D quarantine: sovereign qualified attributes defined first,
 ;; supporting both Mode-D (qualified attributes) and Mode-S boundary adapters.

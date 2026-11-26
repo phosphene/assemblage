@@ -26,7 +26,9 @@
             [phosphene.assemblage.ast :as ast]
             [phosphene.assemblage.core :as asm]
             [phosphene.assemblage.lattice :as lat]
-            [phosphene.assemblage.lens :as lens]))
+            [phosphene.assemblage.lens :as lens]
+            [phosphene.assemblage.spec :as aspec]
+            [clojure.spec.alpha :as s]))
 
 ;; --- Helper: Table Term Extraction ---
 
@@ -148,6 +150,11 @@
          ;; 5. Predicative Tension Ledger (T-429)
          tensions (lat/tension-ledger empirical-referents)]
      
+     ;; Validate reasoning stream against Pattern 3 s/& non-backtracking invariants
+     (when-not (s/valid? ::aspec/reasoning-stream units)
+       (throw (ex-info "Reasoning stream failed Pattern 3 invariants"
+                       {:explain (s/explain-data ::aspec/reasoning-stream units)})))
+
      {:assemblage/graph with-transversals
       :assemblage/units units
       :assemblage/total-units (count units)
