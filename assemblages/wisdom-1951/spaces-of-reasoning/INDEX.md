@@ -30,3 +30,6 @@
 | **CR-WISDOM-U016** | §4.4 | Recognition of Universals: Scansion & The Invariance Gap | `unit-16-recognition-universals-scansion.md` | **Deposited** |
 | **CR-WISDOM-U017** | §4.5, §5, §6 | Deductive Inference, Open Systems & EEG Rhythm Scanning | `unit-17-deductive-inference-open-systems-eeg.md` | **Deposited** |
 | **CR-WISDOM-U018** | §7 | Evaluation: Machine Taxonomy Beyond Newton & Mind-Body Bounds | `unit-18-evaluation-machine-taxonomy-mind-body.md` | **Deposited** |
+| **CR-WISDOM-U019** | §1 | Analogy Tier 1: Mechanism Carve vs. Behavioral Mimicry | `unit-019-analogy-tier-1-mechanism-carve-vs-mimicry-1-pp-1-2.md` | **Deposited** |
+| **CR-WISDOM-U020** | §4.0 | Analogy Tier 2: The Negative Method & The Unmodeled Residual | `unit-020-analogy-tier-2-negative-method-and-residual-4-0-p-7.md` | **Deposited** |
+| **CR-WISDOM-U021** | §7 | Analogy Tier 3: The Epistemic Ceiling & Relative Metric of Machines | `unit-021-analogy-tier-3-epistemic-ceiling-and-relative-metric-7-pp-22-23.md` | **Deposited** |

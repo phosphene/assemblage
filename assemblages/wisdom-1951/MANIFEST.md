@@ -14,10 +14,10 @@ generated_by: phosphene.assemblage.projector
 
 | Invariant Metric | Count | Specification Status |
 |---|---|---|
-| **Units of Reason (Level 1 Nodes)** | 18 | Conformed to `clj-spec v1.2-Peirce-Hume-Omega` |
+| **Units of Reason (Level 1 Nodes)** | 21 | Conformed to `clj-spec v1.2-Peirce-Hume-Omega` |
 | **Historical Anchors (Level 0 Nodes)** | 54 | Verified primary witnesses |
 | **Distinct Conceptual Traits** | 68 | Set-algebraic attributes |
-| **Graph Vertices Total** | 72 | Open-world `AssemblageGraph` |
+| **Graph Vertices Total** | 75 | Open-world `AssemblageGraph` |
 | **Directed Relations Total** | 61 | Lineage + Transversal links |
 | **Directed Feedback Cycles** | 0 | Elementary closed walks |
 

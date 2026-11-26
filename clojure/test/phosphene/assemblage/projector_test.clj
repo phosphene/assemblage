@@ -10,10 +10,10 @@
     (let [res (proj/assemble-corpus "assemblages/wisdom-1951/spaces-of-reasoning")
           graph (:assemblage/graph res)]
       ;; Validates 18 units conformed
-      (is (= 18 (:assemblage/total-units res)))
+      (is (= 21 (:assemblage/total-units res)))
       (is (= 68 (:assemblage/total-traits res)))
       (is (s/valid? ::spec/assemblage graph))
-      (is (= 72 (count (:nodes graph))))
+      (is (= 75 (count (:nodes graph))))
       (is (= 61 (count (:edges graph))))
       
       ;; Verify trait intersections
@@ -26,4 +26,4 @@
       (let [manifest (proj/generate-assemblage-manifest res)]
         (is (string? manifest))
         (is (.contains manifest "Self-Assembling Fact Registry Manifest"))
-        (is (.contains manifest "18"))))))
+        (is (.contains manifest "21"))))))
