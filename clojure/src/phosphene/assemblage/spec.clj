@@ -108,6 +108,7 @@
 
 ;; --- Semiotic Close-Read Triad Specifications ---
 ;; Conforms to clj-spec v1.2-Peirce-Hume-Omega supporting both qualified and unqualified keys
+;; and multi-paradigm Seme/Pheme representations (Peircean Rheme and Poset Vertices).
 
 (s/def :close-read/id (s/or :str string? :kw keyword?))
 (s/def :close-read/title (s/nilable string?))
@@ -115,17 +116,35 @@
 
 (s/def :quality/phenomenon (s/or :kw keyword? :str string? :vec vector?))
 (s/def :perceptual/metaphor (s/or :str string? :vec vector?))
+(s/def :perceptual/invariant (s/or :kw keyword? :str string? :vec vector?))
+
+(s/def :rheme/id keyword?)
+(s/def :rheme/semes (s/coll-of map? :kind vector?))
 
 (s/def :seme/firstness
-  (s/or :qualified (s/keys :req [:quality/phenomenon] :opt [:perceptual/metaphor])
-        :unqualified (s/keys :req-un [:quality/phenomenon] :opt-un [:perceptual/metaphor])))
+  (s/or :simple-qualified (s/keys :req [:quality/phenomenon] :opt [:perceptual/metaphor :perceptual/invariant])
+        :simple-unqualified (s/keys :req-un [:quality/phenomenon] :opt-un [:perceptual/metaphor :perceptual/invariant])
+        :rheme-qualified (s/keys :req [:rheme/id :rheme/semes])
+        :open-map (s/and map? #(or (contains? % :quality/phenomenon)
+                                   (contains? % :phenomenon)
+                                   (contains? % :rheme/id)
+                                   (seq %)))))
 
 (s/def :pheme/encounter (s/or :kw keyword? :str string?))
-(s/def :pheme/historical-anchors (s/coll-of (s/or :kw keyword? :str string?) :kind vector?))
+(s/def :pheme/historical-anchors (s/coll-of (s/or :kw keyword? :str string?) :kind coll?))
+(s/def :pheme/claimed-vertex keyword?)
+(s/def :pheme/required-coordinates (s/coll-of keyword? :kind vector?))
+(s/def :pheme/empirical-encounter map?)
+(s/def :pheme/conformance-status keyword?)
 
 (s/def :pheme/secondness
-  (s/or :qualified (s/keys :req [:pheme/encounter] :opt [:pheme/historical-anchors])
-        :unqualified (s/keys :req-un [:pheme/encounter] :opt-un [:pheme/historical-anchors])))
+  (s/or :simple-qualified (s/keys :req [:pheme/encounter] :opt [:pheme/historical-anchors])
+        :simple-unqualified (s/keys :req-un [:pheme/encounter] :opt-un [:pheme/historical-anchors])
+        :vertex-qualified (s/keys :req [:pheme/claimed-vertex :pheme/required-coordinates :pheme/empirical-encounter])
+        :open-map (s/and map? #(or (contains? % :pheme/encounter)
+                                   (contains? % :encounter)
+                                   (contains? % :pheme/claimed-vertex)
+                                   (seq %)))))
 
 (s/def :term/name keyword?)
 (s/def :term/def string?)
