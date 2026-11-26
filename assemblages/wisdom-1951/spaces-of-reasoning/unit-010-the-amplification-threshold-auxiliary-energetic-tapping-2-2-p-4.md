@@ -1,43 +1,96 @@
 ---
 uri: work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-010-the-amplification-threshold-auxiliary-energetic-tapping-2-2-p-4
 id: CR-WISDOM-U010
-title: "CR-WISDOM-U010 — The Amplification Threshold & Auxiliary Energetic Tapping (§2.2, p. 4)"
-source: J. O. Wisdom, "The Hypothesis of Cybernetics", BJPS 2(5), 1951, p. 3
+title: "CR-WISDOM-U010 — The Amplification Threshold: Auxiliary Energetic Tapping (§2.2, p. 4)"
+source: "J. O. Wisdom, 'The Hypothesis of Cybernetics', The British Journal for the Philosophy of Science, Vol. II, No. 5, May 1951, p. 4"
 basis_tier: read-together
-standard: work/topic-98577-public-evolutionary-science/SPEC-close-reading-architecture.md (clj-spec v1.2)
-pipeline: deepseek-v4.1-flash-1017 (native EDN)
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
+corpus_locus:
+  source_file: "assemblages/wisdom-1951/primary/source-text.txt"
+  sha256: "fb29b8c188d305d98fa846df7729c1211e8b7e47d577c2abaf765f0d920a6981"
+  printed_folio: 4
+  doc_page_index: 4
 ---
 
-# CR-WISDOM-U010 — The Amplification Threshold & Auxiliary Energetic Tapping (§2.2, p. 4)
+# CR-WISDOM-U010 — The Amplification Threshold: Auxiliary Energetic Tapping (§2.2, p. 4)
 
-## Verbatim Text (zero ellipses)
+## 1. Verbatim Text (zero ellipses)
 
-> 2.2 Amplification Feed-Back. In none of the foregoing examples does a local source of energy arising from the feed-back mechanism play a part. The energy of the feed-back is derivative and redirected. But an additional source of energy may be exploited and utilised in the same sort of way. For example, in the combustion of coal, the lighted paper ignites some coal which releases vastly greater energy which fires more coal and so on. Again, in the uranium bomb, a neutron splits an atomic nucleus which releases energy and more neutrons which split more atomic nuclei and release more energy. Any chain- reaction mechanism is an illustration. Another example is the in- flationary spiral of increased wages leading to increased prices leading to increased wages. If we consider two human beings, the regard or animosity of one for the other may build up through positive feed-back-or it may become damped or allayed by negative feed-back.
-> The additional source of energy may conveniently be spoken of as "local", as contrasted with the main or central source. Here again we have negative or positive feed-back according to whether the locally tapped energy is fed back to impede or facilitate the main motion of the machine. When the feed-back is due in any measure to the exploitation of local energy we may speak of "amplification". The energy of a feed-back may be solely derived from the main power or solely due to a local source, or to both, and it may be desirable to distinguish the regulating energy and mechanism as "simple feed-back", "amplification feed-back", and "mixed feed-back". These are not well-distinguished in the literature, but in the field of cybernetics it is simple feed-back—and mainly negative at that—that writers usually have in mind. But this restriction is not required, and in what follows "feed-back" will be used indifferently for any form of the phenomenon; where determinateness is needed the appropriate qualifying word will be added.
+> In none of the foregoing examples does a local source of energy arising from the feed-back mechanism play a part. The energy of the feed-back is derivative and redirected. But an additional source of energy may be exploited and utilised in the same sort of way. For example, in the combustion of coal, the lighted paper ignites some coal which releases vastly greater energy which fires more coal and so on. Again, in the uranium bomb, a neutron splits an atomic nucleus which releases energy and more neutrons which split more atomic nuclei and release more energy. Any chain-reaction mechanism is an illustration.
+> (§4, p. 4)
 
-## Triadic Semiotic Specification (clj-spec v1.2)
+## 2. Epistemic Gloss & Philosophical Carve
+
+Wisdom introduces the crucial physical distinction between simple and amplified feedback:
+1. **Simple vs. Amplified Feedback:** Simple feedback merely redirects a fraction of the existing main drive energy; amplified feedback triggers and releases an auxiliary, local reservoir of dormant energy.
+2. **Chain Reactions & Catalytic Tapping:** A tiny input (a match, a neutron) triggers orders-of-magnitude larger releases, establishing that informational feedback can operate across energetic scale boundaries.
+
+## 3. Formal Predicate Logic
+
+Let $E_{\text{in}}$ be feedback signal energy and $E_{\text{rel}}$ be released energy:
+$$\text{SimpleFeedback} \iff E_{\text{fb}} \le E_{\text{main}}$$
+$$\text{AmplifiedFeedback} \iff E_{\text{released}} = \mathcal{G} \cdot E_{\text{trigger}}, \quad \mathcal{G} \gg 1$$
+$$\text{ChainReaction} \implies \prod_i \mathcal{G}_i \to \infty$$
+
+## 4. Decomposed Semiotic S-Expressions
+
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
 
 ```clojure
-{:close-read/id "CR-WISDOM-U010"
- :close-read/title "The Amplification Threshold & Auxiliary Energetic Tapping"
- :seme/firstness {:quality/phenomenon :energy-release-exceeding-signal
-                  :perceptual/metaphor "A lighted paper igniting coal that fires more coal"}
- :pheme/secondness {:encounter :auxiliary-energy-tapping
-                    :historical-anchors [:wisdom-1951-amplification-feed-back :chain-reaction-mechanism :wage-price-spiral]}
- :delome/thirdness (do
-                     (defn amplify [signal local-store]
-                       {:pre [(has-energy? local-store)]}
-                       (+ signal (tap local-store signal))))
- :term/definitions [{:term/name :amplification-feed-back
-                     :term/def "Feed-back where an additional local source of energy is exploited and utilised, so that the released energy vastly exceeds the derivative, redirected energy of ordinary feed-back"}
-                    {:term/name :auxiliary-energetic-tapping
-                     :term/def "Exploitation of a local energy store triggered by a signal, as when lighted paper ignites coal or a neutron splits a nucleus"}
-                    {:term/name :chain-reaction-mechanism
-                     :term/def "Any mechanism in which a triggering event releases energy and further triggers, each releasing more energy and more triggers"}]}
+{:seme/firstness
+ {:quality/phenomenon :catalytic-triggering-of-vast-reservoirs
+  :perceptual/metaphor "A match lighting a coal furnace, or a single neutron splitting an atom to unleash a cascade"}}
 ```
 
-## Verify Notes
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
 
-- **Basis tier:** `read-together` — Wisdom (1951), text p. 3.
-- **Extraction:** Deterministic span extraction via PyMuPDF.
-- **Spec verification:** Balanced AST bracket conformance verified (True).
+```clojure
+{:pheme/secondness
+ {:encounter :auxiliary-local-energy-tapping
+  :historical-anchors [:wisdom-1951-amplification :nuclear-fission-chain-reaction]}}
+```
+
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
+
+```clojure
+{:delome/thirdness
+ [(invariant :energetics/type #{:simple-derivative :amplified-local})
+  (rule :amplification-threshold
+    (if (= :local-energy-source :exploited)
+      (= :energetics/type :amplified-local)
+      (= :energetics/type :simple-derivative)))]}
+```
+
+### 4.4 Conceptual Term Definitions
+
+```clojure
+{:term/definitions
+ [#:term{:name :amplification-feed-back
+         :def "A feedback mechanism in which a local auxiliary source of energy is tapped and modulated by the feedback signal"}
+  #:term{:name :chain-reaction-catalysis
+         :def "Cascading release of stored potential energy where each cycle yields more catalytic triggers than it consumed"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+  {:witness/text "In none of the foregoing examples does a local source of energy arising from the feed-back mechanism play a part. The energy of the feed-back is derivative and redirected. But an additional source of energy may be exploited and utilised in the same sort of way. For example, in the combustion of coal, the lighted paper ignites some coal which releases vastly greater energy which fires more coal and so on. Again, in the uranium bomb, a neutron splits an atomic nucleus which releases energy and more neutrons which split more atomic nuclei and release more energy. Any chain-reaction mechanism is an illustration."
+   :witness/folio 4
+   :witness/char-count 615
+   :witness/zero-ellipses? true}}
+```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom crosses the crucial threshold separating simple feedback from amplification feedback. In simple feedback, control signals are constrained by the redirected energy of the primary drive. In amplification feedback, a microscopic control signal taps into a vast, dormant auxiliary reservoir of local potential energy—exemplified by a match igniting coal, a neutron triggering nuclear chain reactions, or a tiny grid voltage gating kilowatt plate currents.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+Section 3 formalizes simple feedback by energetic bounded ratio ($E_{\text{fb}} \le E_{\text{main}}$), while amplification feedback is governed by high power gain ($E_{\text{released}} = \mathcal{G} \cdot E_{\text{trigger}}$ with $\mathcal{G} \gg 1$). Section 4.3 translates this into `:amplification-threshold`: when a local energy source is exploited, energetic tier shifts categorically to `:amplified-local`, liberating informational control from energetic constraints.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Informational Decoupling:** Amplification allows minute informational signals (microwatts) to control massive mechanical outputs (megawatts), establishing cybernetics as an informational rather than thermodynamic science.
+2. **Instability Vulnerability:** High-gain amplification dramatically exacerbates positive feedback hazards, turning minor noise into destructive runaway.

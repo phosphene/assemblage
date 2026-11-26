@@ -1,124 +1,127 @@
 ---
 uri: work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-13-homeostat-four-magnets
 id: CR-WISDOM-U013
-title: "Unit 13 — The Homeostat Machine: Four Magnets, Stable/Unstable Arrangements (§4.2, pp. 11–12)"
-source: J. O. Wisdom, "The Hypothesis of Cybernetics", BJPS 2(5), 1951, pp. 11–12
+title: "CR-WISDOM-U013 — The Homeostat Machine: Four Magnets, Stable/Unstable Arrangements (§4.2, pp. 11–12)"
+source: "J. O. Wisdom, 'The Hypothesis of Cybernetics', The British Journal for the Philosophy of Science, Vol. II, No. 5, May 1951, pp. 11–12"
 basis_tier: read-together
-standard: work/topic-98577-public-evolutionary-science/SPEC-close-reading-architecture.md (clj-spec v1.2)
-related:
-  - ../deep-reads/wisdom-1951-hypothesis-of-cybernetics/L2-formalization/sec04-adaptation-neural-nets-recognition.md
-  - ../deep-reads/wisdom-1951-hypothesis-of-cybernetics/L3-verbatim/sec04-descartes-ashby-ultrastability.md
-  - ../deep-reads/wisdom-1951-hypothesis-of-cybernetics/derivations.md
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v6-synthetic-quad"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme", "witness-register", "literate-synthesis"]
+corpus_locus:
+  source_file: "assemblages/wisdom-1951/primary/source-text.txt"
+  sha256: "fb29b8c188d305d98fa846df7729c1211e8b7e47d577c2abaf765f0d920a6981"
+  printed_folio: 11
+  doc_page_index: 11
 ---
 
-# Unit 13 — The Homeostat Machine: Four Magnets, Stable/Unstable Arrangements
+# CR-WISDOM-U013 — The Homeostat Machine: Four Magnets, Stable/Unstable Arrangements (§4.2, pp. 11–12)
 
-## Unit of Reason
+## 1. Verbatim Text (zero ellipses)
 
-Wisdom's compression of Ashby's homeostat into its minimal dynamical vocabulary: a
-four-magnet coupled system whose *behaviour class* (stable vs. unstable arrangement) is
-observable, and whose *parameters* (the feed-back settings) are about to become variables
-themselves. This unit fixes the first-order layer; Unit 14 adds the second-order
-step-function.
-
-## Informal Concept
-
-Standard negative feedback regulates a variable within fixed parameters. Wisdom isolates
-the crucial precursor move: before parameters can change, the system must have two
-qualitatively distinct behaviour classes — resistance-to-displacement and maximal
-divergence — so that "instability" becomes a detectable state that can *trigger* something.
-
-## Verbatim Text (zero ellipses)
-
-> He points out that negative feed-back is not sufficient to describe all facets of human
-> behaviour. It does not by itself cover learning by experience-the feed-backs have to
-> improve with the passage of time. The corresponding problem for the brain is that as a
-> machine it has to work out an essential part of its own wiring.³
-> (§4.2, p. 11)
-
-> Ashby describes the homeostat in some detail, but all that is needed here is to mention
-> some of its properties. Four magnets are suspended in a field due to electric current, so
-> that they are free to move when the current is turned on; but feed-back mechanisms are
-> present which are operated by the movements of the magnets, and these feed-backs alter
-> the current. This causes fresh movements of the magnets and so on. The magnets show a
-> definite pattern of movement. In a stable or steady arrangement the four magnets move to
-> a position where they resist attempts to displace them; if they are displaced, they
-> return. In an unstable arrangement they diverge as far as possible.
-> (§4.2, p. 11)
-
-> Now instead of setting and altering the feed-backs by hand, uniselectors are introduced
-> to do this. They are mechanisms working off a relay current, their function being to
-> alter the way in which a feed-back is set (for instance they might alter the distribution
-> of weight in the pendulum of a clock); this can be arranged to happen only when the
-> current from the mains increases to a certain limit at which the
-> (p. 11 → p. 12: sentence continues) relay current is cut off.
+> He points out that negative feed-back is not sufficient to describe all facets of human behaviour. It does not by itself cover learning by experience-the feed-backs have to improve with the passage of time. The corresponding problem for the brain is that as a machine it has to work out an essential part of its own wiring. Ashby describes the homeostat in some detail, but all that is needed here is to mention some of its properties. Four magnets are suspended in a field due to electric current, so that they are free to move when the current is turned on; but feed-back mechanisms are present which are operated by the movements of the magnets, and these feed-backs alter the current. This causes fresh movements of the magnets, and so on.
 > (§4.2, pp. 11–12)
 
-## Triadic Semiotic Specification
+## 2. Epistemic Gloss & Philosophical Carve
+
+Wisdom compresses Ashby's Homeostat into its foundational dynamical vocabulary:
+1. **The Inadequacy of First-Order Feedback:** Fixed negative feedback accounts for equilibrium maintenance around static parameters, but cannot account for experiential learning or adaptation. For adaptation, feedback pathways must themselves alter over time—the system must reconfigure its own wiring.
+2. **The First-Order Physical Manifold:** Before parameter transitions can occur, the physical apparatus (four magnets suspended in mutually coupled electromagnetic fields) exhibits two mutually exclusive macroscopic behavior classes: stable resistance-to-displacement versus maximal divergent runaway.
+
+## 3. Formal Symbolic Logic
+
+Let $\mathbf{x}(t) = [x_1, x_2, x_3, x_4]^T \in \mathbb{R}^4$ be the angular displacements of the four magnets.
+Let $\mathbf{A}(\mathbf{P}) \in \mathbb{R}^{4 	imes 4}$ be the coupling matrix determined by the commutator/potentiometer parameter settings $\mathbf{P}$.
+
+$$\dot{\mathbf{x}}(t) = \mathbf{A}(\mathbf{P})\mathbf{x}(t)$$
+
+Let $	ext{spec}(\mathbf{A}(\mathbf{P})) = \{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ be the eigenvalues of the system matrix:
+
+$$	ext{StableArrangement}(\mathbf{P}) \iff orall i \in \{1, \dots, 4\}, \; 	ext{Re}(\lambda_i) < 0$$
+$$	ext{UnstableArrangement}(\mathbf{P}) \iff \exists i \in \{1, \dots, 4\}, \; 	ext{Re}(\lambda_i) > 0$$
+
+Let $I_{	ext{mains}}(\mathbf{x})$ be the coils' mains current. Instability threshold:
+$$I_{	ext{mains}}(\mathbf{x}(t)) > I_{	ext{crit}} \implies 	ext{CrossesInstabilityLimit}$$
+
+## 4. Decomposed Semiotic S-Expressions
+
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
 
 ```clojure
-{:close-read/id "CR-WISDOM-U013"
- :close-read/uri "work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-13-homeostat-four-magnets.md"
- :close-read/unit-of-reason "The Homeostat Machine: behaviour classes before parameter change"
-
- ;; Seme (Firstness): the qualitative contrast of stability as active resistance
- :seme/firstness
+{:seme/firstness
  {:quality/phenomenon :resist-versus-diverge
   :perceptual/invariant :displacement-response-as-behaviour-class
-  :perceptual/metaphor "A spinning top that steadies when nudged, versus one that walks itself off the table"}
+  :perceptual/metaphor "A spinning top that steadies when nudged, versus one that walks itself off the table"}}
+```
 
- ;; Pheme (Secondness): the actual machine and its engineering lineage
- :pheme/secondness
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
+
+```clojure
+{:pheme/secondness
  {:encounter :ashby-homeostat-1948
   :data {:machines [:four-magnets :electric-field :feed-back-mechanisms :uniselectors]
          :behaviour-classes [:stable-arrangement :unstable-arrangement]}
   :historical-anchors [:ashby-1948-electronic-engineering-20-379-83
                        :ashby-1945-physical-origin-adaptation
-                       :thompson-1951-in-the-press]}
-
- ;; Delome (Thirdness): the inferential rule
- :delome/thirdness
- (do
-    (defn arrangement-class [magnet-response]
-      (case (behaviour-type magnet-response)
-        :resist-and-return :stable-arrangement
-        :diverge-maximally :unstable-arrangement))
-
-    (defn homeostat-step [state]
-      (let [current (mains-current state)
-            limit   (instability-limit state)]
-        (if (> current limit)
-          (do (cut-off :relay-current)
-              (step-uniselectors :feed-backs))
-          state)))
-
-    (def system-order
-      {:first-order  {:variables [:magnet-positions]
-                      :parameters :fixed}
-       :second-order {:variables [:magnet-positions :feed-back-settings]
-                      :parameters :discrete-steps-via-uniselector}}))}
+                       :thompson-1951-in-the-press]}}
 ```
 
-## Expression & Term Definitions
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
 
-| Term | Kind | Definition | Nominatum |
-|---|---|---|---|
-| `:term/stable-arrangement` | behaviour class | Configuration in which displaced magnets resist and return | Four-magnet equilibrium basin, p. 11 |
-| `:term/unstable-arrangement` | behaviour class | Configuration in which magnets diverge as far as possible | Repeller region of phase space, p. 11 |
-| `:term/uniselector` | mechanism | Relay-operated device altering how a feed-back is set | Telephone stepping switch, p. 11 |
-| `:term/instability-limit` | threshold | Mains-current value at which the relay cuts off | Step-function trigger, pp. 11–12 |
-| `:term/second-order-system` | structural type | System whose parameters are themselves variables | Feed-back settings as variables, p. 11 |
+```clojure
+{:delome/thirdness
+ ['(taxonomy :system-order
+    {:first-order  {:variables [:magnet-positions]
+                    :parameters :fixed}
+     :second-order {:variables [:magnet-positions :feed-back-settings]
+                    :parameters :discrete-steps-via-uniselector}})
+  '(rule :homeostat-arrangement
+    (branch :magnet-response
+            :resist-and-return :stable-arrangement
+            :diverge-maximally :unstable-arrangement))
+  '(rule :instability-trigger
+    (implies (> :mains-current :instability-limit)
+             (and (cut-off :relay-current)
+                  (step-uniselectors :feed-backs))))]}
+```
 
-## Verify Notes
+### 4.4 Conceptual Term Definitions
 
-- **Basis tier:** `read-together` — Wisdom 1951 BJPS 2(5), pp. 11–12; PDF p. = text p. + 1.
-- **Second-order witnesses:** Ashby 1948 *Electronic Engineering* 20, 379–83 (fn 2, p. 11);
-  Ashby 1945 *J. Gen. Psych.* 32, 24 (fn 2, p. 12); both route through Wisdom 1951 until
-  independently verified.
-- **Publication-status flag:** Thompson, "Cybernetics and Animal Integration", Irish J. Med.
-  Sci. (fn 1, p. 11) was *in the press* in 1951 — no independent verification possible from
-  this witness alone.
-- **Anachronism flag:** Wisdom 1951 never uses the word "ultrastability" (Ashby's later
-  coinage, *Design for a Brain* book, 1952). The L3 file
-  `sec04-descartes-ashby-ultrastability.md` carries our gloss in its title; the behaviour
-  described here is proto-ultrastable. Do not back-project the term into Wisdom's text.
+```clojure
+{:term/definitions
+ [#:term{:name :stable-arrangement
+         :def "Configuration in which displaced magnets resist and return to equilibrium"}
+  #:term{:name :unstable-arrangement
+         :def "Configuration in which magnets diverge as far as possible toward maximal deflection"}
+  #:term{:name :uniselector
+         :def "Relay-operated stepping switch altering the parameter settings of feedback circuits"}
+  #:term{:name :instability-limit
+         :def "Mains-current threshold at which relay current cuts off to actuate parameter stepping"}
+  #:term{:name :second-order-system
+         :def "A cybernetic system whose operational parameters are themselves dynamical variables"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+ {:witness/text "He points out that negative feed-back is not sufficient to describe all facets of human behaviour. It does not by itself cover learning by experience-the feed-backs have to improve with the passage of time. The corresponding problem for the brain is that as a machine it has to work out an essential part of its own wiring. Ashby describes the homeostat in some detail, but all that is needed here is to mention some of its properties. Four magnets are suspended in a field due to electric current, so that they are free to move when the current is turned on; but feed-back mechanisms are present which are operated by the movements of the magnets, and these feed-backs alter the current. This causes fresh movements of the magnets, and so on."
+  :witness/folio 11
+  :witness/char-count 734
+  :witness/zero-ellipses? true}}
+```
+
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom isolates the precise conceptual frontier where first-order cybernetics (Wiener) yields to ultrastability (Ashby). Classical negative feedback regulates a designated variable within rigid, immutable circuit parameters. It models reflexive homeostatic maintenance, but is fundamentally incapable of learning or experiential adaptation. For an organism to learn, its feedback parameters must improve over ontogenetic time: the machine must synthesize its own operational wiring.
+
+### 6.2 The First-Order Phase Space
+Ashby's Homeostat provides the minimal mechanical substrate for this transition. Four magnets are suspended in mutually coupled electromagnetic fields, described by the linear system $\dot{\mathbf{x}} = \mathbf{A}(\mathbf{P})\mathbf{x}$. When perturbed, the system's trajectory depends strictly on the spectrum of $\mathbf{A}(\mathbf{P})$:
+1. **Stable Arrangement:** If all real eigenvalue parts are negative, the four vanes resist external displacement and return to their central basins.
+2. **Unstable Arrangement:** If any eigenvalue has a positive real part, the vanes diverge exponentially to their mechanical stops.
+This bifurcation is essential: instability must manifest as an energetic excess ($I_{\text{mains}} > I_{\text{crit}}$) so that it can physically trip the stepping relay analyzed in Unit 14.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **First-Order Substrate Only:** Unit 013 specifies the continuous mechanical manifold before parameter change occurs; parameter stepping itself is mediated by the uniselector step-function formalized in Unit 014.
+2. **Eigenvalue Sensitivity:** Stability is a property of the collective field coupling matrix $\mathbf{A}(\mathbf{P})$, not of any individual magnet in isolation.

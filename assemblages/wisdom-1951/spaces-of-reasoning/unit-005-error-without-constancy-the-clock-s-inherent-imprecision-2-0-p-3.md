@@ -2,44 +2,98 @@
 uri: work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-005-error-without-constancy-the-clock-s-inherent-imprecision-2-0-p-3
 id: CR-WISDOM-U005
 title: "CR-WISDOM-U005 — Error-Without-Constancy: The Clock's Inherent Imprecision (§2.0, p. 3)"
-source: J. O. Wisdom, "The Hypothesis of Cybernetics", BJPS 2(5), 1951, p. 2
+source: "J. O. Wisdom, 'The Hypothesis of Cybernetics', The British Journal for the Philosophy of Science, Vol. II, No. 5, May 1951, p. 3"
 basis_tier: read-together
-standard: work/topic-98577-public-evolutionary-science/SPEC-close-reading-architecture.md (clj-spec v1.2)
-pipeline: deepseek-v4.1-flash-1017 (native EDN)
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
+corpus_locus:
+  source_file: "assemblages/wisdom-1951/primary/source-text.txt"
+  sha256: "fb29b8c188d305d98fa846df7729c1211e8b7e47d577c2abaf765f0d920a6981"
+  printed_folio: 3
+  doc_page_index: 3
 ---
 
 # CR-WISDOM-U005 — Error-Without-Constancy: The Clock's Inherent Imprecision (§2.0, p. 3)
 
-## Verbatim Text (zero ellipses)
+## 1. Verbatim Text (zero ellipses)
 
-> Clearly the clock does not keep exact time. It is nearly always going slightly too fast or slightly too slow-only in between is it just right. Riding a bicycle affords another example. When the rider falls slightly to the right, he turns his front wheel to the right, which stops his fall but leads to his being gently thrown over on the left. This he corrects by turning his wheel to his left. 2.I Feed-Back, Positive and Negative. These are all examples of 'negative feed-back '. In all of them the work done by a source of power is controlled-the machine is prevented from running away- by a mechanism that checks it and keeps the rate at which energy is expended hovering round a certain quantity. This feed-back is 'negative' because the work done by the feed-back mechanism opposes the working of the main driving force.
+> Clearly the clock does not keep exact time. It is nearly always going slightly too fast or slightly too slow-only in between is it just right.
+> (§3, p. 3)
 
-## Triadic Semiotic Specification (clj-spec v1.2)
+## 2. Epistemic Gloss & Philosophical Carve
+
+Wisdom articulates the foundational cybernetic ontological principle of error-actuated regulation:
+1. **The Inherent Imprecision of Homeostasis:** A feedback regulator cannot maintain an absolute, static point. It operates strictly by sensing deviation; hence deviation (error) is a structural precondition of correction.
+2. **Hovering Equilibrium:** The system hovers around its target value through slight alternating errors (slightly too fast, slightly too slow), crossing the ideal only in transient passing.
+
+## 3. Formal Predicate Logic
+
+Let $\theta(t)$ be the system parameter and $\theta^*$ be the ideal target. Let $e(t) = \theta(t) - \theta^*$:
+$$\forall t, \; \exists \delta > 0 : |e(t)| > 0 \quad \text{a.e.}$$
+$$e(t_1) > 0 \land e(t_2) < 0 \implies \exists t^* \in (t_1, t_2) : e(t^*) = 0$$
+$$\text{RegulatoryEquilibrium}(\theta) \equiv \lim_{T \to \infty} \frac{1}{T} \int_0^T e(t) dt \approx 0 \land \forall t, e(t) \not\equiv 0$$
+
+## 4. Decomposed Semiotic S-Expressions
+
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
 
 ```clojure
-{:close-read/id "CR-WISDOM-U005"
- :close-read/title "Error-Without-Constancy: The Clock's Inherent Imprecision"
- :seme/firstness {:quality/phenomenon :oscillation-around-ideal
-                  :perceptual/metaphor "A clock that is nearly always slightly too fast or slightly too slow, just right only in between"}
- :pheme/secondness {:encounter :negative-feed-back-correction
-                    :historical-anchors [:wisdom-1951-clock-imprecision :wisdom-1951-bicycle-balance :cannon-1932-homeostasis]}
- :delome/thirdness (do
-                     (defn hover-around [rate target tolerance]
-                       {:pre [(pos? tolerance)]}
-                       (let [error (- rate target)]
-                         (if (<= (abs error) tolerance)
-                           rate
-                           (- rate (signum error)))))
-                     (defn negative-feed-back [main-force check-mechanism]
-                       (check-mechanism (main-force))))
- :term/definitions [{:term/name :negative-feed-back
-                     :term/def "Control in which the work done by a feed-back mechanism opposes the main driving force, keeping the rate of energy expenditure hovering around a certain quantity and preventing the machine from running away"}
-                    {:term/name :error-without-constancy
-                     :term/def "Inherent imprecision manifesting as continual slight deviation to either side of an ideal, corrected only in passing"}]}
+{:seme/firstness
+ {:quality/phenomenon :oscillation-around-ideal
+  :perceptual/metaphor "A clock pendulum or escapement that is nearly always slightly too fast or slightly too slow, just right only in between"}}
 ```
 
-## Verify Notes
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
 
-- **Basis tier:** `read-together` — Wisdom (1951), text p. 2.
-- **Extraction:** Deterministic span extraction via PyMuPDF.
-- **Spec verification:** Balanced AST bracket conformance verified (True).
+```clojure
+{:pheme/secondness
+ {:encounter :clockwork-escapement-hovering
+  :historical-anchors [:wisdom-1951-clock-imprecision :cannon-1932-homeostasis]}}
+```
+
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
+
+```clojure
+{:delome/thirdness
+ [(invariant :error/sign-persistence #{:oscillating :static-offset})
+  (invariant :error/exactness-status #{:never-a-static-state :attained})
+  (rule :hovering-error-without-constancy
+    (implies (and (= :error/sign-persistence :oscillating)
+                  (= :error/exactness-status :never-a-static-state))
+             :hovering-equilibrium))]}
+```
+
+### 4.4 Conceptual Term Definitions
+
+```clojure
+{:term/definitions
+ [#:term{:name :error-without-constancy
+         :def "Inherent imprecision manifesting as continual slight deviation to either side of an ideal, corrected only in passing"}
+  #:term{:name :hovering-equilibrium
+         :def "Dynamic maintenance achieved through small alternating corrections rather than rigid static rest"}
+  #:term{:name :negative-feed-back
+         :def "The class of mechanism, exemplified by the clock among others, whose oppositional work keeps energy expenditure hovering round a certain quantity"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+  {:witness/text "Clearly the clock does not keep exact time. It is nearly always going slightly too fast or slightly too slow-only in between is it just right."
+   :witness/folio 3
+   :witness/char-count 142
+   :witness/zero-ellipses? true}}
+```
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom uncovers a core ontological paradox of cybernetic regulation: homeostatic constancy is an illusion generated by continual slight error. A mechanical clock never rests at absolute target time; the escapement mechanism functions by alternating between running slightly too fast and slightly too slow. Equilibrium is not a frozen static state, but a dynamic oscillation that crosses the ideal setpoint only in transient passing.
+
+### 6.2 Dynamical Formalization & Invariant Rules
+In Section 3, error is formalized as $e(t) = \theta(t) - \theta^*$. For all time $t$, non-zero error exists almost everywhere ($|e(t)| > 0$), while sign-alternation across intervals guarantees zero-crossings ($e(t^*) = 0$). Dynamic stability is defined by the bounded time-average $\lim_{T \to \infty} \frac{1}{T} \int_0^T e(t) dt \approx 0$. Section 4.3 translates this into the rule `:hovering-error-without-constancy`: oscillating error signs coupled with non-static deviation formally instantiate `:hovering-equilibrium`.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Regulation Requires Error:** Perfect precision is physically incompatible with feedback control, because a feedback loop requires an error signal to actuate correction. Zero error extinguishes the regulatory motive force.
+2. **Hovering is Not Failure:** Systemic deviation within calibrated tolerances is not mechanical defect, but the foundational operating modality of homeostatic stabilization.

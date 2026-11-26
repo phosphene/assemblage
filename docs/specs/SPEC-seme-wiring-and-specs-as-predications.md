@@ -67,3 +67,53 @@ Following the close-reading methodology review in Topic 102248:
   1. Map `assemblage` units of reason into a `phosphene.seme.pheme` vertex lattice.
   2. Implement automated trait subsumption checking: determine whether unit $U_A$ structurally subsumes $U_B$ based on shared distinctive semes.
   3. When an empirical witness fails a predicative contract (e.g. Ashby's machine model failing on human behavioral indeterminacy), log the failure into `seme.delome`'s axiomatic tension ledger rather than halting pipeline execution.
+
+### T-430: Two-Tier Boundary Lexer & Safe Pattern Compilation (Pattern 1 & Antipattern 5)
+- **Target Repo:** `phosphene/assemblage` (`ast.clj`, `client.clj`)
+- **Scope:**
+  1. Refactor `ast/parse-yaml-frontmatter` from loose, ad-hoc string regex matching (`re-matches #"^([a-zA-Z0-9_\-\./]+)\s*:\s*(.*)$"`) into a Two-Tier Lexer boundary pattern with explicit token conformance.
+  2. Eliminate manual string escaping and regex parsing of JSON completion streams in `client/request-edn-projection` (`re-find #""content":\s*"((?:\"|[^"])*)""`) to prevent escape injection vulnerabilities and catastrophic backtracking.
+  3. Ensure all host `java.util.regex.Pattern` usages are strictly confined to primitive string scanning at the outer boundary, immediately lifting results into tagged EDN values.
+
+### T-431: Spec Regex AST Boundary Hygiene & Nested Splicing Safeguards (Antipattern 1 & CLJ-007)
+- **Target Repo:** `phosphene/assemblage` (`spec.clj`, `lens.clj`)
+- **Scope:**
+  1. Enforce strict `(s/spec ...)` wrappers around all nested sequence grammars in `spec.clj` to prevent default sequence splicing/flattening traps.
+  2. Ensure compound data grammars (such as `:delome/thirdness` and AST children sequences) distinguish between flat element streams and nested S-expression sub-trees.
+  3. Add property-based verification checks (`delome_spec_test.clj`) confirming that multi-level nested forms do not splice inappropriately into flat parent clauses.
+
+### T-432: Non-Backtracking Grammar Intersections & Invariant Cross-Checks via `s/&` (Pattern 3)
+- **Target Repo:** `phosphene/assemblage` & `lib/clojure/seme`
+- **Scope:**
+  1. Replace any multi-pass filtering or lookahead assertions across close-read sequences and graph traversals with `s/&` intersection specs.
+  2. Formalize cross-element invariants on reasoning sequences (e.g., verifying that a sequence of inference rules contains at least one ground antecedent and satisfies bounded complexity) without complecting the sequence grammar.
+
+### T-433: Bidirectional Conformation & Unforming for Sovereign Identifiers (Pattern 6)
+- **Target Repo:** `phosphene/assemblage` (`spec.clj`, `witness.clj`)
+- **Scope:**
+  1. Refactor structured identifiers (`:close-read/id`, `CR-WISDOM-UXXX`, `:node/id`) to use character-level sequence specs with bidirectional `s/conformer` pairs.
+  2. Enable lossless symmetric round-trip: `(s/conform ::close-read-id (seq "CR-WISDOM-U001"))` $\leftrightarrow$ `(s/unform ::close-read-id conformed-val)`.
+  3. Provide full generative testing generators for valid IDs using `s/exercise` and `test.check` without hand-rolled string generators.
+
+### T-434: Quarantine Protocol & Lifting Unqualified Boundary Keys into Sovereign Qualified Senses
+- **Target Repo:** `phosphene/assemblage` (`ast.clj`, `spec.clj`, `lens.clj`)
+- **Scope:**
+  1. Audit all map structures originating from Markdown AST (`nextjournal.markdown`), YAML frontmatter, and external JSON inputs.
+  2. Implement the Mode-S to Mode-D quarantine boundary: ensure external unqualified keys (e.g. `:type`, `:text`, `:content`, `:info`) never circulate past the parser boundary.
+  3. Replace `:req-un` definitions in `spec.clj` (`:node/entity`, `:ast.node/text-node`, `:ast.node/heading-node`, `:ast.node/code-node`, etc.) with sovereign qualified attributes (`:ast.node/type`, `:ast.text/content`, `:ast.heading/level`).
+  4. Ensure outward projection functions project to unqualified external formats strictly at system egress.
+
+### T-435: Bare `(s/keys)` Universal Fact Validation & Point-of-Use Destructuring
+- **Target Repo:** `phosphene/assemblage` (`spec.clj`, `lens.clj`, `projector.clj`, `witness.clj`)
+- **Scope:**
+  1. De-complect static aggregate schemas: dismantle composite `s/keys` specs that bundle `:req` and `:opt` vectors (`::close-read-triad`, `::assemblage-graph`).
+  2. Register all atomic attributes under sovereign namespaced coordinates with global timeless Senses via `s/def`.
+  3. Replace rigid aggregate spec gates with universal bare `(s/keys)` open-world validation gates (`{:pre [(s/valid? (s/keys) m)]}`).
+  4. Formalize local Presence via Clojure point-of-use destructuring (keyset extraction, defaults, and nested path navigation) inside consumer functions (`project-close-read`, `project-assemblage-elements`, `verify-witness`).
+
+### T-436: Generative Testing via Character-Level Sequence Grammars & `test.check`
+- **Target Repo:** `phosphene/assemblage` (`spec.clj`, `delome_spec_test.clj`)
+- **Scope:**
+  1. Formulate character-level sequence specs for sovereign identifiers (`CR-WISDOM-UXXX`, `:node/id`, `:concept/id`) paired with bidirectional conformers (`s/conformer`).
+  2. Wire `clojure.spec.gen.alpha` and `test.check` to generate valid test instances automatically without hand-rolled regex string generators.
+  3. Implement round-trip property tests: `(= id (s/unform ::sovereign-id (s/conform ::sovereign-id id)))`.
