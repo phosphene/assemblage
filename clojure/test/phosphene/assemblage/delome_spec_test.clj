@@ -40,3 +40,32 @@
                         (implies (= :computation/medium :electronic-machine)
                                  :tactical-viability))]]
       (is (s/valid? ::aspec/delome-thirdness thirdness)))))
+
+(deftest test-nested-sequence-splicing-hygiene
+  (testing "Antipattern 1: wrapping inner sequence specs in (s/spec ...) preserves nested boundaries"
+    ;; Unwrapped sequence spec splices flatly into outer sequence
+    (let [unwrapped-inner (s/cat :tag keyword? :val any?)
+          unwrapped-outer (s/cat :head keyword? :nested unwrapped-inner)
+          ;; Wrapped sequence spec treats nested sequence as a discrete collection element
+          wrapped-outer (s/cat :head keyword? :nested (s/spec unwrapped-inner))]
+      ;; Unwrapped matches flat stream [1 2 3], FAILS on nested collection [1 [2 3]]
+      (is (s/valid? unwrapped-outer [:cmd :tag "val"]))
+      (is (not (s/valid? unwrapped-outer [:cmd [:tag "val"]])))
+
+      ;; Wrapped correctly matches nested collection [:cmd [:tag "val"]] and rejects flat stream
+      (is (s/valid? wrapped-outer [:cmd [:tag "val"]]))
+      (is (not (s/valid? wrapped-outer [:cmd :tag "val"])))
+      (is (= {:head :cmd, :nested {:tag :tag, :val "val"}}
+             (s/conform wrapped-outer [:cmd [:tag "val"]])))))
+
+  (testing "Delome clauses in vector are discrete sequential forms, not flat spliced tokens"
+    (let [clauses '[(invariant :computation/wartime-pressure boolean?)
+                    (rule :test-rule (and true false))]]
+      ;; ::delome-clause uses (s/spec ::delome-invariant) and (s/spec ::delome-rule)
+      ;; ensuring each clause is validated as an atomic AST node rather than being spliced flatly
+      (is (s/valid? ::aspec/delome-thirdness clauses))
+      (let [conformed (s/conform ::aspec/delome-thirdness clauses)]
+        (is (= :declarative-vector (first conformed)))
+        (is (= 2 (count (second conformed))))
+        (is (= :invariant (first (first (second conformed)))))
+        (is (= :rule (first (second (second conformed)))))))))

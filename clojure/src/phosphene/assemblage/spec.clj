@@ -91,11 +91,11 @@
          :body :delome.isomorphism/body))
 
 (s/def ::delome-clause
-  (s/alt :invariant (s/spec ::delome-invariant)
-         :rule (s/spec ::delome-rule)
-         :taxonomy (s/spec ::delome-taxonomy)
-         :isomorphism (s/spec ::delome-isomorphism)
-         :generic-form (s/spec seq?)))
+  (s/or :invariant ::delome-invariant
+        :rule ::delome-rule
+        :taxonomy ::delome-taxonomy
+        :isomorphism ::delome-isomorphism
+        :generic-form seq?))
 
 (s/def ::delome-thirdness
   (s/or :declarative-vector (s/coll-of ::delome-clause :kind vector?)
