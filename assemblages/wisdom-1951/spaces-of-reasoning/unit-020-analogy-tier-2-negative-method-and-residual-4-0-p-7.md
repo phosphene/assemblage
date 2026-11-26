@@ -56,10 +56,10 @@ The scope and residual of the mechanical analogy are formally demarcated:
 $$\text{AnalogyScope}(\mathcal{M}_{\text{Ashby}}, \mathcal{O}_{\text{human}}) = \{ s \in S \mid |\delta_{\mathcal{O}}(s)| = 1 \land \delta_{\mathcal{O}}(s) = \{\delta_{\mathcal{M}}(s)\} \}$$
 
 $$\text{Residual}(\mathcal{O}_{\text{human}}, \mathcal{M}_{\text{Ashby}}) = \{ s \in S \mid \delta_{\mathcal{O}}(s) 
-eq \{\delta_{\mathcal{M}}(s)\} \}$$
+\neq \{\delta_{\mathcal{M}}(s)\} \}$$
 
 $$\text{NegativeMethodDemarcation}(\mathcal{M}, \mathcal{O}) \iff \text{Residual}(\mathcal{O}, \mathcal{M}) 
-eq \emptyset$$
+\neq \emptyset$$
 
 ## 4. Decomposed Semiotic S-Expressions
 

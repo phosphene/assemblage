@@ -37,7 +37,7 @@ $$\dot{\mathbf{x}}(t) = \mathbf{A}(\mathbf{P})\mathbf{x}(t)$$
 
 Let $\text{spec}(\mathbf{A}(\mathbf{P})) = \{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ be the eigenvalues of the system matrix:
 
-$$\text{StableArrangement}(\mathbf{P}) \iff orall i \in \{1, \dots, 4\}, \; \text{Re}(\lambda_i) < 0$$
+$$\text{StableArrangement}(\mathbf{P}) \iff \forall i \in \{1, \dots, 4\}, \; \text{Re}(\lambda_i) < 0$$
 
 $$\text{UnstableArrangement}(\mathbf{P}) \iff \exists i \in \{1, \dots, 4\}, \; \text{Re}(\lambda_i) > 0$$
 

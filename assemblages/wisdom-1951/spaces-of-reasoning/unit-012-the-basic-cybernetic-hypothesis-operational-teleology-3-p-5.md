@@ -19,8 +19,8 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for " purposive " can now be defined in terms of negative feed-back.
-> (§5, p. 5)
+> The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for \" purposive \" can now be defined in terms of negative feed-back.
+> (§3, p. 5)
 
 ## 2. Epistemic Gloss & Philosophical Carve
 
@@ -28,15 +28,28 @@ Wisdom articulates the foundational core thesis of the entire cybernetic revolut
 1. **The CNS Mechanism Thesis:** The central nervous system's chief organizing and operational principle is closed-loop negative feedback.
 2. **Operationalization of Teleology:** 'Purpose' and 'goal-seeking'—long dismissed as unscientific occult or vitalist concepts—are fully grounded in physical automata as error-compensating negative feedback towards a target state.
 
-## 3. Formal Predicate Logic
+## 3. Formal Symbolic Logic
 
-Let $\text{TargetState}(S^*)$ and $\text{CurrentState}(S(t))$ define error $\mathcal{E}(t) = S(t) - S^*$:
+Let $\mathcal{M}$ be an automaton and $\mathcal{O}_{\text{CNS}}$ be a biological central nervous system.
+Let $S(t) \in \mathbb{R}^n$ denote the system state trajectory over time lattice $T$, and let $S^* \in \mathbb{R}^n$ denote the invariant target setpoint.
+Let $\mathcal{E}(t) = S(t) - S^*$ be the instantaneous deviation error vector.
+Let $\mathbf{K} \in \mathbb{R}^{n \times n}$ be the feedback actuation gain tensor with positive definite real spectrum.
 
-$$\text{TeleologicalActuation}: \frac{dS}{dt} = - \mathbf{K} \cdot \mathcal{E}(t)$$
+Operational Teleological Actuation (Closed-Loop Error Elimination):
 
-$$\lim_{t \to \infty} S(t) = S^* \implies \text{PurposiveBehavior}(\mathcal{M})$$
+$$\frac{dS}{dt} = - \mathbf{K} \cdot \mathcal{E}(t) \quad \text{such that} \quad \lim_{t \to \infty} \|S(t) - S^*\| = 0$$
 
-$$\text{Teleology}(\mathcal{M}) \equiv \text{NegativeFeedbackRegulator}(\mathcal{M}, S^*)$$
+Operational Definition of Purposive Behavior:
+
+$$\text{PurposiveBehavior}(\mathcal{M}, S^*) \iff \exists \mathcal{E}(t) \, \left[ \left( \frac{d\|\mathcal{E}\|^2}{dt} < 0 \right) \land \left( \lim_{t \to \infty} S(t) = S^* \right) \right]$$
+
+The Basic Cybernetic Hypothesis (CNS Equivalence):
+
+$$\text{ChiefMechanism}(\mathcal{O}_{\text{CNS}}) = \text{NegativeFeedbackRegulator}(\mathcal{M}, S^*)$$
+
+$$\text{Teleology}(\mathcal{M}) \equiv \text{ClosedLoopNegativeFeedback}(\mathcal{M})$$
+
+The warrant of cybernetic teleology is that purposive trajectories require no occult final causation or future pulling; goal-directed behavior is constituted entirely by present-tense negative feedback error-compensation.
 
 ## 4. Decomposed Semiotic S-Expressions
 
@@ -80,7 +93,7 @@ $$\text{Teleology}(\mathcal{M}) \equiv \text{NegativeFeedbackRegulator}(\mathcal
 
 ```clojure
 {:witness/selection
-  {:witness/text "The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for " purposive " can now be defined in terms of negative feed-back."
+  {:witness/text "The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for \" purposive \" can now be defined in terms of negative feed-back."
    :witness/folio 5
    :witness/char-count 548
    :witness/zero-ellipses? true}}

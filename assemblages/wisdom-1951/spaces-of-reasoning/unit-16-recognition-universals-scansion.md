@@ -33,13 +33,11 @@ Wisdom inspects the McCulloch-Pitts (1947) neural model for the perception of ge
 Let $I(x, y) \in \mathbb{R}^{\ge 0}$ be the retinal luminance distribution.
 Let $(x_c, y_c)$ be the center of brightness:
 
-$$(x_c, y_c) = \left( rac{\iint x I(x, y) dx dy}{\iint I(x, y) dx dy}, \; rac{\iint y I(x, y) dx dy}{\iint I(x, y) dx dy} 
-ight)$$
+$$(x_c, y_c) = \left( \frac{\iint x I(x, y) dx dy}{\iint I(x, y) dx dy}, \; \frac{\iint y I(x, y) dx dy}{\iint I(x, y) dx dy} \right)$$
 
 Centering servo dynamics:
 
-$$\dot{\mathbf{r}}_{\text{fixation}} = \mathbf{K} \cdot \left( [x_c, y_c]^T - \mathbf{r}_{\text{fixation}} 
-ight)$$
+$$\dot{\mathbf{r}}_{\text{fixation}} = \mathbf{K} \cdot \left( [x_c, y_c]^T - \mathbf{r}_{\text{fixation}} \right)$$
 
 Wisdom's epistemic demarcation:
 
@@ -48,7 +46,7 @@ $$\lim_{t \to \infty} \mathbf{r}_{\text{fixation}}(t) = [x_c, y_c]^T \centernot\
 Let $G$ be the 2D affine Lie group (translation, scaling, rotation).
 True universal form recognition requires an invariant group projection operator $\Phi$:
 
-$$orall g \in G, \quad \Phi(g \circ I) = \Phi(I) = \mathbf{v}_{\text{invariant}}$$
+$$\forall g \in G, \quad \Phi(g \circ I) = \Phi(I) = \mathbf{v}_{\text{invariant}}$$
 
 ## 4. Decomposed Semiotic S-Expressions
 
