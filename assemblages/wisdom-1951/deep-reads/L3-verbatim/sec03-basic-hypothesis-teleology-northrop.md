@@ -44,19 +44,19 @@ related:
 
 > "3 The Basic Cybernetic Hypothesis
 > 
-> We may describe machines that embody negative feed-back mechanisms as proceeding by 'trial and error', or as 'error-compensating', or—best—as 'self-correcting'; and we may define 'a simple negative feed-back mechanism' as a mechanism by which part of the input-energy of a machine is utilised at intervals to impose a check on the output-energy.
+> "We may describe machines that embody negative feed-back mechanisms as proceeding by "trial and error", or as error-compensating", or—best—as "self-correcting"; and we may define "a simple negative feed-back mechanism" as a mechanism by which part of the input-energy of a machine is utilised at intervals to impose a check on the output-energy."
 > 
 > The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and 'adaptive' behaviour."
 
 ### Block 3.2: Redefining Purpose, Predictive Tracking, and the Northrop Carve (pp. 5–6)
 
-> "Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for 'purposive' can now be defined in terms of negative feed-back. An anti-aircraft gun is 'purposive' in the sense that it is able by means of radar to follow its target.¹ Predictive behaviour is also accounted for by the same mechanism, as illustrated by a gun firing not at a point where an aeroplane is but at a point where it will be—just as a cat chasing a mouse extrapolates the mouse's path.
+> "Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for "purposive" can now be defined in terms of negative feed-back. An anti-aircraft gun is 'purposive' in the sense that it is able by means of radar to follow its target.¹ Predictive behaviour is also accounted for by the same mechanism, as illustrated by a gun firing not at a point where an aeroplane is but at a point where it will be—just as a cat chasing a mouse extrapolates the mouse's path.
 > 
 > Support for this striking hypothesis, which is of fundamental importance, is to be found both in rather general resemblances between organisms and electronic machines and in resemblances of more special kinds."
 
 ### Block 3.3: Footnote 1 — Northrop on Purposive vs. Teleological (p. 5)
 
-> "¹ Some readers may find it conducive to clarity to distinguish with Northrop between 'purposive' and 'teleological'. A machine may start towards a goal, but after it deviates it may make no attempt to pursue that goal. It would then be in one sense 'purposive' but not 'teleological'. To be 'teleological' it must continue to seek its goal, which requires negative feed-back. (F. S. C. Northrop, 'The Neurological and Behavioristic Psychological Basis of the Ordering of Society by Means of Ideas', Science, New York, 1948, 107, 415.) In ordinary usage, of course, 'purposive' has the sense here ascribed to 'teleological'."
+> "Some readers may find it conducive to clarity to distinguish with Northrop between 'purposive' and 'teleological'. A machine may start towards a goal, but after it deviates it may make no attempt to pursue that goal. It would then be in one sense 'purposive' but not 'teleological'. To be 'teleological' it must continue to seek its goal, which requires negative feed-back. (F. S. C. Northrop, "The Neurological and Behavioristic Psychological Basis of the Ordering of Society by Means of Ideas", Science, New York, 1948, 107, 415.) In ordinary usage, of course, "purposive" has the sense here ascribed to "telelogical"."
 
 ---
 

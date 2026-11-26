@@ -42,7 +42,7 @@ related:
 
 ### Block 4.1.1: Deductive Falsification and the Clinical Analog of Hunting (pp. 10–11)
 
-> "4.1 Feed-Back in the Nervous System. Wiener handled the cybernetic hypothesis in the usual scientific way. He deduced a consequence from it and sought a test. When a thermostat corrects an error it makes a new one, but a smaller one, and this too it corrects by making a further, but smaller error: the negative feed-back leads to closer and closer focus on the target.
+> "4.1 Feed-Back in the Nervous System. Wiener handled the cybernetic hypothesis in the usual scientific way. He deduced a consequence from it and sought a test. When a thermostat corrects an error it makes a new one, but a smaller one, and this too it corrects by making a further, but smaller error : the negative feed-back leads to closer and closer focus on the target.
 > 
 > In certain conditions, however, it will lead to oscillation. This comes about if the self-correcting mechanism overshoots its mark too far, i.e. if the error it makes is commensurate with the one it is correcting. Wiener considered that if the organism has negative feed-back this deduction would hold, and that it should be possible to find an organic example of oscillation.
 > 
@@ -52,7 +52,9 @@ related:
 
 ### Block 4.1.2: Normal Regulation and Experimental De-afferentation (p. 11)
 
-> "Non-oscillatory motion, of course, characterises ordinary controlled action, such as picking up a pen—'our motion is regulated by some measure of the amount by which it has not yet been accomplished.'³ Wiener and Rosenblueth have here found highly important confirmation of the hypothesis.
+> "Non-oscillatory motion, of course, characterises ordinary controlled action, such as picking up a pen--'our motion is regulated by some measure of the amount by which it has not yet been accomplished.'"
+
+> "Wiener and Rosenblueth have here found highly important confirmation of the hypothesis.
 > 
 > Further support comes from experiments in which animals have been deprived of a part of the nervous system. Numerous examples are cited by Brazier⁴; she mentions, for instance, Young's work with cuttlefish in which removal of the higher centres led to unceasing swimming continuing till the fish died; she also mentions cauterisation of the interpeduncular nucleus in cats, carried out by Bailey, as a result of which they walk forward continuously till they die. Apparently the negative feed-back mechanisms were put out of action or removed."
 

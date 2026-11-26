@@ -41,7 +41,7 @@ related:
 
 ### Block 5.1: The Four Dynamical Possibilities of Open Systems (pp. 20–21)
 
-> "An interesting and important development that should be brought into relation with cybernetics is the interpretation of the organism as an open system. This is due to von Bertalanffy,² who has published a number of writings on system theory, and to Burton³ who has briefly put forward the same idea.
+> "An interesting and important development that should be brought into relation with cybernetics is the interpretation of the organism as an open system. This is due to von Bertalanffy,² who has published a number of writings on system theory, and to Burton 3 who has briefly put forward the same idea.
 > 
 > A dynamical system is 'closed' if it does not exchange matter or energy with its environment... [An open system] might behave in one of four ways: (i) it might lose energy until it attained dynamically stable equilibrium, (ii) it might absorb energy until it broke, (iii) it might oscillate, and (iv) it might attain steady motion, or at least perform small oscillations round the state of steady motion.
 > 
@@ -49,7 +49,7 @@ related:
 
 ### Block 5.2: The Deductive Confirmation of the Open System Hypothesis (p. 21)
 
-> "In his mathematical and hypothetico-deductive development of the theory of systems, von Bertalanffy deduces that the properties of steady motion characterise in suitable conditions open systems and that they never characterise closed systems. Then, on the hypothesis that the organism is an open system, it must be capable of assuming steady motion; but we have identified a state of adaptation with steady motion; we therefore have confirmation that the organism is an open system.
+> "In his mathematical and hypothetico-deductive development of the theory of systems, von Bertalanffy deduces that the properties of steady motion characterise in suitable conditions open systems and that they never characterise closed systems. Then, on the hypothesis that the organism is an open system, it must be capable of assuming steady motion ; but we have identified a state of adaptation with steady motion; we therefore have confirmation that the organism is an open system.
 > 
 > What this does for us is not to give us new information, but to give a theoretical framework into which fundamental properties of the organism fit—and there is always the possibility of gaining further knowledge from such a theoretical framework."
 

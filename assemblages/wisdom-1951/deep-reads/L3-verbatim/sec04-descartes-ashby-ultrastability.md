@@ -37,13 +37,13 @@ related:
 
 ## 2. The Descartes Footnote (verbatim, footnote 1)
 
-> "Ashby also makes the interesting observation that, while the ordinary electronic machine can perform only those operations for which it was designed, the homeostat holds out the very real possibility of our making a machine capable of performing operations beyond those for which it was designed—and beyond the knowledge of its designer.¹"
+> "Ashby also makes the interesting observation that, while the ordinary electronic machine can perform only those operations for which it was designed, the homeostat holds out the very real possibility of our making a machine capable of performing operations beyond those for which it was designed—and beyond the knowledge of its designer.'"
 >
 > "¹ This would refute Descartes's principle that there must be at least as much reality and perfection in the cause as in the effect, a principle on which he based one of his proofs of the existence of God."
 
 ## 3. The Two Classes of Reversion (verbatim)
 
-> "At this point it is worth drawing a distinction in connection with those processes that revert towards steady motion after disturbance. Some revert towards the same state of steady motion as they were in before being disturbed; but others are, as it were, content to aim at any steady motion. The one is illustrated by the steadiness of blood temperature; the other by bodily adjustments to a new diet, and by Ashby's machine with breaks."
+> "At this point it is worth drawing a distinction in connection with those processes that revert towards steady motion after disturbance. Some revert towards the same state of steady motion as they were in before being disturbed; but others are, as it were, content to aim at any steady motion. The one is illustrated by the steadiness of blood temperature; the other by bodily adjustments to a new diet, and by Ashby's machine with breaks :"
 
 ## 4. Ashby's Trial-and-Error Citation (verbatim, quoting Ashby 1945)
 

@@ -7,7 +7,7 @@
 
 (deftest hermetic-assemblage-projection-test
   (testing "Assembling corpus directly from local Markdown files in repo"
-    (let [res (proj/assemble-corpus "../assemblages/wisdom-1951/spaces-of-reasoning")
+    (let [res (proj/assemble-corpus "assemblages/wisdom-1951/spaces-of-reasoning")
           graph (:assemblage/graph res)]
       ;; Validates 18 units conformed
       (is (= 18 (:assemblage/total-units res)))

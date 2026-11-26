@@ -41,7 +41,7 @@ related:
 
 ### Block 6.1: Photic Entrainment and Epileptic Synchronization (p. 21)
 
-> "Thus an epileptic patient, whose rhythm in a resting state was first obtained, was confronted with a light flashing at regular intervals; when the frequency of the flashes became equal to or a multiple of his rhythm when resting, his new rhythm showed the characteristic form associated with an epileptic attack. 'This observation appears to support the hypothesis, based on study of analysed epileptic records, that certain types of seizure are due to exact synchronization of cerebral rhythms previously slightly out of step.'¹"
+> "Thus an epileptic patient, whose rhythm in a resting state was first obtained, was confronted with a light flashing at regular intervals; when the frequency of the flashes became equal to or a multiple of his rhythm when resting, his new rhythm showed the characteristic form associated with an epileptic attack. 'This observation appears to support the hypothesis, based on study of analysed epileptic records, that certain types of seizure are due to exact synchronization of cerebral rhythms previously slightly out of step.'"
 > 
 > *(Footnote 1: W. G. Walter, V. J. Dovey, and H. Shipton, "Analysis of the Electrical Response of the Human Cortex to Photic Stimulation", Nature, London, 1946, 158, 541.)*
 
