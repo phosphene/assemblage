@@ -14,7 +14,8 @@
 ;; --- Lens 1: Semiotic Close-Read Triad Projection (:convention/close-read) ---
 
 (defn extract-code-edn
-  "Extract and read the first clojure/edn code block from the AST."
+  "Extract and read the first clojure/edn code block from the Markdown AST.
+   If read fails, returns a typed anomaly map rather than failing silently (E2)."
   [ast]
   (let [blocks (or (seq (ast/code-blocks ast "clojure"))
                    (seq (ast/code-blocks ast "edn"))
@@ -26,26 +27,38 @@
                               str/join)]
         (try
           (edn/read-string text-content)
-          (catch Exception _ nil))))))
+          (catch Exception e
+            {:anomaly/type :edn-parse-failure
+             :anomaly/message (ex-message e)}))))))
 
 (defn project-close-read
   "Lens morphism projecting a parsed Markdown AST into a conformed Semiotic Close-Read Triad.
-   Carries document out-of-band metadata into the conformed result."
+   Provenance precedence: canonical frontmatter metadata strictly anchors the projection (E3)."
   [ast-doc]
   (let [doc-meta (ast/doc-metadata ast-doc)
         edn-data (extract-code-edn ast-doc)]
     (when (map? edn-data)
-      (with-meta
-        (merge
-         {:close-read/id (or (:close-read/id edn-data)
-                             (:id doc-meta)
-                             (:registry.core/id doc-meta))
-          :close-read/title (or (:close-read/title edn-data)
-                                (:title doc-meta)
-                                (:title ast-doc))
-          :close-read/source (:source doc-meta)}
-         edn-data)
-        doc-meta))))
+      (if (:anomaly/type edn-data)
+        ;; Return conformed anomaly projection
+        (with-meta {:anomaly/lens :close-read
+                    :anomaly/detail edn-data}
+                   doc-meta)
+        ;; Provenance precedence: canonical frontmatter anchors metadata,
+        ;; while preserving explicit domain ID when specified in frontmatter.
+        (let [canonical-id (or (:id doc-meta)
+                               (:close-read/id edn-data)
+                               (:registry.core/id doc-meta))
+              canonical-title (or (:title doc-meta)
+                                  (:title ast-doc)
+                                  (:close-read/title edn-data))
+              canonical-source (:source doc-meta)]
+          (with-meta
+            (merge edn-data
+                   (cond-> {}
+                     canonical-id (assoc :close-read/id canonical-id)
+                     canonical-title (assoc :close-read/title canonical-title)
+                     canonical-source (assoc :close-read/source canonical-source)))
+            doc-meta))))))
 
 ;; --- Lens 2: Topological Assemblage Morphism (:convention/topological-assemblage) ---
 
@@ -54,7 +67,7 @@
    Extracts named entities from :term/definitions and delome state rules."
   [ast-doc]
   (let [triad (project-close-read ast-doc)]
-    (when triad
+    (when (and triad (not (:anomaly/lens triad)))
       (let [unit-id (:close-read/id triad)
             terms (:term/definitions triad)
             anchors (get-in triad [:pheme/secondness :historical-anchors] [])
