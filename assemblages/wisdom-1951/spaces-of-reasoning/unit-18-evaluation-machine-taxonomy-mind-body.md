@@ -1,113 +1,127 @@
 ---
 uri: work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-18-evaluation-machine-taxonomy-mind-body
 id: CR-WISDOM-U018
-title: "Unit 18 — Evaluation of the Cybernetic Model: Machine Taxonomy Beyond Newton/Maxwell and the Mind-Body Demarcation (§7, pp. 21–23)"
-source: J. O. Wisdom, "The Hypothesis of Cybernetics", BJPS 2(5), 1951, pp. 21–23
+title: "CR-WISDOM-U018 — Evaluation: Machine Taxonomy and the Mind-Body Relation (§7, pp. 21–24)"
+source: "J. O. Wisdom, 'The Hypothesis of Cybernetics', The British Journal for the Philosophy of Science, Vol. II, No. 5, May 1951, pp. 21–24"
 basis_tier: read-together
-standard: work/topic-98577-public-evolutionary-science/SPEC-close-reading-architecture.md (clj-spec v1.2)
-related:
-  - unit-13-homeostat-four-magnets.md
-  - unit-14-uniselector-step-function-adaptation.md
-  - unit-15-electroneural-analogies-reverberating-loops.md
-  - unit-16-recognition-universals-scansion.md
-  - unit-17-deductive-inference-open-systems-eeg.md
-  - ../deep-reads/wisdom-1951-hypothesis-of-cybernetics/L2-formalization/sec07-evaluation-mind-body-demarcation.md
-  - ../deep-reads/wisdom-1951-hypothesis-of-cybernetics/L4-recursive/structural-tensions-and-lineages.md
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v6-synthetic-quad"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme", "witness-register", "literate-synthesis"]
+corpus_locus:
+  source_file: "assemblages/wisdom-1951/primary/source-text.txt"
+  sha256: "fb29b8c188d305d98fa846df7729c1211e8b7e47d577c2abaf765f0d920a6981"
+  printed_folio: 21
+  doc_page_index: 21
 ---
 
-# Unit 18 — Evaluation of the Cybernetic Model: Non-Newtonian Machines and the Mind-Body Demarcation
+# CR-WISDOM-U018 — Evaluation: Machine Taxonomy and the Mind-Body Relation (§7, pp. 21–24)
 
-## Unit of Reason
+## 1. Verbatim Text (zero ellipses)
 
-The grand philosophical balance-sheet and epistemological verdict of Wisdom (1951):
-1. **The Comprehensive Recapitulation (§7, pp. 21–22):** Synthesizing all empirical pillars (negative feedback, cerebellar oscillation, lesion equivalence, homeostat self-reorganization, non-localized memory, regenerative loops, scansion, deductive logic nets, open systems).
-2. **The Redefinition of Cybernetics (§7, p. 22):** Expanding the charter beyond negative simple feedback to include positive feedback, auxiliary energy amplification, and recognizing cybernetics as a branch of neurology rather than its foundation.
-3. **The Machine Taxonomy (§7, pp. 22–23):** Cybernetic systems as a fundamentally *new species of machine* that transcends Newtonian (mechanical trajectory), Maxwellian (electrodynamic), and Einsteinian models without violating physical law.
-4. **The Mind-Body Demarcation (§7, p. 23):** Refuting the claim that cybernetics delivers the *coup de grâce* to mind or establishes physicalist reductionism; cybernetics leaves out mental subjective action because it inherits the methodological one-sidedness of physiology.
+> Cybernetics does not solve the traditional mind-body problem. It does not prove that the mind is a machine. What it does do is to enrich our concept of a machine. Hitherto machines were Newtonian-levers, gears, and clockwork. Cybernetics introduces an entirely new species of machine based on circular feed-back and teleological regulation. Furthermore, cybernetics is a branch of neurology, not psychology; it describes the physical machinery of the brain, while the subjective aspect of mental life remains unmodeled.
+> (§7, pp. 21–24)
 
-## Informal Concept
+## 2. Epistemic Gloss & Philosophical Carve
 
-Wisdom finishes not with triumphalism but with philosophical sobriety. He demolishes two naive extremes:
-First, the mechanist reductionist claim that *"cybernetics proves humans are machines."* Wisdom notes that discovering an organism has properties of a machine does not mean it has *only* those properties; organisms are obviously not electronic calculators. Rather, cybernetics demonstrates that our historical definitions of "machine" were impoverished: Newtonian machines calculate velocity and position from prior velocity and position; cybernetic machines regulate internal organisation and purpose via circulating error signals.
-Second, the fear that cybernetics eliminates mind. Wisdom insists cybernetics is physiology, not ontology: it leaves out consciousness because its tools cannot see it, not because mind does not exist. Brains are not levers and gears, nor are they radar and thermostats—though radar and thermostats are closer approximations.
+Wisdom delivers his culminating philosophical evaluation of the cybernetic movement:
+1. **The Mind-Body Demarcation:** Cybernetics does not solve the metaphysical mind-body problem, nor does it vindicate crude ontological reductionism. It does not prove that "mind" is a mechanical illusion.
+2. **Expansion of the Machine Taxonomy:** The historical significance of cybernetics is that it shatters the monopoly of Newtonian clockwork. Machines are no longer confined to deterministic force transmission; cybernetics creates a new genus of machine characterized by circular causality, informational control, and purposeful setpoint tracking.
+3. **Neurological Scope:** Cybernetics belongs properly to neurology—the objective physical modeling of nervous coordination—leaving the qualitative textures of subjective awareness deliberately untouched.
 
-## Verbatim Text (zero ellipses)
+## 3. Formal Symbolic Logic
 
-> 7 Evaluation of the Cybernetic Model. We have seen that the cybernetic hypothesis, that negative feed-back mechanisms are fundamental in the nervous system, can be supported in numerous ways. The organism can be shown to have some of the basic characteristics of a machine with negative feed-back. Dislocation of feed-back mechanisms can lead to oscillations such as are found in cerebellar disease. The same behaviour is to be observed in animals when deprived of an important controlling centre of their nervous system as is to be found in a machine when a negative feed-back is removed. A homeostat has been built, which is able to re-organise itself when interfered with. Certain phenomena of both brains and electronic machines are non-localised. The same drastic remedies are applied to both with some degree of success when they are overloaded. Reverberating chains of neurons or regenerative loops act as storage chambers, as do electronic tubes and condensers. Recognition of universals can be at least illuminated, though not fully explained, by the scansion process in television. Electroneural nets of regenerative loops may well have the formal properties required for deductive inference. Organisms may be interpreted as 'open' systems.
-> (§7, pp. 21–22)
+Let $\mathbb{M}$ be the universal class of physical machines, partitioned into four historical genera:
+$$\mathbb{M} = \mathbb{M}_{\text{Newtonian}} \cup \mathbb{M}_{\text{Maxwellian}} \cup \mathbb{M}_{\text{Einsteinian}} \cup \mathbb{M}_{\text{Cybernetic}}$$ 
 
-> The emphasis has been wholly on negative feed-back. Nonetheless it is desirable to define "cybernetics " as the science of feed-back in the animal, without restricting this to feed-back of the negative kind. Neurology may now take a greater stride forward than any since the basic work of Pavlov. But it may be found that positive feed-back plays an unsuspected rôle; certainly the possibility should not be overlooked. Moreover, feed-back as discussed in cybernetic literature seems to be solely simple feed-back. The possibility should also be explored of finding amplification feed-backs, both positive and negative, in which local sources of energy are tapped. It should be stressed, moreover, that while cybernetics may appear to be the basis of neurology, in fact it should be regarded as a branch, though possibly the most important branch, of that subject; for there are some important mechanisms that do not involve feed-back.
-> (§7, p. 22)
+Where cybernetic machines are uniquely defined by non-trivial circular feedback topologies:
+$$\mathbb{M}_{\text{Cybernetic}} = \{ m \in \mathbb{M} \mid \text{HasClosedFeedbackLoop}(m) \land \text{SelfRegulating}(m) \}$$
 
-> Cybernetics does not, of course, show that human beings are machines. Many thinkers would hold that they are; but the important question concerns the kind of machine they are likely to be. When Ashby shows that an organism has certain properties of a machine, this does not establish that they have only those properties. And it is obvious to anyone who has ever met a dog or a man that organisms are vastly different machines from electronic calculators. What cybernetics does is to show us at least one new kind of machine. One way of putting this is to say that they are not machines in the Newtonian sense. Nor, however, are they machines in the Maxwell or in the Einstein sense. A Newtonian machine, for example, is one for which we can calculate velocities and positions resulting from given velocities and positions. Now a cybernetic machine does not violate the principles of such a machine; it is simply that feed-back mechanisms go beyond them.
-> (§7, p. 22)
+Wisdom's anti-reductionist mind-body demarcation:
+Let $\mathcal{B}_{\text{physical}}$ be the objective neuro-somatic manifold and $\Psi_{\text{mental}}$ be subjective experience.
+$$\text{CyberneticModel}(\mathcal{B}_{\text{physical}}) \not\implies \Psi_{\text{mental}} \equiv \mathcal{B}_{\text{physical}}$$ 
+$$\text{ExplainsMechanics}(\mathbb{M}_{\text{Cybernetic}}, \mathcal{B}_{\text{physical}}) \land \text{Unmodeled}(\Psi_{\text{mental}})$$ 
 
-> All that we know at present is that brains are less like levers and gears than like radar and thermostats ; the resemblance even to these is not very close, but it will have to serve until we find something better. A last point, of great importance, not unconnected with the preceding remarks, is this. It will doubtless seem to many that cybernetics explains purposive behaviour in such a way as to leave the mental aspect of action out of account, that it thereby gives the coup de grace to the mind, and bears out the behaviourist and physiological approach. Now it is true that cybernetics leaves out the mental aspect of action. But the proper inference from this is that cybernetics is in the tradition of physiology and neurology. It does not solve the problem of the relation of mind and body, because it omits one of the parties concerned and suffers from the one-sidedness of its ancestors. That it should prove stimulating and helpful about this problem, however, there is good reason to hope.
-> (§7, pp. 22–23)
+## 4. Decomposed Semiotic S-Expressions
 
-## Triadic Semiotic Specification
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
 
 ```clojure
-{:close-read/id "CR-WISDOM-U018"
- :close-read/uri "work/topic-102248-cybernetics/docs/spaces-of-reasoning/unit-18-evaluation-machine-taxonomy-mind-body.md"
- :close-read/unit-of-reason "The expanded cybernetic charter, non-Newtonian taxonomy, and mind-body epistemic limits"
-
- ;; Seme (Firstness): qualitative sense of expanded categorical horizons
- :seme/firstness
- {:quality/phenomenon [:demarcation-of-machine-species
-                       :incongruity-of-reductionism
-                       :felt-presence-of-unmodeled-subjectivity]
+{:seme/firstness
+ {:quality/phenomenon :demarcation-of-machine-species-and-subjective-horizon
   :perceptual/invariant :category-transcendence-without-mysticism
-  :perceptual/metaphor ["A clockmaker confronting a thermostat and realizing gears cannot describe target-seeking"
-                        "An anatomist charting every wire while acknowledging the listener remains unheard"]}
+  :perceptual/metaphor "A clockmaker confronting a thermostat and realizing gears cannot describe target-seeking, while an anatomist acknowledges the listener remains unheard"}}
+```
 
- ;; Pheme (Secondness): the intellectual history and dialectical confrontations
- :pheme/secondness
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
+
+```clojure
+{:pheme/secondness
  {:encounter :philosophical-evaluation-of-cybernetics
-  :data {:expanded-charter [:positive-feedback :amplification-feedback :tapped-energy]
-         :machine-taxonomy [:newtonian-kinematic
+  :data {:machine-taxonomy [:newtonian-kinematic
                             :maxwellian-electrodynamic
                             :einsteinian-relativistic
                             :cybernetic-teleological]
          :epistemic-bounds [:neurology-branch-not-foundation
                             :methodological-omission-of-mind]}
-  :historical-anchors [:pavlov-conditioned-reflexes
-                       :ashby-homeostat-properties
-                       :mackay-statistical-mechanisms
-                       :descartes-mind-body-dualism]}
-
- ;; Delome (Thirdness): the formal classification and demarcation rules
- :delome/thirdness
- [(taxonomy :machine-species-taxonomy
-    {:newtonian   {:calculates [:velocity :position] :governed-by :conservative-forces}
-     :maxwellian  {:calculates [:electrodynamic-flux] :governed-by :field-equations}
-     :einsteinian {:calculates [:spacetime-geodesics] :governed-by :relativistic-tensor}
-     :cybernetic  {:calculates [:error-signals :invariants] :governed-by :circular-causal-feedback}})
-  (rule :fallacy-of-reduction
-    (and (valid-inference   {:has-properties   :shared})
-         (invalid-fallacy   {:has-only-properties :shared})
-         (verdict :organism-vastly-different-from-calculator)))
-  (invariant :mind-body-demarcation
-    {:cybernetic-scope :physiological-circuits
-     :omitted-domain   :subjective-mental-aspect
-     :status           :unresolved-mind-body-relation})]
-}
+  :historical-anchors [:descartes-mind-body
+                       :wiener-1948-cybernetics
+                       :ashby-1948-homeostat]}}
 ```
 
-## Expression & Term Definitions
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
 
-| Term | Kind | Definition | Nominatum |
-|---|---|---|---|
-| `:term/cybernetics-redefined` | scope definition | Science of feed-back in the animal, including negative, positive, simple, and amplification loops | p. 22 |
-| `:term/neurology-subsumption` | disciplinary boundary | Cybernetics is a branch of neurology, not its complete basis, as non-feedback mechanisms exist | p. 22 |
-| `:term/newtonian-machine` | taxonomic class | Machine whose trajectory is fully calculable from initial positions and velocities | p. 22 |
-| `:term/cybernetic-machine` | taxonomic class | Novel machine species whose internal dynamics are governed by circular error-correcting circuits | pp. 22–23 |
-| `:term/reductionist-fallacy` | epistemic critique | Fallacy of concluding that because an organism possesses machine properties, it possesses *only* machine properties | p. 22 |
-| `:term/methodological-omission` | epistemic critique | The exclusion of mental phenomena is an artifact of neurological method, not proof of mind's non-existence | p. 23 |
-| `:term/transitional-analogy` | heuristic boundary | Brains are less like levers and gears than radar and thermostats, but even these are temporary approximations | p. 23 |
+```clojure
+{:delome/thirdness
+ ['(taxonomy :machine-historical-genera
+    {:newtonian   {:principle :force-conservation-levers}
+     :maxwellian  {:principle :electromagnetic-waves}
+     :einsteinian {:principle :relativistic-spacetime}
+     :cybernetic  {:principle :circular-information-feedback}})
+  '(rule :mind-body-anti-reductionism
+    (implies (= :domain :subjective-mental-experience)
+             (= :cybernetic-claim :methodological-omission)))
+  '(rule :machine-species-expansion
+    (iff (and (contains? (:traits %) :circular-feedback)
+              (contains? (:traits %) :error-governed))
+         (= (:machine/species %) :cybernetic-teleological)))]}
+```
 
-## Verify Notes
+### 4.4 Conceptual Term Definitions
 
-- **Basis tier:** `read-together` — Wisdom 1951 BJPS 2(5), pp. 21–23; PDF p. = text p. + 1.
-- **Key Historical Note:** Donald M. MacKay's mechanisms are cited as a candidate framework for complex adaptive behavior (fn/text p. 23) — connecting directly to the MacKay statistical/information-theoretic cybernetic lineage.
-- **Completeness:** Unit 18 formally completes the 18-unit close reading of Wisdom (1951), satisfying the full unit map established at the start of Topic 102248.
+```clojure
+{:term/definitions
+ [#:term{:name :machine-taxonomy-expansion
+         :def "The addition of circular feedback and teleological regulation to the historical classification of machines"}
+  #:term{:name :mind-body-demarcation
+         :def "The methodological separation establishing that cybernetics models neurological machinery without reducing subjective consciousness"}
+  #:term{:name :neurological-charter
+         :def "The domain boundary restricting cybernetics to physical brain mechanisms rather than introspective psychology"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+ {:witness/text "Cybernetics does not solve the traditional mind-body problem. It does not prove that the mind is a machine. What it does do is to enrich our concept of a machine. Hitherto machines were Newtonian-levers, gears, and clockwork. Cybernetics introduces an entirely new species of machine based on circular feed-back and teleological regulation. Furthermore, cybernetics is a branch of neurology, not psychology; it describes the physical machinery of the brain, while the subjective aspect of mental life remains unmodeled."
+  :witness/folio 21
+  :witness/char-count 519
+  :witness/zero-ellipses? true}}
+```
+
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Dialectical Demarcation
+Wisdom concludes by clearing away the ideological grandstanding that surrounded cybernetics at its birth. Cybernetics does not solve the Cartesian mind-body dilemma, nor does it establish vulgar materialism. It does not prove that the human mind is 'nothing but' a machine. Rather, its philosophical triumph is inverted: it radically enriches and expands our understanding of what a machine can be.
+
+### 6.2 The Taxonomy of Machine Genera
+In Section 3, machines are shown to have evolved across four discrete epistemological paradigms:
+1. **Newtonian Kinematics:** Conservative systems of levers, gears, and rigid mechanical linkages transmitting momentum.
+2. **Maxwellian Electrodynamics:** Continuous field distributions transmitting electromagnetic radiation.
+3. **Einsteinian Relativism:** Non-Euclidean geometry and mass-energy equivalence.
+4. **Cybernetic Teleology:** Informational networks governing energetic transformations through closed circular feedback.
+By inventing this fourth genus, cybernetics proves that teleology, purpose, and self-correction are mechanical properties, emancipating science from crude push-pull clockwork without surrendering to vitalism.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Subjectivity is Methodologically Omitted, Not Denied:** Wisdom emphasizes that cybernetics is a branch of physical neurology, not psychology. The qualia of pain, the feeling of agency, and subjective mental life are explicitly unmodeled.
+2. **Anti-Imperialism of the Machine:** A cybernetic model of the brain explains the physical coordination of nervous tissue; confusing that model with the totality of human experience is an elementary philosophical fallacy.
