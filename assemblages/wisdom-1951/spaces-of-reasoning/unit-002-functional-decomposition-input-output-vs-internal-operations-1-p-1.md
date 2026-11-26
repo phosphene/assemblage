@@ -67,31 +67,14 @@ $$\mathcal{M} = \langle \text{In}, \text{Store}, \text{Select}, \text{Out} \rang
 A machine satisfies the necessary functional conditions of calculation iff all four operators are realized:
 $$\text{CalculatingEngine}(\mathcal{M}) \iff (\text{In} \neq \emptyset) \land (\text{Store} \neq \emptyset) \land (\text{Select} \neq \emptyset) \land (\text{Out} \neq \emptyset)$$
 
-## 4. S-Expressions (`assemblage` & `phosphene/seme`)
+## 4. Decomposed Semiotic S-Expressions
+
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
+
+The qualitative texture of the fourfold functional demand: intake, persistence, timed retrieval, and report — the bare architecture of discrete calculation.
 
 ```clojure
-{:close-read/id "CR-WISDOM-U002"
- :close-read/title "Functional Decomposition: The Fourfold Architecture of the Calculating Engine"
- :close-read/source "Wisdom (1951), BJPS 2(5), p. 1"
- :reading-discipline {:style :style/deliberative-synthesis
-                      :engine "deliberative-reasoning-seme"
-                      :target-registers [:verbatim :gloss :formal-logic :seme]}
-
- ;; --- Mode D: Verbatim Register Witness ---
- :witness/selection
- {:witness/text "Such machines had to be able (a) to be fed with information, (b) to store in some form the results of their preliminary calculations, (c) to make use of these results appropriately at the right time, i.e. to select from their 'files', and (d) to report their final results."
-  :witness/char-count 273
-  :witness/offset 1989
-  :witness/printed-folio 1
-  :witness/doc-page 1
-  :witness/zero-ellipses? true
-  :witness/exact-contiguous? true
-  :witness/verdict :verbatim}
-
- ;; --- Mode S: Peircean Semiotic Specification via phosphene/seme ---
-
- ;; 1. Firstness (Rheme / Qualitative Seme): Quadruple functional traits
- :seme/firstness
+{:seme/firstness
  {:rheme/id :sememe/functional-von-neumann-quadruple
   :rheme/semes
   [#:seme{:id :seme/information-intake
@@ -105,10 +88,15 @@ $$\text{CalculatingEngine}(\mathcal{M}) \iff (\text{In} \neq \emptyset) \land (\
           :metadata "Ability (c): to make use of results at the right time from files (addressable retrieval)"}
    #:seme{:id :seme/terminal-reporting
           :pred :positive
-          :metadata "Ability (d): to report final results (output transducer)"}]}
+          :metadata "Ability (d): to report final results (output transducer)"}]}}
+```
 
- ;; 2. Secondness (Pheme / Conformed Witness): Keyset lattice vertex
- :pheme/secondness
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
+
+The concrete architectural vertex: the discrete calculating engine as realized in early digital machines.
+
+```clojure
+{:pheme/secondness
  {:pheme/claimed-vertex :vertex/functional-calculating-automaton
   :pheme/required-coordinates
   [:arch/input-channel
@@ -123,32 +111,65 @@ $$\text{CalculatingEngine}(\mathcal{M}) \iff (\text{In} \neq \emptyset) \land (\
    :machine/architecture-type :discrete-calculating-engine
    :historical/era :early-digital}
   :pheme/conformance-status :conformed
-  :pheme/historical-anchors [:von-neumann-1945-first-draft :turing-1936]}
+  :pheme/historical-anchors [:von-neumann-1945-first-draft :turing-1936]}}
+```
 
- ;; 3. Thirdness (Delome / Governing Habit & Formal Predication):
- :delome/thirdness
- [(invariant :arch/input-channel boolean?)
-  (invariant :arch/memory-store boolean?)
-  (invariant :arch/addressable-selection boolean?)
-  (invariant :arch/output-channel boolean?)
-  (rule :functional-calculating-automaton
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
+
+Provoked 1:1 by the operator decomposition $\mathcal{M} = \langle \text{In}, \text{Store}, \text{Select}, \text{Out} \rangle$ of Section 3: the conjunction of the four realized operators is the necessary and sufficient condition for a calculating engine.
+
+```clojure
+{:delome/thirdness
+ ['(invariant :arch/input-channel boolean?)
+  '(invariant :arch/memory-store boolean?)
+  '(invariant :arch/addressable-selection boolean?)
+  '(invariant :arch/output-channel boolean?)
+  '(rule :functional-calculating-automaton
     (iff (and (:arch/input-channel machine)
               (:arch/memory-store machine)
               (:arch/addressable-selection machine)
               (:arch/output-channel machine))
-         :calculating-machine))]
-}
-     (and (true? (:arch/input-channel machine))
-          (true? (:arch/memory-store machine))
-          (true? (:arch/addressable-selection machine))
-          (true? (:arch/output-channel machine))))))
+         :calculating-machine))]}
+```
 
-## 5. Conceptual Terms & Trait Register
+### 4.4 Conceptual Term Definitions
 
-| Term | Kind | Definition |
-|---|---|---|
-| `:term/information-feeding` | Architectural | The ingestion of problem parameters and instructions into machine state (Operation a) |
-| `:term/preliminary-storage` | Memory | The retention of interim computational states across sequential calculation cycles (Operation b) |
-| `:term/timed-file-selection` | Control | The addressable retrieval of stored interim results contingent on execution context (Operation c) |
-| `:term/result-reporting` | Output | The terminal emission of conformed solutions to external sinks (Operation d) |
-| `:term/functional-decomposition` | Methodological | Resolution of an automaton into distinct operational faculties prior to mechanical modeling |
+```clojure
+{:term/definitions
+ [#:term{:name :information-feeding
+         :def "The ingestion of problem parameters and instructions into machine state (Operation a)"}
+  #:term{:name :preliminary-storage
+         :def "The retention of interim computational states across sequential calculation cycles (Operation b)"}
+  #:term{:name :timed-file-selection
+         :def "The addressable retrieval of stored interim results contingent on execution context (Operation c)"}
+  #:term{:name :result-reporting
+         :def "The terminal emission of conformed solutions to external sinks (Operation d)"}
+  #:term{:name :functional-decomposition
+         :def "Resolution of an automaton into distinct operational faculties prior to mechanical modeling"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+ {:witness/text "Such machines had to be able (a) to be fed with information, (b) to store in some form the results of their preliminary calculations, (c) to make use of these results appropriately at the right time, i.e. to select from their 'files', and (d) to report their final results."
+  :witness/char-count 273
+  :witness/offset 1989
+  :witness/printed-folio 1
+  :witness/doc-page 1
+  :witness/zero-ellipses? true
+  :witness/exact-contiguous? true
+  :witness/verdict :verbatim}}
+```
+
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Fourfold Architecture as Engineering Necessity
+Wisdom decomposes the electronic calculator into four jointly necessary functional abilities: receiving information, storing interim results, retrieving those results at the right moment, and reporting final output. This quadruple anticipates the canonical von Neumann architecture, but Wisdom states it purely operationally — as a checklist of capacities any calculating engine must possess, independent of whether its hardware is relays, valves, or neurons.
+
+### 6.2 From Operator Tuple to Checkable Rule
+In Section 3 the machine is formalized as the operator tuple $\mathcal{M} = \langle \text{In}, \text{Store}, \text{Select}, \text{Out} \rangle$, with the biconditional: an engine qualifies as a calculating machine if and only if all four operators are realized and non-empty. Section 4.3 transcribes this conjunction directly into the rule `:functional-calculating-automaton`. The scare-quotes Wisdom places around 'files' mark the conceptually decisive step: passive storage becomes active, addressable selection — the machine must know *when* each interim result is appropriate, which is the seed of control flow.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+1. **Architecture is Not Intelligence:** The fourfold decomposition characterizes any discrete calculating engine whatsoever — including a human computer with a filing cabinet. It establishes functional sufficiency for calculation, not mechanistic kinship with the brain. The analogy to mental operations is explicitly deferred by Wisdom to the subsequent sentence and later units.
+2. **Necessary, Not Explanatory:** Realizing all four operators is a necessary condition for calculation, but carries no explanatory weight about *how* the machine regulates itself. Self-regulation requires the circular feedback structure introduced in Units 004–007.

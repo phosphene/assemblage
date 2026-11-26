@@ -55,31 +55,14 @@ $$\tau_{\text{machine}} = \frac{C(\mathcal{P})}{R_{\text{electronic}}} \le \tau_
 The machine is defined functionally as a causal operator $\Omega$ mapping input parameters to equations solved within the critical bound:
 $$\Omega: (I, \mathcal{P}) \xrightarrow{\Delta t \le \tau_{\text{tactical}}} O$$
 
-## 4. S-Expressions (`assemblage` & `phosphene/seme`)
+## 4. Decomposed Semiotic S-Expressions
+
+### 4.1 Firstness: Qualitative Phenomenon (Seme)
+
+The immediate qualitative texture of the wartime computational crisis: urgent operational demand colliding with human-scale calculation latency, relieved by electronic acceleration.
 
 ```clojure
-{:close-read/id "CR-WISDOM-U001"
- :close-read/title "The Wartime Automaton: Latency Crisis and Computational Acceleration"
- :close-read/source "Wisdom (1951), BJPS 2(5), p. 1"
- :reading-discipline {:style :style/deliberative-synthesis
-                      :engine "deliberative-reasoning-seme"
-                      :target-registers [:verbatim :gloss :formal-logic :seme]}
-
- ;; --- Mode D: Verbatim Register Witness ---
- :witness/selection
- {:witness/text "DURING World War II some of the research in theoretical physics and engineering, which was important both for attack and defence, required vast calculations to be carried out. The delay involved in doing these with pencil and paper would have been a serious drawback; but the difficulty was overcome by means of electronic calculating machines, which could solve in a matter of hours mathematical equations that would otherwise have taken months to work out."
-  :witness/char-count 458
-  :witness/offset 1530
-  :witness/printed-folio 1
-  :witness/doc-page 1
-  :witness/zero-ellipses? true
-  :witness/exact-contiguous? true
-  :witness/verdict :verbatim}
-
- ;; --- Mode S: Peircean Semiotic Specification via phosphene/seme ---
-
- ;; 1. Firstness (Rheme / Qualitative Seme): Distinctive feature bundle
- :seme/firstness
+{:seme/firstness
  {:rheme/id :sememe/wartime-computational-crisis
   :rheme/semes
   [#:seme{:id :seme/tactical-urgency
@@ -90,10 +73,15 @@ $$\Omega: (I, \mathcal{P}) \xrightarrow{\Delta t \le \tau_{\text{tactical}}} O$$
           :metadata "Pencil-and-paper delay taking months, exceeding tactical tempo"}
    #:seme{:id :seme/electronic-acceleration
           :pred :positive
-          :metadata "Discrete electronic computation solving equations in hours"}]}
+          :metadata "Discrete electronic computation solving equations in hours"}]}}
+```
 
- ;; 2. Secondness (Pheme / Conformed Witness): Keyset lattice vertex
- :pheme/secondness
+### 4.2 Secondness: Empirical Encounter & Historical Anchors (Pheme)
+
+The concrete wartime apparatus: electronic calculating machines displacing pencil-and-paper derivation under operational pressure.
+
+```clojure
+{:pheme/secondness
  {:pheme/claimed-vertex :vertex/wartime-calculating-machine
   :pheme/required-coordinates
   [:computation/wartime-pressure
@@ -106,29 +94,61 @@ $$\Omega: (I, \mathcal{P}) \xrightarrow{\Delta t \le \tau_{\text{tactical}}} O$$
    :computation/superseded-medium :pencil-and-paper
    :historical/era :world-war-ii}
   :pheme/conformance-status :conformed
-  :pheme/historical-anchors [:world-war-ii :eniac-manhattan-project]}
-
- ;; 3. Thirdness (Delome / Governing Habit & Formal Predication):
- :delome/thirdness
- [(invariant :computation/wartime-pressure boolean?)
-  (invariant :computation/latency-mode #{:discrete-hours :continuous-months})
-  (invariant :computation/medium #{:electronic-machine :pencil-and-paper})
-  (rule :overcomes-latency-bottleneck
-    (implies (and (= :computation/medium :electronic-machine)
-                  (<= :computation/solution-time-hours :tactical-horizon-hours))
-             :tactical-viability))]
- :lexicon/terms
- [{:term/name :electronic-calculating-machine
-   :term/def "Discrete electronic automaton solving in hours mathematical equations requiring months by pencil and paper"}
-  {:term/name :operational-latency-crisis
-   :term/def "The discrepancy between biological/manual calculation speed and the temporal horizon required for real-time control"}]}
+  :pheme/historical-anchors [:world-war-ii :eniac-manhattan-project]}}
 ```
 
-## 5. Conceptual Terms & Trait Register
+### 4.3 Thirdness: Invariant Delome Rules & Causal Habits (Delome)
 
-| Term | Kind | Definition |
-|---|---|---|
-| `:term/electronic-calculating-machine` | Mechanical | Discrete electronic automaton solving in hours mathematical equations requiring months by pencil and paper |
-| `:term/operational-latency-crisis` | Epistemic | The discrepancy between biological calculation speed and the temporal horizon required for real-time control |
-| `:term/pencil-and-paper-computation` | Historical | The human baseline of continuous manual algebraic derivation |
-| `:term/intellect-analogy` | Comparative | Obvious analogy between machine powers and intellect: working out, storing, recalling, selecting, and communicating |
+Provoked 1:1 by the formal propositions of Section 3: the latency bound $\tau_{\text{machine}} \le \tau_{\text{tactical}}$ becomes the viability rule.
+
+```clojure
+{:delome/thirdness
+ ['(invariant :computation/wartime-pressure boolean?)
+  '(invariant :computation/latency-mode #{:discrete-hours :continuous-months})
+  '(invariant :computation/medium #{:electronic-machine :pencil-and-paper})
+  '(rule :overcomes-latency-bottleneck
+    (implies (and (= :computation/medium :electronic-machine)
+                  (<= :computation/solution-time-hours :tactical-horizon-hours))
+             :tactical-viability))]}
+```
+
+### 4.4 Conceptual Term Definitions
+
+```clojure
+{:term/definitions
+ [#:term{:name :electronic-calculating-machine
+         :def "Discrete electronic automaton solving in hours mathematical equations requiring months by pencil and paper"}
+  #:term{:name :operational-latency-crisis
+         :def "The discrepancy between biological/manual calculation speed and the temporal horizon required for real-time control"}
+  #:term{:name :pencil-and-paper-computation
+         :def "The human baseline of continuous manual algebraic derivation"}
+  #:term{:name :intellect-analogy
+         :def "Obvious analogy between machine powers and intellect: working out, storing, recalling, selecting, and communicating"}]}
+```
+
+## 5. Verbatim Witness Register
+
+```clojure
+{:witness/selection
+ {:witness/text "DURING World War II some of the research in theoretical physics and engineering, which was important both for attack and defence, required vast calculations to be carried out. The delay involved in doing these with pencil and paper would have been a serious drawback; but the difficulty was overcome by means of electronic calculating machines, which could solve in a matter of hours mathematical equations that would otherwise have taken months to work out."
+  :witness/char-count 458
+  :witness/offset 1530
+  :witness/printed-folio 1
+  :witness/doc-page 1
+  :witness/zero-ellipses? true
+  :witness/exact-contiguous? true
+  :witness/verdict :verbatim}}
+```
+
+## 6. Literate Semantic Demonstration & Bounded Synthesis
+
+### 6.1 The Latency Crisis as Historical Genesis
+Wisdom opens the treatise not with metaphysics but with a concrete historical bottleneck: during World War II, the limiting factor in military physics was not the formulation of equations but the time required to solve them. Human pencil-and-paper derivation operated on a biological timescale of months, while the tactical tempo of attack and defence demanded answers within hours. The electronic calculating machine enters history as a physical transducer that collapsed this latency by roughly four orders of magnitude.
+
+### 6.2 From Operator Notation to Operational Meaning
+In the formal notation of Section 3, the crisis is expressed as a race between two calculation rates: $\tau_{\text{human}} = C(\mathcal{P})/R_{\text{human}}$ versus $\tau_{\text{machine}} = C(\mathcal{P})/R_{\text{electronic}}$, both measured against the tactical horizon $\tau_{\text{tactical}}$. When the human timescale exceeds the horizon, solutions arrive already obsolete ($\text{Drawback}$); when the machine timescale falls within it, the difficulty is overcome. The Clojure rule `:overcomes-latency-bottleneck` in Section 4.3 is this exact inequality transcribed into checkable form: electronic medium plus solution time within the tactical horizon yields tactical viability.
+
+### 6.3 Epistemic Bounds & Negative Horizon
+Two boundary constraints keep this unit honest:
+1. **No Cognition Claim Yet:** Wisdom deliberately calls the machines neither "intelligent" nor "thinking" at this stage. They are introduced strictly as accelerators of discrete mathematical transformations; the analogy to intellect is deferred and must be earned by later mechanistic argument (Units 003, 019).
+2. **Acceleration is Not Explanation:** Overcoming latency ($\tau_{\text{machine}} \le \tau_{\text{tactical}}$) is a temporal achievement only. Nothing in this unit asserts that the machine's internal causal architecture resembles a nervous system; that carve awaits the feedback mechanism invariant.

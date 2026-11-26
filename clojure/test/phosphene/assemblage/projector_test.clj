@@ -11,10 +11,10 @@
           graph (:assemblage/graph res)]
       ;; Validates 18 units conformed
       (is (= 21 (:assemblage/total-units res)))
-      (is (= 68 (:assemblage/total-traits res)))
+      (is (= 76 (:assemblage/total-traits res)))
       (is (s/valid? ::spec/assemblage graph))
       (is (= 66 (count (:nodes graph))))
-      (is (= 51 (count (:edges graph))))
+      (is (= 54 (count (:edges graph))))
       
       ;; Verify trait intersections
       (is (contains? (:algebra/trait-intersections res)
