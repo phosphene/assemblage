@@ -65,15 +65,43 @@
 
 ;; --- Tier 2: Sequence Grammar over Tokens (clojure.spec.alpha) ---
 
-(s/def :token/kv (s/and vector? #(= (first %) :tok/kv)))
-(s/def :token/section-key (s/and vector? #(= (first %) :tok/section-key)))
-(s/def :token/bullet (s/and vector? #(= (first %) :tok/bullet)))
-(s/def :token/sub-kv (s/and vector? #(= (first %) :tok/sub-kv)))
-(s/def :token/fence (s/and vector? #(= (first %) :tok/fence)))
-(s/def :token/blank (s/and vector? #(= (first %) :tok/blank)))
-(s/def :token/h1 (s/and vector? #(= (first %) :tok/h1)))
-(s/def :token/h2 (s/and vector? #(= (first %) :tok/h2)))
-(s/def :token/text (s/and vector? #(= (first %) :tok/text)))
+;; --- Sovereign Namespaced Token Senses (Hickey / Tellman) ---
+
+(s/def :phosphene.assemblage.ast.tok/fence (s/tuple #{:tok/fence}))
+(s/def :phosphene.assemblage.ast.tok/blank (s/tuple #{:tok/blank}))
+(s/def :phosphene.assemblage.ast.tok/h1 (s/tuple #{:tok/h1} string?))
+(s/def :phosphene.assemblage.ast.tok/h2 (s/tuple #{:tok/h2} string?))
+(s/def :phosphene.assemblage.ast.tok/bullet (s/tuple #{:tok/bullet} string?))
+(s/def :phosphene.assemblage.ast.tok/sub-kv (s/tuple #{:tok/sub-kv} keyword? string?))
+(s/def :phosphene.assemblage.ast.tok/section-key (s/tuple #{:tok/section-key} keyword?))
+(s/def :phosphene.assemblage.ast.tok/kv (s/tuple #{:tok/kv} keyword? string?))
+(s/def :phosphene.assemblage.ast.tok/text (s/tuple #{:tok/text} string?))
+
+(s/def ::token
+  (s/or :fence :phosphene.assemblage.ast.tok/fence
+        :blank :phosphene.assemblage.ast.tok/blank
+        :h1 :phosphene.assemblage.ast.tok/h1
+        :h2 :phosphene.assemblage.ast.tok/h2
+        :bullet :phosphene.assemblage.ast.tok/bullet
+        :sub-kv :phosphene.assemblage.ast.tok/sub-kv
+        :section-key :phosphene.assemblage.ast.tok/section-key
+        :kv :phosphene.assemblage.ast.tok/kv
+        :text :phosphene.assemblage.ast.tok/text))
+
+(s/def ::token-stream
+  (s/coll-of ::token :kind vector?))
+
+;; --- Tier 2: Sequence Grammar over Tokens (clojure.spec.alpha) ---
+
+(s/def :token/kv :phosphene.assemblage.ast.tok/kv)
+(s/def :token/section-key :phosphene.assemblage.ast.tok/section-key)
+(s/def :token/bullet :phosphene.assemblage.ast.tok/bullet)
+(s/def :token/sub-kv :phosphene.assemblage.ast.tok/sub-kv)
+(s/def :token/fence :phosphene.assemblage.ast.tok/fence)
+(s/def :token/blank :phosphene.assemblage.ast.tok/blank)
+(s/def :token/h1 :phosphene.assemblage.ast.tok/h1)
+(s/def :token/h2 :phosphene.assemblage.ast.tok/h2)
+(s/def :token/text :phosphene.assemblage.ast.tok/text)
 
 (s/def ::fm-list-block
   (s/cat :head :token/section-key
