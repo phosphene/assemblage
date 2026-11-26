@@ -109,7 +109,7 @@
 
 (s/def :close-read/id (s/or :str string? :kw keyword?))
 (s/def :close-read/title (s/nilable string?))
-(s/def :close-read/source (s/nilable string?))
+(s/def :close-read/source (s/nilable (s/or :str string? :map map?)))
 
 (s/def :quality/phenomenon (s/or :kw keyword? :str string? :vec vector?))
 (s/def :perceptual/metaphor (s/or :str string? :vec vector?))
