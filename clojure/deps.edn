@@ -4,5 +4,7 @@
         io.github.nextjournal/markdown {:git/tag "v0.7.232"
                                         :git/sha "1580eeb11773902b943f4acf88d9f8e1a4ea9e67"}}
  :aliases
- {:test {:extra-paths ["test"]
+ {:dev {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}
+  :test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}}}

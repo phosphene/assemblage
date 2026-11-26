@@ -119,3 +119,23 @@
 
 (s/def ::verbatim-witnesses
   (s/coll-of ::verbatim-witness :kind vector?))
+
+;; --- Verbatim Register (empirical selection gate, Topic 102248 #102484) ---
+;; A witness in the verbatim register is an exact contiguous token selection
+;; from the primary corpus. Boundaries are arbitrary; invention and truncation
+;; inside the sequence are forbidden. Verification is decidable:
+;; witness/exact-contiguous? is computed against the primary corpus in
+;; phosphene.assemblage.witness (see assemblages/wisdom-1951/primary/).
+
+(s/def :witness/exact-contiguous? boolean?)
+(s/def :witness/offset (s/nilable nat-int?))
+(s/def :witness/verdict #{:verbatim :truncated :invented})
+
+(s/def ::verified-verbatim-witness
+  (s/keys :req [:witness/text :witness/char-count :witness/zero-ellipses?
+                :witness/exact-contiguous? :witness/offset :witness/verdict]))
+
+(s/def ::verbatim-register
+  (s/coll-of (s/and ::verified-verbatim-witness
+                    #(= :verbatim (:witness/verdict %)))
+             :kind vector?))
