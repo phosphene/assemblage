@@ -94,3 +94,26 @@ Following the close-reading methodology review in Topic 102248:
   1. Refactor structured identifiers (`:close-read/id`, `CR-WISDOM-UXXX`, `:node/id`) to use character-level sequence specs with bidirectional `s/conformer` pairs.
   2. Enable lossless symmetric round-trip: `(s/conform ::close-read-id (seq "CR-WISDOM-U001"))` $\leftrightarrow$ `(s/unform ::close-read-id conformed-val)`.
   3. Provide full generative testing generators for valid IDs using `s/exercise` and `test.check` without hand-rolled string generators.
+
+### T-434: Quarantine Protocol & Lifting Unqualified Boundary Keys into Sovereign Qualified Senses
+- **Target Repo:** `phosphene/assemblage` (`ast.clj`, `spec.clj`, `lens.clj`)
+- **Scope:**
+  1. Audit all map structures originating from Markdown AST (`nextjournal.markdown`), YAML frontmatter, and external JSON inputs.
+  2. Implement the Mode-S to Mode-D quarantine boundary: ensure external unqualified keys (e.g. `:type`, `:text`, `:content`, `:info`) never circulate past the parser boundary.
+  3. Replace `:req-un` definitions in `spec.clj` (`:node/entity`, `:ast.node/text-node`, `:ast.node/heading-node`, `:ast.node/code-node`, etc.) with sovereign qualified attributes (`:ast.node/type`, `:ast.text/content`, `:ast.heading/level`).
+  4. Ensure outward projection functions project to unqualified external formats strictly at system egress.
+
+### T-435: Bare `(s/keys)` Universal Fact Validation & Point-of-Use Destructuring
+- **Target Repo:** `phosphene/assemblage` (`spec.clj`, `lens.clj`, `projector.clj`, `witness.clj`)
+- **Scope:**
+  1. De-complect static aggregate schemas: dismantle composite `s/keys` specs that bundle `:req` and `:opt` vectors (`::close-read-triad`, `::assemblage-graph`).
+  2. Register all atomic attributes under sovereign namespaced coordinates with global timeless Senses via `s/def`.
+  3. Replace rigid aggregate spec gates with universal bare `(s/keys)` open-world validation gates (`{:pre [(s/valid? (s/keys) m)]}`).
+  4. Formalize local Presence via Clojure point-of-use destructuring (keyset extraction, defaults, and nested path navigation) inside consumer functions (`project-close-read`, `project-assemblage-elements`, `verify-witness`).
+
+### T-436: Generative Testing via Character-Level Sequence Grammars & `test.check`
+- **Target Repo:** `phosphene/assemblage` (`spec.clj`, `delome_spec_test.clj`)
+- **Scope:**
+  1. Formulate character-level sequence specs for sovereign identifiers (`CR-WISDOM-UXXX`, `:node/id`, `:concept/id`) paired with bidirectional conformers (`s/conformer`).
+  2. Wire `clojure.spec.gen.alpha` and `test.check` to generate valid test instances automatically without hand-rolled regex string generators.
+  3. Implement round-trip property tests: `(= id (s/unform ::sovereign-id (s/conform ::sovereign-id id)))`.
