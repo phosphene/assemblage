@@ -106,11 +106,69 @@
 
 (s/def :delome/thirdness ::delome-thirdness)
 
+;; --- Character-Level Sovereign Identifier Grammar (Pattern 6 / T-433 / T-436) ---
+
+(def ^:private upper-alpha-chars (set "ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+(def ^:private ascii-digit-chars (set "0123456789"))
+
+(s/def :id.char/prefix
+  (s/cat :c1 #{\C} :c2 #{\R}))
+
+(s/def :id.char/corpus
+  (s/+ upper-alpha-chars))
+
+(s/def :id.char/unit
+  (s/cat :u #{\U}
+         :d1 ascii-digit-chars
+         :d2 ascii-digit-chars
+         :d3 ascii-digit-chars))
+
+(s/def ::close-read-id-chars
+  (s/cat :prefix :id.char/prefix
+         :sep1 #{\-}
+         :corpus :id.char/corpus
+         :sep2 #{\-}
+         :unit :id.char/unit))
+
+(defn conform-close-read-id
+  "Parse a sovereign Close-Read identifier string into a structured semantic record.
+   Returns ::s/invalid on non-strings or invalid sequences."
+  [id-str]
+  (if (string? id-str)
+    (let [chars (seq id-str)]
+      (if (s/valid? ::close-read-id-chars chars)
+        (let [{:keys [corpus unit]} (s/conform ::close-read-id-chars chars)]
+          {:id/type :close-read
+           :id/corpus (keyword (str/lower-case (apply str corpus)))
+           :id/unit (Integer/parseInt (str (:d1 unit) (:d2 unit) (:d3 unit)))})
+        ::s/invalid))
+    ::s/invalid))
+
+(defn unform-close-read-id
+  "Losslessly reconstruct a canonical sovereign Close-Read ID string from a structured record."
+  [{:keys [id/type id/corpus id/unit]}]
+  (when (and (= type :close-read) (keyword? corpus) (integer? unit))
+    (str "CR-" (str/upper-case (name corpus)) "-U" (format "%03d" unit))))
+
+(s/def :id/type #{:close-read})
+(s/def :id/corpus keyword?)
+(s/def :id/unit (s/int-in 1 1000))
+
+(s/def ::structured-close-read-id
+  (s/keys :req [:id/type :id/corpus :id/unit]))
+
+(s/def ::sovereign-close-read-id
+  (s/conformer conform-close-read-id
+               unform-close-read-id))
+
 ;; --- Semiotic Close-Read Triad Specifications ---
 ;; Conforms to clj-spec v1.2-Peirce-Hume-Omega supporting both qualified and unqualified keys
 ;; and multi-paradigm Seme/Pheme representations (Peircean Rheme and Poset Vertices).
 
-(s/def :close-read/id (s/or :str string? :kw keyword?))
+(s/def :close-read/id
+  (s/or :sovereign ::sovereign-close-read-id
+        :str string?
+        :kw keyword?))
 (s/def :close-read/title (s/nilable string?))
 (s/def :close-read/source (s/nilable (s/or :str string? :map map?)))
 
