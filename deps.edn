@@ -1,11 +1,13 @@
 ;; Root deps.edn — hermetic entry point for phosphene/assemblage
-{:aliases
- {:test {:extra-paths ["clojure/src" "clojure/test"]
-         :extra-deps {org.clojure/clojure {:mvn/version "1.12.0"}
-                      org.clojure/spec.alpha {:mvn/version "0.5.238"}
-                      io.github.nextjournal/markdown {:git/tag "v0.7.232"
-                                                      :git/sha "1580eeb11773902b943f4acf88d9f8e1a4ea9e67"}
-                      phosphene/seme {:git/url "https://github.com/phosphene/seme.git"
-                                      :git/sha "107743f6a60d2fd276aa0f7ac334cd5fe39f3bac"}
-                      org.clojure/test.check {:mvn/version "1.1.1"}}
+{:paths ["clojure/src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}
+        org.clojure/spec.alpha {:mvn/version "0.5.238"}
+        io.github.nextjournal/markdown {:git/tag "v0.7.232"
+                                        :git/sha "1580eeb11773902b943f4acf88d9f8e1a4ea9e67"}
+        phosphene/seme {:git/url "https://github.com/phosphene/seme.git"
+                        :git/sha "107743f6a60d2fd276aa0f7ac334cd5fe39f3bac"}
+        phosphene/stanza {:local/root "../../lib/stanza/lib/clojure"}}
+ :aliases
+ {:test {:extra-paths ["clojure/test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}
          :main-opts ["-m" "cognitect.test-runner"]}}}
