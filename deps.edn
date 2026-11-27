@@ -1,5 +1,5 @@
 ;; Root deps.edn — hermetic entry point for phosphene/assemblage
-{:paths ["clojure/src"]
+{:paths ["clojure/src" "clojure/src/java" "target/classes"]
  :deps {org.clojure/clojure {:mvn/version "1.12.0"}
         org.clojure/spec.alpha {:mvn/version "0.5.238"}
         io.github.nextjournal/markdown {:git/tag "v0.7.232"
@@ -10,4 +10,4 @@
  :aliases
  {:test {:extra-paths ["clojure/test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}
-         :main-opts ["-m" "cognitect.test-runner"]}}}
+         :main-opts ["-m" "phosphene.assemblage.runner"]}}}
