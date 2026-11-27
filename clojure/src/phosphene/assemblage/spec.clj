@@ -318,11 +318,28 @@
 
 (s/def :witness/exact-contiguous? boolean?)
 (s/def :witness/offset (s/nilable nat-int?))
+(s/def :witness/occurrences nat-int?)
+(s/def :witness/unique? boolean?)
 (s/def :witness/verdict #{:verbatim :truncated :invented})
+
+(s/def :location/source-sha256 (s/and string? #(re-matches #"^[0-9a-f]{64}$" %)))
+(s/def :location/region keyword?)
+(s/def :location/start (s/nilable nat-int?))
+(s/def :location/end (s/nilable nat-int?))
+(s/def :location/char-count nat-int?)
+(s/def :location/occurrences nat-int?)
+(s/def :location/unique? boolean?)
+
+(s/def ::witness-location
+  (s/keys :req [:location/source-sha256 :location/region :location/char-count :location/occurrences :location/unique?]
+          :opt [:location/start :location/end]))
+
+(s/def :witness/location ::witness-location)
 
 (s/def ::verified-verbatim-witness
   (s/keys :req [:witness/text :witness/char-count :witness/zero-ellipses?
-                :witness/exact-contiguous? :witness/offset :witness/verdict]))
+                :witness/exact-contiguous? :witness/offset :witness/verdict]
+          :opt [:witness/occurrences :witness/unique? :witness/location]))
 
 (s/def ::verbatim-register
   (s/coll-of (s/and ::verified-verbatim-witness

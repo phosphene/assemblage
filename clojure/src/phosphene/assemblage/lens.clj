@@ -145,15 +145,35 @@
   [ast]
   (ast/query-nodes ast (fn [node] (= (:type node) :blockquote))))
 
+(defn- extract-clean-witness-text
+  "Extract the verbatim text from a blockquote node, stripping trailing citation
+   lines like '(§1, p. 1)' or '(Wisdom 1951, p. 5)' and bounding quotation marks."
+  [bq-node]
+  (let [raw-lines (->> (ast/query-nodes bq-node (fn [n] (= (:type n) :text)))
+                       (map :text)
+                       (mapcat #(str/split % #"\n"))
+                       (map str/trim)
+                       (remove str/blank?))
+        witness-lines (remove (fn [l]
+                                (or (re-find #"^\([§p\d]" l)
+                                    (re-find #"^\(Wisdom" l)
+                                    (re-find #"^\*Source:" l)))
+                              raw-lines)
+        joined (str/join " " witness-lines)]
+    (cond
+      (and (str/starts-with? joined "\"") (str/ends-with? joined "\"") (> (count joined) 1))
+      (subs joined 1 (dec (count joined)))
+      (and (str/starts-with? joined "'") (str/ends-with? joined "'") (> (count joined) 1))
+      (subs joined 1 (dec (count joined)))
+      :else joined)))
+
 (defn project-verbatim-witnesses
-  "Extract verbatim witness passages from blockquotes in the document."
+  "Extract clean verbatim witness passages from blockquotes in the document.
+   Strips inline citation annotations so the emitted witness matches primary text (T-438 / Req 3)."
   [ast-doc]
   (let [quotes (blockquotes ast-doc)]
     (mapv (fn [bq]
-            (let [text (->> (ast/query-nodes bq (fn [n] (= (:type n) :text)))
-                            (map :text)
-                            str/join
-                            str/trim)]
+            (let [text (extract-clean-witness-text bq)]
               {:witness/text text
                :witness/char-count (count text)
                :witness/zero-ellipses? (not (str/includes? text "..."))}))
