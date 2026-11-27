@@ -31,24 +31,21 @@ Wisdom maps the concrete neurophysiological and clinical embodiments of cybernet
 
 ## 3. Formal Symbolic Logic
 
-Let $
-u_i(t) \in \{0, 1\}$ be the firing state of neuron $i$ at time $t$.
-Let $	heta_i$ be the synaptic threshold and $w_{ij}$ be the synaptic weight from neuron $j$ to neuron $i$:
+Let $\nu_i(t) \in \{0, 1\}$ be the firing state of neuron $i$ at time $t$.
+Let $\theta_i$ be the synaptic threshold and $w_{ij}$ be the synaptic weight from neuron $j$ to neuron $i$:
 
-$$
-u_i(t+1) = \Theta\left(\sum_{j} w_{ij} 
-u_j(t) - 	heta_iight) \quad 	ext{where } \Theta(z) = egin{cases} 1 & z \ge 0 \ 0 & z < 0 \end{cases}$$
+$$\nu_i(t+1) = \Theta\left(\sum_{j} w_{ij} \nu_j(t) - \theta_i\right) \quad \text{where } \Theta(z) = \begin{cases} 1 & z \ge 0 \\ 0 & z < 0 \end{cases}$$
 
-Let $\mathcal{C} = (V, E)$ be a closed neural circuit with directed cycle $v_1 	o v_2 	o \dots 	o v_k 	o v_1$.
+Let $\mathcal{C} = (V, E)$ be a closed neural circuit with directed cycle $v_1 \to v_2 \to \dots \to v_k \to v_1$.
 Persistence of circulating excitation (reverberation):
 
-$$\prod_{m=1}^k w_{v_{m+1}, v_m} \ge 1 \implies 
-u_i(t + k) = 
-u_i(t) \quad (	ext{Self-Sustaining Regenerative Loop})$$
+$$\prod_{m=1}^k w_{v_{m+1}, v_m} \ge 1 \implies \nu_i(t + k) = \nu_i(t) \quad (\text{Self-Sustaining Regenerative Loop})$$
 
 Clinical pathology of runaway loop gain:
-$$\mathcal{G}_{	ext{loop}} > 1 \implies 	ext{Overload}(\mathcal{C}) \implies 	ext{PathologicalFixation}$$
-$$	ext{Leucotomy}(\mathcal{C}) \implies \exists e \in E(\mathcal{C}) : w_e 	o 0 \implies \mathcal{G}_{	ext{loop}} 	o 0$$
+
+$$\mathcal{G}_{\text{loop}} > 1 \implies \text{Overload}(\mathcal{C}) \implies \text{PathologicalFixation}$$
+
+$$\text{Leucotomy}(\mathcal{C}) \implies \exists e \in E(\mathcal{C}) : w_e \to 0 \implies \mathcal{G}_{\text{loop}} \to 0$$
 
 ## 4. Decomposed Semiotic S-Expressions
 

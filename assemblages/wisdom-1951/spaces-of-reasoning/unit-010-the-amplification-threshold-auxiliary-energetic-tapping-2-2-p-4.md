@@ -31,8 +31,11 @@ Wisdom introduces the crucial physical distinction between simple and amplified 
 ## 3. Formal Predicate Logic
 
 Let $E_{\text{in}}$ be feedback signal energy and $E_{\text{rel}}$ be released energy:
+
 $$\text{SimpleFeedback} \iff E_{\text{fb}} \le E_{\text{main}}$$
+
 $$\text{AmplifiedFeedback} \iff E_{\text{released}} = \mathcal{G} \cdot E_{\text{trigger}}, \quad \mathcal{G} \gg 1$$
+
 $$\text{ChainReaction} \implies \prod_i \mathcal{G}_i \to \infty$$
 
 ## 4. Decomposed Semiotic S-Expressions

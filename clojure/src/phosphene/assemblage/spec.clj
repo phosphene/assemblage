@@ -318,13 +318,59 @@
 
 (s/def :witness/exact-contiguous? boolean?)
 (s/def :witness/offset (s/nilable nat-int?))
+(s/def :witness/occurrences nat-int?)
+(s/def :witness/unique? boolean?)
 (s/def :witness/verdict #{:verbatim :truncated :invented})
+
+(s/def :location/source-sha256 (s/and string? #(re-matches #"^[0-9a-f]{64}$" %)))
+(s/def :location/region keyword?)
+(s/def :location/start (s/nilable nat-int?))
+(s/def :location/end (s/nilable nat-int?))
+(s/def :location/char-count nat-int?)
+(s/def :location/occurrences nat-int?)
+(s/def :location/unique? boolean?)
+
+(s/def ::witness-location
+  (s/keys :req [:location/source-sha256 :location/region :location/char-count :location/occurrences :location/unique?]
+          :opt [:location/start :location/end]))
+
+(s/def :witness/location ::witness-location)
 
 (s/def ::verified-verbatim-witness
   (s/keys :req [:witness/text :witness/char-count :witness/zero-ellipses?
-                :witness/exact-contiguous? :witness/offset :witness/verdict]))
+                :witness/exact-contiguous? :witness/offset :witness/verdict]
+          :opt [:witness/occurrences :witness/unique? :witness/location]))
 
 (s/def ::verbatim-register
   (s/coll-of (s/and ::verified-verbatim-witness
                     #(= :verbatim (:witness/verdict %)))
              :kind vector?))
+
+;; --- Genealogical Network & Lineage Specifications (:convention/genealogy) ---
+
+(s/def :genealogy/id string?)
+(s/def :genealogy/target-claim string?)
+(s/def :genealogy/epoch int?)
+(s/def :genealogy/epistemic-status
+  #{:dual-genesis :terminological-rectification :boundary-demarcation
+    :empirical-confirmation :clinical-embodiment :model-ceiling :open-system-transfer})
+
+(s/def :genealogy.ref/author string?)
+(s/def :genealogy.ref/year int?)
+(s/def :genealogy.ref/source string?)
+(s/def :genealogy.ref/citation string?)
+(s/def :genealogy.ref/discipline keyword?)
+(s/def :genealogy.ref/role keyword?)
+
+(s/def ::genealogy-reference
+  (s/keys :req [:genealogy.ref/author :genealogy.ref/year :genealogy.ref/source]
+          :opt [:genealogy.ref/citation :genealogy.ref/discipline :genealogy.ref/role]))
+
+(s/def :genealogy/references (s/coll-of ::genealogy-reference :kind vector?))
+(s/def :genealogy/precursors (s/coll-of string? :kind vector?))
+(s/def :genealogy/successors (s/coll-of string? :kind vector?))
+
+(s/def ::genealogy-unit
+  (s/keys :req [:genealogy/id :genealogy/target-claim :genealogy/epoch :genealogy/epistemic-status]
+          :opt [:genealogy/references :genealogy/precursors :genealogy/successors
+                :genealogy/wisdom-synthesis :genealogy/coined-by :genealogy/roots]))

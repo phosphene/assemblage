@@ -1,0 +1,255 @@
+;; Canonical Empirical Citation & Lineage Atlas for J. O. Wisdom (1951)
+;; "The Hypothesis of Cybernetics", British Journal for the Philosophy of Science, 2(5), 1-24.
+;; Extracted directly from primary source text and footnote registers.
+
+{:atlas/corpus :wisdom-1951
+ :atlas/total-citations 20
+ :atlas/citations
+ [{:citation/id "cite-maxwell-1868"
+   :citation/author "J. C. Maxwell"
+   :citation/year 1868
+   :citation/title "On Governors"
+   :citation/journal "Proc. Roy. Soc. London"
+   :citation/volume "16"
+   :citation/pages "270"
+   :citation/page-in-wisdom 2
+   :citation/footnote-num 1
+   :citation/discipline :mathematical-mechanics
+   :citation/role :mechanical-origin
+   :citation/concept "Kinetic centrifugal negative feed-back governor"}
+
+  {:citation/id "cite-northrop-1948"
+   :citation/author "F. S. C. Northrop"
+   :citation/year 1948
+   :citation/title "The Neurological and Behavioristic Psychological Basis of the Ordering of Society by Means of Ideas"
+   :citation/journal "Science"
+   :citation/volume "107"
+   :citation/pages "415"
+   :citation/page-in-wisdom 5
+   :citation/footnote-num 1
+   :citation/discipline :epistemology-social-theory
+   :citation/role :conceptual-demarcation
+   :citation/concept "Distinction between purposive (goal-directed) and teleological (negative feed-back seeking)"}
+
+  {:citation/id "cite-ashby-1940"
+   :citation/author "W. R. Ashby"
+   :citation/year 1940
+   :citation/title "Adaptiveness and Equilibrium"
+   :citation/journal "Journal of Mental Science"
+   :citation/volume "86"
+   :citation/pages "478-483"
+   :citation/page-in-wisdom 5
+   :citation/footnote-num 2
+   :citation/discipline :psychiatry-biology
+   :citation/role :biological-dual-root
+   :citation/concept "Adaptive behavior as mechanical/dynamical equilibrium"}
+
+  {:citation/id "cite-rosenblueth-wiener-bigelow-1943"
+   :citation/author "Arturo Rosenblueth, Norbert Wiener, Julian Bigelow"
+   :citation/year 1943
+   :citation/title "Behavior, Purpose, and Teleology"
+   :citation/journal "Philosophy of Science"
+   :citation/volume "10"
+   :citation/pages "18-24"
+   :citation/page-in-wisdom 5
+   :citation/footnote-num 3
+   :citation/discipline :mathematics-engineering
+   :citation/role :teleological-dual-root
+   :citation/concept "Behavior classification: active vs passive, purposive vs non-purposive, feedback teleology"}
+
+  {:citation/id "cite-wiener-1948"
+   :citation/author "Norbert Wiener"
+   :citation/year 1948
+   :citation/title "Cybernetics: or Control and Communication in the Animal and the Machine"
+   :citation/publisher "Technology Press / John Wiley"
+   :citation/address "New York"
+   :citation/page-in-wisdom 6
+   :citation/footnote-num 1
+   :citation/discipline :mathematics-cybernetics
+   :citation/role :linguistic-coinage-and-servomechanisms
+   :citation/concept "Coinage of 'cybernetics'; hunting oscillation analogy to cerebellar tremor"}
+
+  {:citation/id "cite-wilbur-1941"
+   :citation/author "G. B. Wilbur"
+   :citation/year 1941
+   :citation/title "Some Problems Presented by Freud's Life-Death Instinct Theory"
+   :citation/journal "The American Imago"
+   :citation/volume "2"
+   :citation/pages "224 n"
+   :citation/page-in-wisdom 6
+   :citation/footnote-num 2
+   :citation/discipline :psychoanalysis
+   :citation/role :unexploited-metaphor
+   :citation/concept "Radio self-regenerating system metaphor for reflex arc; dismissed by Wisdom: 'Why well known?'"}
+
+  {:citation/id "cite-ashby-1947"
+   :citation/author "W. R. Ashby"
+   :citation/year 1947
+   :citation/title "The Nervous System as Physical Machine: with Special Reference to the Origin of Adaptive Behaviour"
+   :citation/journal "Mind"
+   :citation/volume "56"
+   :citation/pages "44-59"
+   :citation/page-in-wisdom 6
+   :citation/footnote-num 4
+   :citation/discipline :psychiatry-dynamical-systems
+   :citation/role :dynamical-formulation
+   :citation/concept "Dynamical equilibrium and step-functions over phase space"}
+
+  {:citation/id "cite-cannon-1926"
+   :citation/author "W. B. Cannon"
+   :citation/year 1926
+   :citation/title "Some General Features of Endocrine Influence on Metabolism"
+   :citation/journal "Amer. Journ. Med. Sci."
+   :citation/volume "171"
+   :citation/pages "1-20"
+   :citation/page-in-wisdom 7
+   :citation/footnote-num 2
+   :citation/discipline :physiology
+   :citation/role :physiological-steady-state
+   :citation/concept "Physical concept of steady motion as organic adaptation"}
+
+  {:citation/id "cite-hill-1930"
+   :citation/author "A. V. Hill"
+   :citation/year 1930
+   :citation/title "Membrane-Phenomena in Living Matter: Equilibrium or Steady State"
+   :citation/journal "Trans. Faraday Soc."
+   :citation/volume "26"
+   :citation/pages "667-673"
+   :citation/page-in-wisdom 7
+   :citation/footnote-num 3
+   :citation/discipline :biophysics
+   :citation/role :thermodynamic-demarcation
+   :citation/concept "Demarcation between closed thermodynamic equilibrium and open energetic steady state"}
+
+  {:citation/id "cite-mackay-1950"
+   :citation/author "D. M. MacKay"
+   :citation/year 1950
+   :citation/title "Communication to the Philosophy of Science Group"
+   :citation/source "Private communication, 13 Nov 1950"
+   :citation/page-in-wisdom 9
+   :citation/footnote-num 2
+   :citation/discipline :information-theory
+   :citation/role :probabilistic-correction
+   :citation/concept "Uncertainty response refuting deterministic machine necessity"}
+
+  {:citation/id "cite-brazier-1950"
+   :citation/author "Mary A. B. Brazier"
+   :citation/year 1950
+   :citation/title "The Tremor of Patients with Parkinson's Disease"
+   :citation/journal "The Journal of Nervous and Mental Disease"
+   :citation/page-in-wisdom 10
+   :citation/footnote-num 1
+   :citation/discipline :clinical-neurophysiology
+   :citation/role :clinical-pathological-test
+   :citation/concept "Cerebellar intention tremor vs Parkinsonian resting tremor"}
+
+  {:citation/id "cite-thompson-1951"
+   :citation/author "Thompson"
+   :citation/year 1951
+   :citation/title "Personal communication on renal hypertension"
+   :citation/page-in-wisdom 11
+   :citation/footnote-num 1
+   :citation/discipline :pathophysiology
+   :citation/role :positive-feedback-pathology
+   :citation/concept "Vicious spiral of renal damage and hypertension as fatal positive amplification feedback"}
+
+  {:citation/id "cite-ashby-1948"
+   :citation/author "W. R. Ashby"
+   :citation/year 1948
+   :citation/title "Design for a Brain"
+   :citation/journal "Electronic Engineering"
+   :citation/volume "20"
+   :citation/pages "379-383"
+   :citation/page-in-wisdom 11
+   :citation/footnote-num 2
+   :citation/discipline :cybernetics-apparatus
+   :citation/role :ultrastable-hardware
+   :citation/concept "The Homeostat: 4 coupled magnets with 25-step uniselector switching"}
+
+  {:citation/id "cite-cannon-1932"
+   :citation/author "W. B. Cannon"
+   :citation/year 1932
+   :citation/title "The Wisdom of the Body"
+   :citation/publisher "Kegan Paul"
+   :citation/address "London"
+   :citation/page-in-wisdom 12
+   :citation/footnote-num 1
+   :citation/discipline :physiology
+   :citation/role :homeostasis-taxonomy
+   :citation/concept "Reversion to the same steady state (Cannon) vs reversion to any steady state (Ashby)"}
+
+  {:citation/id "cite-ashby-1945"
+   :citation/author "W. R. Ashby"
+   :citation/year 1945
+   :citation/title "The Physical Origin of Adaptation by Trial and Error"
+   :citation/journal "Journ. Gen. Psychol."
+   :citation/volume "32"
+   :citation/pages "13-25"
+   :citation/page-in-wisdom 12
+   :citation/footnote-num 2
+   :citation/discipline :psychology
+   :citation/role :adaptation-by-breakdown
+   :citation/concept "Automatic re-adjustment of internal organisation through breaking down"}
+
+  {:citation/id "cite-adrian-1947"
+   :citation/author "E. D. Adrian"
+   :citation/year 1947
+   :citation/title "The Physical Background of Perception"
+   :citation/publisher "Clarendon Press"
+   :citation/address "Oxford"
+   :citation/page-in-wisdom 14
+   :citation/footnote-num 1
+   :citation/discipline :neurophysiology
+   :citation/role :neural-frequency-code
+   :citation/concept "All-or-none axonal impulse frequency coding"}
+
+  {:citation/id "cite-lorente-de-no-1938"
+   :citation/author "R. Lorente de Nó"
+   :citation/year 1938
+   :citation/title "Analysis of the Activity of the Chains of Internuncial Neurons"
+   :citation/journal "J. Neurophysiol."
+   :citation/volume "1"
+   :citation/pages "207-244"
+   :citation/page-in-wisdom 14
+   :citation/footnote-num 4
+   :citation/discipline :neuroanatomy
+   :citation/role :reverberating-circuits
+   :citation/concept "Closed internuncial neural chains maintaining circular self-excitation"}
+
+  {:citation/id "cite-craik-1943"
+   :citation/author "K. J. W. Craik"
+   :citation/year 1943
+   :citation/title "The Nature of Explanation"
+   :citation/publisher "Cambridge University Press"
+   :citation/address "Cambridge"
+   :citation/page-in-wisdom 16
+   :citation/footnote-num 3
+   :citation/discipline :cognitive-science-psychology
+   :citation/role :internal-symbolic-model
+   :citation/concept "Organism carries an internal working model of reality to predict external events"}
+
+  {:citation/id "cite-mcculloch-pitts-1943"
+   :citation/author "W. S. McCulloch, Walter Pitts"
+   :citation/year 1943
+   :citation/title "A Logical Calculus of the Ideas Immanent in Nervous Activity"
+   :citation/journal "Bulletin of Mathematical Biophysics"
+   :citation/volume "5"
+   :citation/pages "115-133"
+   :citation/page-in-wisdom 18
+   :citation/footnote-num 2
+   :citation/discipline :mathematical-biophysics
+   :citation/role :propositional-neural-logic
+   :citation/concept "Formal equivalence between neural thresholds/circuits and propositional logic"}
+
+  {:citation/id "cite-bertalanffy-1950"
+   :citation/author "Ludwig von Bertalanffy"
+   :citation/year 1950
+   :citation/title "The Theory of Open Systems in Physics and Biology"
+   :citation/journal "Science"
+   :citation/volume "111"
+   :citation/pages "23-29"
+   :citation/page-in-wisdom 19
+   :citation/footnote-num 2
+   :citation/discipline :general-system-theory
+   :citation/role :open-systems-thermodynamics
+   :citation/concept "Organism as open system maintaining dynamic steady state through continuous mass/energy flux"}]}

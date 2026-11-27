@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> These electronic machines are not merely 'automatic', in the sense in which a seesaw is automatic. They embody a mechanism known as "feed-back ", which is of the highest importance; they thus differ from purely Newtonian machines (the nature of this difference requires elucidation and will be discussed in the final section).
+> These electronic machines are not merely 'automatic', in the sense in which a seesaw is automatic. They embody a mechanism known as \"feed-back \", which is of the highest importance; they thus differ from purely Newtonian machines (the nature of this difference requires elucidation and will be discussed in the final section).
 > (§2, p. 2)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -28,12 +28,26 @@ Wisdom distinguishes simple passive periodicity from active dynamic maintenance:
 1. **The Seesaw Fallacy:** A seesaw is automatic in that potential energy shifts mechanically to kinetic energy and back, but it has no capacity to sense its own state or modify its energy expenditure to oppose disturbance.
 2. **Newtonian vs. Cybernetic Machines:** A Newtonian machine transmits force deterministically; a cybernetic machine incorporates an internal informational loop that feeds back a fraction of its output to modulate its input.
 
-## 3. Formal Predicate Logic
+## 3. Formal Symbolic Logic
 
-Let $\mathcal{M}_{\text{seesaw}}$ be a conservative harmonic oscillator and $\mathcal{M}_{\text{cybernetic}}$ be an error-actuated regulator:
-$$\mathcal{M}_{\text{seesaw}}: \frac{d^2 x}{dt^2} + \omega^2 x = 0 \implies \text{PassiveOscillation}$$
-$$\mathcal{M}_{\text{cybernetic}}: \frac{dx}{dt} = f(x) - k \cdot \mathcal{E}(x, x_{\text{target}}) \implies \text{DynamicMaintenance}$$
-$$\text{Automatic}(\mathcal{M}_{\text{seesaw}}) \land \neg \text{HasFeedback}(\mathcal{M}_{\text{seesaw}}) \implies \text{NonCybernetic}(\mathcal{M}_{\text{seesaw}})$$
+Let $\mathcal{M}_{\text{seesaw}}$ be a conservative harmonic oscillator and $\mathcal{M}_{\text{cybernetic}}$ be an error-actuated regulator.
+Let $x(t) \in \mathbb{R}$ denote the angular displacement from horizontal equilibrium over time lattice $T$.
+Let $x_{\text{target}} = 0$ denote the desired equilibrium setpoint.
+Let $\mathcal{E}(x, x_{\text{target}}) = x(t) - x_{\text{target}}$ denote sensory deviation error.
+
+Passive Conservative Oscillation (Newtonian Kinematics):
+
+$$\mathcal{M}_{\text{seesaw}}: \frac{d^2 x}{dt^2} + \omega^2 x = 0 \implies \text{PassiveOscillation}(\mathcal{M}_{\text{seesaw}})$$
+
+Active Error-Actuated Regulation (Cybernetic Feedback):
+
+$$\mathcal{M}_{\text{cybernetic}}: \frac{dx}{dt} = f(x) - k \cdot \mathcal{E}(x, x_{\text{target}}) \implies \text{DynamicMaintenance}(\mathcal{M}_{\text{cybernetic}})$$
+
+Demarcation Rule of Automaticity vs Cybernetic Regulation:
+
+$$\text{Automatic}(\mathcal{M}) \land \neg \text{HasFeedback}(\mathcal{M}) \implies \text{NonCybernetic}(\mathcal{M})$$
+
+The warrant of cybernetic regulation rests upon closed-loop error-sensing and energy redirection rather than passive conservative oscillation.
 
 ## 4. Decomposed Semiotic S-Expressions
 
@@ -78,7 +92,7 @@ $$\text{Automatic}(\mathcal{M}_{\text{seesaw}}) \land \neg \text{HasFeedback}(\m
 
 ```clojure
 {:witness/selection
-  {:witness/text "These electronic machines are not merely 'automatic', in the sense in which a seesaw is automatic. They embody a mechanism known as "feed-back ", which is of the highest importance; they thus differ from purely Newtonian machines (the nature of this difference requires elucidation and will be discussed in the final section)."
+  {:witness/text "These electronic machines are not merely 'automatic', in the sense in which a seesaw is automatic. They embody a mechanism known as \"feed-back \", which is of the highest importance; they thus differ from purely Newtonian machines (the nature of this difference requires elucidation and will be discussed in the final section)."
    :witness/folio 2
    :witness/char-count 326
    :witness/zero-ellipses? true}}

@@ -31,8 +31,11 @@ Wisdom introduces open unstable equilibria requiring active neurological/motor s
 ## 3. Formal Predicate Logic
 
 Let $\phi$ be roll angle and $\delta$ be steering angle:
+
 $$\ddot{\phi} = \frac{g}{h}\phi - \frac{V^2}{b h}\delta$$
+
 $$\text{CorrectionPolicy}: \text{sgn}(\delta) = \text{sgn}(\phi)$$
+
 $$\text{StableBalance} \equiv \text{ContinuousDynamicCountersteering}(\phi, \delta, t)$$
 
 ## 4. Decomposed Semiotic S-Expressions

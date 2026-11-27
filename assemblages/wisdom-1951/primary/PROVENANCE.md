@@ -13,7 +13,7 @@ source:
   journal: "The British Journal for the Philosophy of Science"
   year: 1951
   medium: "JSTOR digitized scan (PDF, 25 pages)"
-  sha256-source-text: "01878b9e38a88ed5... (truncated; full hash in manifest)"
+  sha256-source-text: "66c589afc1c477263a8cf13661657b66206dce0dcd27be103167e9ebb1c21ae3"
 tags:
   - verbatim-register
   - primary-corpus

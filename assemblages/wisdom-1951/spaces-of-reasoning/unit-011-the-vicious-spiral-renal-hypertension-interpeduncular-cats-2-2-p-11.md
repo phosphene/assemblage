@@ -31,7 +31,9 @@ Wisdom applies cybernetic pathology to physiological breakdown:
 ## 3. Formal Predicate Logic
 
 Let $D_{\text{renal}}$ be renal tissue damage and $P_{\text{arterial}}$ be arterial pressure:
+
 $$\frac{dP_{\text{arterial}}}{dt} = f(D_{\text{renal}}), \quad \frac{dD_{\text{renal}}}{dt} = g(P_{\text{arterial}})$$
+
 $$\frac{\partial f}{\partial D} > 0 \land \frac{\partial g}{\partial P} > 0 \implies \text{Eigenvalue } \lambda > 0 \implies \text{LethalInstability}$$
 
 ## 4. Decomposed Semiotic S-Expressions

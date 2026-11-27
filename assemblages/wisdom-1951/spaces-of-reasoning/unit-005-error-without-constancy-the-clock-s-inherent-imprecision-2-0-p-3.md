@@ -31,8 +31,11 @@ Wisdom articulates the foundational cybernetic ontological principle of error-ac
 ## 3. Formal Predicate Logic
 
 Let $\theta(t)$ be the system parameter and $\theta^*$ be the ideal target. Let $e(t) = \theta(t) - \theta^*$:
+
 $$\forall t, \; \exists \delta > 0 : |e(t)| > 0 \quad \text{a.e.}$$
+
 $$e(t_1) > 0 \land e(t_2) < 0 \implies \exists t^* \in (t_1, t_2) : e(t^*) = 0$$
+
 $$\text{RegulatoryEquilibrium}(\theta) \equiv \lim_{T \to \infty} \frac{1}{T} \int_0^T e(t) dt \approx 0 \land \forall t, e(t) \not\equiv 0$$
 
 ## 4. Decomposed Semiotic S-Expressions

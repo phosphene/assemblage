@@ -30,19 +30,19 @@ Wisdom formulates the cybernetic resolution to Cartesian biological skepticism:
 
 ## 3. Formal Symbolic Logic
 
-Let $\mathbf{x} \in \mathbb{R}^4$ be magnet states and $\mathbf{P}_k \in \mathcal{P}_{	ext{discrete}}$ be the parameter vector selected from $25^4$ uniselector configurations.
+Let $\mathbf{x} \in \mathbb{R}^4$ be magnet states and $\mathbf{P}_k \in \mathcal{P}_{\text{discrete}}$ be the parameter vector selected from $25^4$ uniselector configurations.
 Let $\mathcal{E}(\mathbf{x}) = \|\mathbf{x}\|_{\infty}$ measure system displacement from homeostatic center.
-Let $\mathcal{B}_{	ext{essential}} = \{\mathbf{x} \mid \mathcal{E}(\mathbf{x}) \le L_{	ext{crit}}\}$ be the basin of essential physiological bounds.
+Let $\mathcal{B}_{\text{essential}} = \{\mathbf{x} \mid \mathcal{E}(\mathbf{x}) \le L_{\text{crit}}\}$ be the basin of essential physiological bounds.
 
-$$\mathbf{P}_{k+1} = egin{cases} \mathbf{P}_k & 	ext{if } \mathbf{x}(t) \in \mathcal{B}_{	ext{essential}} \ g(\mathbf{P}_k) & 	ext{if } \mathbf{x}(t) 
-otin \mathcal{B}_{	ext{essential}} \quad (	ext{stochastic step-function})\end{cases}$$
+$$\mathbf{P}_{k+1} = \begin{cases} \mathbf{P}_k & \text{if } \mathbf{x}(t) \in \mathcal{B}_{\text{essential}} \\ g(\mathbf{P}_k) & \text{if } \mathbf{x}(t) \notin \mathcal{B}_{\text{essential}} \quad (\text{stochastic step-function}) \end{cases}$$
 
 Convergence to ultrastability:
-$$\exists k^* < \infty \quad 	ext{such that} \quad orall t > t_{k^*}, \; \mathbf{x}(t) \in \mathcal{B}_{	ext{essential}}$$
+
+$$\exists k^* < \infty \quad \text{such that} \quad \forall t > t_{k^*}, \; \mathbf{x}(t) \in \mathcal{B}_{\text{essential}}$$
 
 Refutation of Cartesian foresight bound:
-$$	ext{Behaviors}(\mathcal{M}) 
-ot\subseteq 	ext{Foresight}(	ext{Designer})$$
+
+$$\text{Behaviors}(\mathcal{M}) \not\subseteq \text{Foresight}(\text{Designer})$$
 
 ## 4. Decomposed Semiotic S-Expressions
 

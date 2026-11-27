@@ -32,7 +32,9 @@ Wisdom anticipates and refutes the philosophical objection that positive feedbac
 
 Let $P_{\text{max}}$ be full power. Instant step-input: $\Delta P(0) = P_{\text{max}} \implies \text{Jerk} = \infty \implies \text{Damage}$.
 Autonomous ramp via positive feedback:
+
 $$\frac{dP}{dt} = \gamma P \implies P(t) = P_0 e^{\gamma t} \quad \text{clamped at } P_{\text{max}}$$
+
 $$\text{Warrant}(\text{PositiveFeedback}) \equiv \text{AutonomousControlledRamp}(P, t)$$
 
 ## 4. Decomposed Semiotic S-Expressions

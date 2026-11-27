@@ -31,17 +31,19 @@ Wisdom compresses Ashby's Homeostat into its foundational dynamical vocabulary:
 ## 3. Formal Symbolic Logic
 
 Let $\mathbf{x}(t) = [x_1, x_2, x_3, x_4]^T \in \mathbb{R}^4$ be the angular displacements of the four magnets.
-Let $\mathbf{A}(\mathbf{P}) \in \mathbb{R}^{4 	imes 4}$ be the coupling matrix determined by the commutator/potentiometer parameter settings $\mathbf{P}$.
+Let $\mathbf{A}(\mathbf{P}) \in \mathbb{R}^{4 \times 4}$ be the coupling matrix determined by the commutator/potentiometer parameter settings $\mathbf{P}$.
 
 $$\dot{\mathbf{x}}(t) = \mathbf{A}(\mathbf{P})\mathbf{x}(t)$$
 
-Let $	ext{spec}(\mathbf{A}(\mathbf{P})) = \{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ be the eigenvalues of the system matrix:
+Let $\text{spec}(\mathbf{A}(\mathbf{P})) = \{\lambda_1, \lambda_2, \lambda_3, \lambda_4\}$ be the eigenvalues of the system matrix:
 
-$$	ext{StableArrangement}(\mathbf{P}) \iff orall i \in \{1, \dots, 4\}, \; 	ext{Re}(\lambda_i) < 0$$
-$$	ext{UnstableArrangement}(\mathbf{P}) \iff \exists i \in \{1, \dots, 4\}, \; 	ext{Re}(\lambda_i) > 0$$
+$$\text{StableArrangement}(\mathbf{P}) \iff \forall i \in \{1, \dots, 4\}, \; \text{Re}(\lambda_i) < 0$$
 
-Let $I_{	ext{mains}}(\mathbf{x})$ be the coils' mains current. Instability threshold:
-$$I_{	ext{mains}}(\mathbf{x}(t)) > I_{	ext{crit}} \implies 	ext{CrossesInstabilityLimit}$$
+$$\text{UnstableArrangement}(\mathbf{P}) \iff \exists i \in \{1, \dots, 4\}, \; \text{Re}(\lambda_i) > 0$$
+
+Let $I_{\text{mains}}(\mathbf{x})$ be the coils' mains current. Instability threshold:
+
+$$I_{\text{mains}}(\mathbf{x}(t)) > I_{\text{crit}} \implies \text{CrossesInstabilityLimit}$$
 
 ## 4. Decomposed Semiotic S-Expressions
 
