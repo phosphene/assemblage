@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§3 The Basic Cybernetic Hypothesis (pp. 5–6)"
 epistemic-status: :dual-genesis
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-000 — The Dual Genealogical Root: Ashby (1940) and Rosenblueth–Wiener–Bigelow (1943)

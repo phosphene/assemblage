@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§4.3 Electroneural Analogies (pp. 13–15)"
 epistemic-status: :clinical-embodiment
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-005 — Closed Internuncial Chains: The Lineage of Reverberating Neural Circuits

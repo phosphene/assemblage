@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "feature/**" ]
+  pull_request:
+    branches: [ "main", "feature/**" ]
+  workflow_dispatch:
+
+jobs:
+  test-clojure:
+    name: Clojure Invariants, Specs & RFC 8785 Vectors
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Set up Clojure
+        uses: DeLaGuardo/setup-clojure@12.5
+        with:
+          cli: 1.12.0.1488
+
+      - name: Run Assemblage Clojure Test Suite
+        run: clojure -M:test
+
+  test-python:
+    name: Python Invariants, Graph & RFC 8785 Vectors
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          version: "latest"
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies & run pytest
+        run: |
+          cd python
+          uv run --python ${{ matrix.python-version }} pytest -v

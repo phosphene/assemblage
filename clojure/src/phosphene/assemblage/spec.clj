@@ -30,7 +30,7 @@
 (s/def :edge/src :node/id)
 (s/def :edge/dst :node/id)
 (s/def :edge/kind
-  #{:genealogical :transversal-cross-link :feedback-cycle :functional :teleological :historical-lineage})
+  #{:genealogical :genealogical-transition :transversal-cross-link :feedback-cycle :functional :teleological :historical-lineage})
 
 (s/def :assemblage/edge
   (s/tuple :edge/src :edge/dst :edge/kind))

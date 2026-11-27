@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§3 The Basic Cybernetic Hypothesis (pp. 5–6)"
 epistemic-status: :boundary-demarcation
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-002 — Purposive vs. Teleological: The Negative-Feed-Back Demarcation

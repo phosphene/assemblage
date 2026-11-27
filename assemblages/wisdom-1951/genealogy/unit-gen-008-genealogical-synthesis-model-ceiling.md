@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§7 Evaluation of the Cybernetic Model (pp. 22–24)"
 epistemic-status: :model-ceiling
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-008 — The Genealogical Synthesis and Epistemic Ceiling: Model vs. Organism

@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§4.4 / §4.5 Recognition of Universals & Deductive Inference (pp. 15–18)"
 epistemic-status: :boundary-demarcation
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-006 — Universals and Logical Calculus: Craik, McCulloch, and Pitts

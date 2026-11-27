@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§4.2 Autonomic Reorganisation in a Machine (pp. 11–13)"
 epistemic-status: :boundary-demarcation
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-004 — Ultrastability, Adaptation by Breakdown, and the Cartesian Causal Ceiling
