@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> (i) The all-or-none principle of nerve conduction is familiar: an impulse is either transmitted or not, according as the stimulus is above or below a certain threshold. Now this is the principle of an on-off switch or 'gate' in an electric machine. (ii) A second analogy: In an automatic telephone exchange, incoming calls are made over trunk-lines to an apparatus that searches for an idle line. If there is none, the calls are held until one becomes free. (iii) A third analogy: To deal with a sudden rush of calls, telephone engineers make provision for 'requisitioning' equipment from other parts of the exchange. (iv) A fourth: In psychiatric breakdown or overload, the cutting of pre-frontal nerve fibres (leucotomy) relieves pressure by destroying reverberating loops.
+> they work according to the 'all or none' principle; and the same is true of the nervous systema neuron fires or does not fire. Apparently the brain has alternative circuits available for the passage of a given signal, in the same way as an automatic telephone exchange provides alternative routes for the impulses received when we dial a number. Thus many of the functions of the brain are nonlocalised, a feature that is paralleled in electronic machines. Wiener puts forward interesting analogies, which are speculative in that they are not yet confirmed, though there is no reason to suppose that confirmation will fail to come. He thinks that the brain may become overloaded like a busy telephone exchange. The telephone engineer may overcome this by cutting some subscribers' lines or by removing their instruments : the analogue would be the operations of pre-frontal leucotomy and lobotomy respectively.
 > (§4.3, pp. 13–15)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -106,9 +106,9 @@ $$\text{Leucotomy}(\mathcal{C}) \implies \exists e \in E(\mathcal{C}) : w_e \to 
 
 ```clojure
 {:witness/selection
- {:witness/text "The all-or-none principle of nerve conduction is familiar: an impulse is either transmitted or not, according as the stimulus is above or below a certain threshold. Now this is the principle of an on-off switch or 'gate' in an electric machine. In an automatic telephone exchange, incoming calls are made over trunk-lines to an apparatus that searches for an idle line. If there is none, the calls are held until one becomes free. To deal with a sudden rush of calls, telephone engineers make provision for 'requisitioning' equipment from other parts of the exchange. In psychiatric breakdown or overload, the cutting of pre-frontal nerve fibres (leucotomy) relieves pressure by destroying reverberating loops."
+ {:witness/text "they work according to the 'all or none' principle; and the same is true of the nervous systema neuron fires or does not fire. Apparently the brain has alternative circuits available for the passage of a given signal, in the same way as an automatic telephone exchange provides alternative routes for the impulses received when we dial a number. Thus many of the functions of the brain are nonlocalised, a feature that is paralleled in electronic machines. Wiener puts forward interesting analogies, which are speculative in that they are not yet confirmed, though there is no reason to suppose that confirmation will fail to come. He thinks that the brain may become overloaded like a busy telephone exchange. The telephone engineer may overcome this by cutting some subscribers' lines or by removing their instruments : the analogue would be the operations of pre-frontal leucotomy and lobotomy respectively."
   :witness/folio 13
-  :witness/char-count 724
+  :witness/char-count 910
   :witness/zero-ellipses? true}}
 ```
 

@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> He mentions the interesting suggestion that a positive amplification feed-back is to be found in some cases of renal disease, in which the renal damage leads to hypertension, which in turn causes further renal disease and still further hypertension-a vicious spiral which, once established, proves fatal.
+> He makes the interesting suggestion that a positive amplification feed-back is to be found in some cases of renal disease, in which the renal damage leads to hypertension, which in turn causes further renal disease and still further hypertension-a vicious spiral which, once established, proves fatal.
 > (§11, p. 11)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -78,9 +78,9 @@ $$\frac{\partial f}{\partial D} > 0 \land \frac{\partial g}{\partial P} > 0 \imp
 
 ```clojure
 {:witness/selection
-  {:witness/text "He mentions the interesting suggestion that a positive amplification feed-back is to be found in some cases of renal disease, in which the renal damage leads to hypertension, which in turn causes further renal disease and still further hypertension-a vicious spiral which, once established, proves fatal."
+  {:witness/text "He makes the interesting suggestion that a positive amplification feed-back is to be found in some cases of renal disease, in which the renal damage leads to hypertension, which in turn causes further renal disease and still further hypertension-a vicious spiral which, once established, proves fatal."
    :witness/folio 11
-   :witness/char-count 304
+   :witness/char-count 301
    :witness/zero-ellipses? true}}
 ```
 ## 6. Literate Semantic Demonstration & Bounded Synthesis
