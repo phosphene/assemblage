@@ -328,3 +328,32 @@
   (s/coll-of (s/and ::verified-verbatim-witness
                     #(= :verbatim (:witness/verdict %)))
              :kind vector?))
+
+;; --- Genealogical Network & Lineage Specifications (:convention/genealogy) ---
+
+(s/def :genealogy/id string?)
+(s/def :genealogy/target-claim string?)
+(s/def :genealogy/epoch int?)
+(s/def :genealogy/epistemic-status
+  #{:dual-genesis :terminological-rectification :boundary-demarcation
+    :empirical-confirmation :clinical-embodiment :model-ceiling :open-system-transfer})
+
+(s/def :genealogy.ref/author string?)
+(s/def :genealogy.ref/year int?)
+(s/def :genealogy.ref/source string?)
+(s/def :genealogy.ref/citation string?)
+(s/def :genealogy.ref/discipline keyword?)
+(s/def :genealogy.ref/role keyword?)
+
+(s/def ::genealogy-reference
+  (s/keys :req [:genealogy.ref/author :genealogy.ref/year :genealogy.ref/source]
+          :opt [:genealogy.ref/citation :genealogy.ref/discipline :genealogy.ref/role]))
+
+(s/def :genealogy/references (s/coll-of ::genealogy-reference :kind vector?))
+(s/def :genealogy/precursors (s/coll-of string? :kind vector?))
+(s/def :genealogy/successors (s/coll-of string? :kind vector?))
+
+(s/def ::genealogy-unit
+  (s/keys :req [:genealogy/id :genealogy/target-claim :genealogy/epoch :genealogy/epistemic-status]
+          :opt [:genealogy/references :genealogy/precursors :genealogy/successors
+                :genealogy/wisdom-synthesis :genealogy/coined-by :genealogy/roots]))
