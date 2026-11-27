@@ -76,17 +76,17 @@ The warrant of cybernetic explanation is strictly grounded in sub-mechanism incl
 
 ```clojure
 {:delome/thirdness
- ['(rule :trivial-analogy-criterion
+ [(rule :trivial-analogy-criterion
     (iff (and (:behavioral/input-output-equivalence %)
               (= (:mechanism/genus %) :purely-newtonian))
          (= (:analogy/tier %) :trivial-mimicry)))
 
-  '(rule :mechanism-carve-criterion
+  (rule :mechanism-carve-criterion
     (iff (and (contains? (:mechanism/subcircuits %) :closed-loop/feed-back)
               (not= (:mechanism/genus %) :purely-newtonian))
          (= (:analogy/tier %) :mechanism-carve)))
 
-  '(rule :striking-analogy-warrant
+  (rule :striking-analogy-warrant
     (implies (= (:analogy/claim %) :striking)
              (= (:analogy/tier %) :mechanism-carve)))]}
 ```

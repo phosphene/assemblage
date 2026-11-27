@@ -74,13 +74,13 @@ $$\mathcal{S}_{\text{internal}}: \text{State}(t) \xrightarrow{\text{simulate}} \
 
 ```clojure
 {:delome/thirdness
- ['(rule :deductive-neural-calculus
+ [(rule :deductive-neural-calculus
     (iff (calculable-in-logic? :proposition)
          (computable-by-neural-net? :circuit)))
-  '(rule :open-system-steady-state
+  (rule :open-system-steady-state
     (implies (= :entropy-rate 0)
              (= :external-negentropy-import :internal-entropy-production)))
-  '(rule :craik-anticipatory-action
+  (rule :craik-anticipatory-action
     (implies (valid-model? :internal-simulator)
              :anticipatory-control))]}
 ```

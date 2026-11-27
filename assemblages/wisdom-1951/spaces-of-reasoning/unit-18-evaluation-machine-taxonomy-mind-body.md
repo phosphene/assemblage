@@ -77,15 +77,15 @@ $$\text{ExplainsMechanics}(\mathbb{M}_{\text{Cybernetic}}, \mathcal{B}_{\text{ph
 
 ```clojure
 {:delome/thirdness
- ['(taxonomy :machine-historical-genera
+ [(taxonomy :machine-historical-genera
     {:newtonian   {:principle :force-conservation-levers}
      :maxwellian  {:principle :electromagnetic-waves}
      :einsteinian {:principle :relativistic-spacetime}
      :cybernetic  {:principle :circular-information-feedback}})
-  '(rule :mind-body-anti-reductionism
+  (rule :mind-body-anti-reductionism
     (implies (= :domain :subjective-mental-experience)
              (= :cybernetic-claim :methodological-omission)))
-  '(rule :machine-species-expansion
+  (rule :machine-species-expansion
     (iff (and (contains? (:traits %) :circular-feedback)
               (contains? (:traits %) :error-governed))
          (= (:machine/species %) :cybernetic-teleological)))]}

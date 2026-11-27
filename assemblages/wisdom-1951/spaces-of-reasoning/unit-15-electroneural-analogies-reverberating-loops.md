@@ -76,14 +76,14 @@ $$\text{Leucotomy}(\mathcal{C}) \implies \exists e \in E(\mathcal{C}) : w_e \to 
 
 ```clojure
 {:delome/thirdness
- ['(rule :all-or-none-isomorphism
+ [(rule :all-or-none-isomorphism
     (iff (>= :membrane-potential :threshold)
          (= :conduction-state :transmitted)))
-  '(rule :reverberating-memory-persistence
+  (rule :reverberating-memory-persistence
     (implies (and (closed-cycle? :neural-circuit)
                   (>= :synaptic-gain 1.0))
              :self-sustaining-memory-trace))
-  '(rule :psychosurgical-loop-interruption
+  (rule :psychosurgical-loop-interruption
     (implies (= :clinical-intervention :prefrontal-leucotomy)
              (cut-feedback-cycle :reverberating-loop)))]}
 ```

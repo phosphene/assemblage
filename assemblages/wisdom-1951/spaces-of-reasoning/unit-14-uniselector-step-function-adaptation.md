@@ -72,14 +72,14 @@ $$\text{Behaviors}(\mathcal{M}) \not\subseteq \text{Foresight}(\text{Designer})$
 
 ```clojure
 {:delome/thirdness
- ['(taxonomy :reverting-classes
+ [(taxonomy :reverting-classes
     {:same-steady-motion {:example :blood-temperature :cannon-term :homeostasis}
      :any-steady-motion  {:example :diet-adjustment :ashby-term :machine-with-breaks}})
-  '(isomorphism :descartes-refutation
+  (isomorphism :descartes-refutation
     {:principle  (>= [reality cause] [reality effect])
      :refuted-by (spontaneous-adaptation :homeostat)
      :ground     (novel-behaviour :not-foresighted-by :designer)})
-  '(rule :ultrastable-search
+  (rule :ultrastable-search
     (until (stable? state)
       (step-uniselector-parameters state)))]}
 ```

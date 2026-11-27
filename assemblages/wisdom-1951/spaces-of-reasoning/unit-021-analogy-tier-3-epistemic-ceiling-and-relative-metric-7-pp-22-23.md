@@ -85,13 +85,13 @@ $$\lim_{t \to \text{present}} d_{\mathcal{K}}(\mathcal{O}_{\text{brain}}, \mathc
 
 ```clojure
 {:delome/thirdness
- ['(rule :relative-topological-metric
+ [(rule :relative-topological-metric
     (asserts (< (causal-distance :brain :radar-and-thermostat)
                 (causal-distance :brain :levers-and-gears))))
-  '(rule :anti-reductionist-property-bound
+  (rule :anti-reductionist-property-bound
     (implies (shares-properties? :organism :machine)
              (not-asserts (subset-of? :organism-properties :machine-properties))))
-  '(rule :interim-heuristic-warrant
+  (rule :interim-heuristic-warrant
     (implies (= :analogy/tier :tier-3-epistemic-ceiling)
              (= :scientific-status :provisional-scaffolding)))]}
 ```

@@ -76,13 +76,13 @@ $$\forall g \in G, \quad \Phi(g \circ I) = \Phi(I) = \mathbf{v}_{\text{invariant
 
 ```clojure
 {:delome/thirdness
- ['(rule :centering-servo-convergence
+ [(rule :centering-servo-convergence
     (until (= :fixation-axis :brightness-centroid)
       (servo-shift :retina-origin :brightness-centroid)))
-  '(rule :wisdom-recognition-demarcation
+  (rule :wisdom-recognition-demarcation
     (implies (= :fixation-axis :brightness-centroid)
              (not-yet-proved :gestalt-recognition)))
-  '(rule :scansion-transformation
+  (rule :scansion-transformation
     (transforms :retinal-raster :impulse-train
                 {:invariant-feature :pitch :scale-feature :tempo}))]}
 ```

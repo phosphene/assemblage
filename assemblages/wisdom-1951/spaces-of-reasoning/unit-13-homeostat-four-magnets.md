@@ -72,16 +72,16 @@ $$I_{\text{mains}}(\mathbf{x}(t)) > I_{\text{crit}} \implies \text{CrossesInstab
 
 ```clojure
 {:delome/thirdness
- ['(taxonomy :system-order
+ [(taxonomy :system-order
     {:first-order  {:variables [:magnet-positions]
                     :parameters :fixed}
      :second-order {:variables [:magnet-positions :feed-back-settings]
                     :parameters :discrete-steps-via-uniselector}})
-  '(rule :homeostat-arrangement
+  (rule :homeostat-arrangement
     (branch :magnet-response
             :resist-and-return :stable-arrangement
             :diverge-maximally :unstable-arrangement))
-  '(rule :instability-trigger
+  (rule :instability-trigger
     (implies (> :mains-current :instability-limit)
              (and (cut-off :relay-current)
                   (step-uniselectors :feed-backs))))]}
