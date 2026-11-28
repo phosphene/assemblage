@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> McCulloch's hypothesis is that the superior colliculus computes this, (i.e. presumably is fitted with negative feed-backs whose function is equivalent to the pencil-and-paper calculation); the superior colliculus signals the resulting position, in the form of impulses proportional to the two co-ordinates, to the lateral and vertical eye-muscles; and the effect of these impulses on these muscles is to turn the visual axis from its fixation point to the centre of brightness. This continues until the fixation point coincides with the centre of brightness. McCulloch then concludes : 'If a square should appear anywhere in the field, the eyes turn until it is centered, and what they see is the same, whatever the initial position of the square.' But unfortunately this does not touch the problem.
+> McCulloch's hypothesis is that the superior colliculus computes this, (i.e. presumably is fitted with negative feed-backs whose function is equivalent to the pencil-and-paper calculation) ; the superior colliculus signals the resulting position, in the form of impulses proportional to the two co-ordinates, to the lateral and vertical eye-muscles; and the effect of these impulses on these muscles is to turn the visual axis from its fixation point to the centre of brightness. This continues until the fixation point coincides with the centre of brightness.' Thus we have a hypothetical radar-like negative feed-back by which the focus of attention gravitates towards the centre of brightness. McCulloch then concludes : 'If a square should appear anywhere in the field, the eyes turn until it is centered, and what they see is the same, whatever the initial position of the square.' 2 But unfortunately he does not explain how centering a square of brightness is equivalent to 'recognition' of squareness.
 > (§4.4, pp. 15–16)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -105,9 +105,9 @@ $$\forall g \in G, \quad \Phi(g \circ I) = \Phi(I) = \mathbf{v}_{\text{invariant
 
 ```clojure
 {:witness/selection
- {:witness/text "McCulloch's hypothesis is that the superior colliculus computes this, (i.e. presumably is fitted with negative feed-backs whose function is equivalent to the pencil-and-paper calculation); the superior colliculus signals the resulting position, in the form of impulses proportional to the two co-ordinates, to the lateral and vertical eye-muscles; and the effect of these impulses on these muscles is to turn the visual axis from its fixation point to the centre of brightness. This continues until the fixation point coincides with the centre of brightness. McCulloch then concludes : 'If a square should appear anywhere in the field, the eyes turn until it is centered, and what they see is the same, whatever the initial position of the square.' But unfortunately this does not touch the problem."
+ {:witness/text "McCulloch's hypothesis is that the superior colliculus computes this, (i.e. presumably is fitted with negative feed-backs whose function is equivalent to the pencil-and-paper calculation) ; the superior colliculus signals the resulting position, in the form of impulses proportional to the two co-ordinates, to the lateral and vertical eye-muscles; and the effect of these impulses on these muscles is to turn the visual axis from its fixation point to the centre of brightness. This continues until the fixation point coincides with the centre of brightness.' Thus we have a hypothetical radar-like negative feed-back by which the focus of attention gravitates towards the centre of brightness. McCulloch then concludes : 'If a square should appear anywhere in the field, the eyes turn until it is centered, and what they see is the same, whatever the initial position of the square.' 2 But unfortunately he does not explain how centering a square of brightness is equivalent to 'recognition' of squareness."
   :witness/folio 15
-  :witness/char-count 872
+  :witness/char-count 1008
   :witness/zero-ellipses? true}}
 ```
 

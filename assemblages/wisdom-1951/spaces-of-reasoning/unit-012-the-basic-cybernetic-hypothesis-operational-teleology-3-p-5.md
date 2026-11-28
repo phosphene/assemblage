@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for \" purposive \" can now be defined in terms of negative feed-back.
+> The basic hypothesis of cybernetics is that the chief mechanism of the central nervous system is one of negative feed-back. The field of study is not, however, restricted to feed-backs of the negative kind. Secondly, cybernetics makes the hypothesis that the negative feed-back mechanism explains 'purposive' and' adaptive' behaviour. Broadly speaking what the cybernetic model does for our outlook is to make us understand how purposive behaviour can be manifested by a machine, for " purposive " can now be defined in terms of negative feed-back.
 > (§3, p. 5)
 
 ## 2. Epistemic Gloss & Philosophical Carve

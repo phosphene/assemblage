@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> Deductive reasoning can be carried out by a machine; this was shown by McCulloch and Pitts. But the brain is an 'open system' in the sense of von Bertalanffy and Burton; that is, it is not a closed thermodynamic system in static equilibrium, but maintains a steady state in the midst of a continuous flux of materials. Craik showed that thought models reality by calculating consequences from symbolic representations. Finally, Grey Walter's electroencephalographic studies reveal rhythmic electrical scansion across the cortex.
+> It is well known that logical machines exist. They are capable of giving deductions from data in a logical calculus. There is nothing very striking about this in principle. What is more interesting is the view that electroneural nets of regenerative loops have exactly the same formal properties as the axioms of mathematics and logic.
 > (§§5–6, pp. 18–21)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -103,9 +103,9 @@ $$\mathcal{S}_{\text{internal}}: \text{State}(t) \xrightarrow{\text{simulate}} \
 
 ```clojure
 {:witness/selection
- {:witness/text "Deductive reasoning can be carried out by a machine; this was shown by McCulloch and Pitts. But the brain is an 'open system' in the sense of von Bertalanffy and Burton; that is, it is not a closed thermodynamic system in static equilibrium, but maintains a steady state in the midst of a continuous flux of materials. Craik showed that thought models reality by calculating consequences from symbolic representations. Finally, Grey Walter's electroencephalographic studies reveal rhythmic electrical scansion across the cortex."
+ {:witness/text "It is well known that logical machines exist. They are capable of giving deductions from data in a logical calculus. There is nothing very striking about this in principle. What is more interesting is the view that electroneural nets of regenerative loops have exactly the same formal properties as the axioms of mathematics and logic."
   :witness/folio 18
-  :witness/char-count 512
+  :witness/char-count 335
   :witness/zero-ellipses? true}}
 ```
 

@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> These electronic machines are not merely 'automatic', in the sense in which a seesaw is automatic. They embody a mechanism known as \"feed-back \", which is of the highest importance; they thus differ from purely Newtonian machines (the nature of this difference requires elucidation and will be discussed in the final section).
+> These electronic machines are not merely 'automatic', in the sense in which a seesaw is automatic. They embody a mechanism known as "feed-back ", which is of the highest importance; they thus differ from purely Newtonian machines (the nature of this difference requires elucidation and will be discussed in the final section).
 > (§2, p. 2)
 
 ## 2. Epistemic Gloss & Philosophical Carve
