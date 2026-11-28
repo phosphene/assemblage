@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§2.0 / §4.0 (pp. 3–8)"
 epistemic-status: :terminological-rectification
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-001 — Steady Motion vs. Equilibrium: Wisdom Corrects Ashby through Cannon and Hill

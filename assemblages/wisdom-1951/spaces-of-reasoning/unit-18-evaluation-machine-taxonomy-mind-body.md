@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> Cybernetics does not solve the traditional mind-body problem. It does not prove that the mind is a machine. What it does do is to enrich our concept of a machine. Hitherto machines were Newtonian-levers, gears, and clockwork. Cybernetics introduces an entirely new species of machine based on circular feed-back and teleological regulation. Furthermore, cybernetics is a branch of neurology, not psychology; it describes the physical machinery of the brain, while the subjective aspect of mental life remains unmodeled.
+> Now it is true that cybernetics leaves out the mental aspect of action. But the proper inference from this is that cybernetics is in the tradition of physiology and neurology. It does not solve the problem of the relation of mind and body, because it omits one of the parties concerned and suffers from the one-sidedness of its ancestors.
 > (§7, pp. 21–24)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -77,15 +77,15 @@ $$\text{ExplainsMechanics}(\mathbb{M}_{\text{Cybernetic}}, \mathcal{B}_{\text{ph
 
 ```clojure
 {:delome/thirdness
- ['(taxonomy :machine-historical-genera
+ [(taxonomy :machine-historical-genera
     {:newtonian   {:principle :force-conservation-levers}
      :maxwellian  {:principle :electromagnetic-waves}
      :einsteinian {:principle :relativistic-spacetime}
      :cybernetic  {:principle :circular-information-feedback}})
-  '(rule :mind-body-anti-reductionism
+  (rule :mind-body-anti-reductionism
     (implies (= :domain :subjective-mental-experience)
              (= :cybernetic-claim :methodological-omission)))
-  '(rule :machine-species-expansion
+  (rule :machine-species-expansion
     (iff (and (contains? (:traits %) :circular-feedback)
               (contains? (:traits %) :error-governed))
          (= (:machine/species %) :cybernetic-teleological)))]}
@@ -107,9 +107,9 @@ $$\text{ExplainsMechanics}(\mathbb{M}_{\text{Cybernetic}}, \mathcal{B}_{\text{ph
 
 ```clojure
 {:witness/selection
- {:witness/text "Cybernetics does not solve the traditional mind-body problem. It does not prove that the mind is a machine. What it does do is to enrich our concept of a machine. Hitherto machines were Newtonian-levers, gears, and clockwork. Cybernetics introduces an entirely new species of machine based on circular feed-back and teleological regulation. Furthermore, cybernetics is a branch of neurology, not psychology; it describes the physical machinery of the brain, while the subjective aspect of mental life remains unmodeled."
+ {:witness/text "Now it is true that cybernetics leaves out the mental aspect of action. But the proper inference from this is that cybernetics is in the tradition of physiology and neurology. It does not solve the problem of the relation of mind and body, because it omits one of the parties concerned and suffers from the one-sidedness of its ancestors."
   :witness/folio 21
-  :witness/char-count 519
+  :witness/char-count 338
   :witness/zero-ellipses? true}}
 ```
 

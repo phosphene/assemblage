@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> mechanisms-governors, escapements, thermostats-are simply devices for re-directing some of the energy supplied by the source of power against the rest of that energy, and the positive feed-back mechan- isms redirect some of the energy towards increasing the energy supplied by the source of power-towards removing a blockage in fact. Both negative and positive types here described may be referred to as " simple feed-back mechanisms ". 2.2 Amplification Feed-Back. In none of the foregoing examples does a local source of energy arising from the feed-back mechanism play a part. The energy of the feed-back is derivative and redirected. But an additional source of energy may be exploited and utilised in the same sort of way. For example, in the combustion of coal, the lighted paper ignites some coal which releases vastly greater energy which fires more coal and so on.
+> mechanisms-governors, escapements, thermostats-are simply devices for re-directing some of the energy supplied by the source of power against the rest of that energy, and the positive feed-back mechanisms redirect some of the energy towards increasing the energy supplied by the source of power-towards removing a blockage in fact. Both negative and positive types here described may be referred to as " simple feed-back mechanisms ". 2.2 Amplification Feed-Back. In none of the foregoing examples does a local source of energy arising from the feed-back mechanism play a part. The energy of the feed-back is derivative and redirected. But an additional source of energy may be exploited and utilised in the same sort of way. For example, in the combustion of coal, the lighted paper ignites some coal which releases vastly greater energy which fires more coal and so on.
 > (§2.1–2.2, pp. 3–4)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -82,7 +82,7 @@ $$\text{AmplificationFeedback}(m) \iff \text{TapsLocalEnergy}(m) \land \mathcal{
 
 ```clojure
 {:witness/selection
- {:witness/text "mechanisms-governors, escapements, thermostats-are simply devices for re-directing some of the energy supplied by the source of power against the rest of that energy, and the positive feed-back mechan- isms redirect some of the energy towards increasing the energy supplied by the source of power-towards removing a blockage in fact. Both negative and positive types here described may be referred to as \" simple feed-back mechanisms\"."
+ {:witness/text "mechanisms-governors, escapements, thermostats-are simply devices for re-directing some of the energy supplied by the source of power against the rest of that energy, and the positive feed-back mechanisms redirect some of the energy towards increasing the energy supplied by the source of power-towards removing a blockage in fact. Both negative and positive types here described may be referred to as \" simple feed-back mechanisms \". 2.2 Amplification Feed-Back. In none of the foregoing examples does a local source of energy arising from the feed-back mechanism play a part. The energy of the feed-back is derivative and redirected. But an additional source of energy may be exploited and utilised in the same sort of way. For example, in the combustion of coal, the lighted paper ignites some coal which releases vastly greater energy which fires more coal and so on."
   :witness/folio 3
   :witness/zero-ellipses? true}}
 ```

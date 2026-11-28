@@ -107,10 +107,10 @@ Provoked 1:1 by the formal propositions of Section 3: the latency bound $\tau_{\
 
 ```clojure
 {:delome/thirdness
- ['(invariant :computation/wartime-pressure boolean?)
-  '(invariant :computation/latency-mode #{:discrete-hours :continuous-months})
-  '(invariant :computation/medium #{:electronic-machine :pencil-and-paper})
-  '(rule :overcomes-latency-bottleneck
+ [(invariant :computation/wartime-pressure boolean?)
+  (invariant :computation/latency-mode #{:discrete-hours :continuous-months})
+  (invariant :computation/medium #{:electronic-machine :pencil-and-paper})
+  (rule :overcomes-latency-bottleneck
     (implies (and (= :computation/medium :electronic-machine)
                   (<= :computation/solution-time-hours :tactical-horizon-hours))
              :tactical-viability))]}

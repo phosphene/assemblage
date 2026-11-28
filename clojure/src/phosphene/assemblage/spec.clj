@@ -30,7 +30,7 @@
 (s/def :edge/src :node/id)
 (s/def :edge/dst :node/id)
 (s/def :edge/kind
-  #{:genealogical :transversal-cross-link :feedback-cycle :functional :teleological :historical-lineage})
+  #{:genealogical :genealogical-transition :transversal-cross-link :feedback-cycle :functional :teleological :historical-lineage})
 
 (s/def :assemblage/edge
   (s/tuple :edge/src :edge/dst :edge/kind))
@@ -366,7 +366,16 @@
   (s/keys :req [:genealogy.ref/author :genealogy.ref/year :genealogy.ref/source]
           :opt [:genealogy.ref/citation :genealogy.ref/discipline :genealogy.ref/role]))
 
-(s/def :genealogy/references (s/coll-of ::genealogy-reference :kind vector?))
+(s/def :genealogy.ref/unqual-reference
+  (s/keys :req-un [:genealogy.ref/author :genealogy.ref/year :genealogy.ref/source]
+          :opt-un [:genealogy.ref/citation :genealogy.ref/discipline :genealogy.ref/role
+                   :root/journal :root/volume :root/pages]))
+
+(s/def ::genealogy-reference-flexible
+  (s/or :qualified ::genealogy-reference
+        :unqualified :genealogy.ref/unqual-reference))
+
+(s/def :genealogy/references (s/coll-of ::genealogy-reference-flexible :kind vector?))
 (s/def :genealogy/precursors (s/coll-of string? :kind vector?))
 (s/def :genealogy/successors (s/coll-of string? :kind vector?))
 

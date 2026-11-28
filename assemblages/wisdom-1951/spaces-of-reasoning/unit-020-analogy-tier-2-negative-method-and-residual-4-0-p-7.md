@@ -85,12 +85,12 @@ $$\text{NegativeMethodDemarcation}(\mathcal{M}, \mathcal{O}) \iff \text{Residual
 
 ```clojure
 {:delome/thirdness
- ['(invariant :system/determinacy #{:strictly-state-determined :stochastic-branching :open-world})
-  '(rule :negative-method-subtraction
+ [(invariant :system/determinacy #{:strictly-state-determined :stochastic-branching :open-world})
+  (rule :negative-method-subtraction
     (implies (and (= :system/determinacy :stochastic-branching)
                   (not= (:transition/cardinality %) 1))
              :unmodeled-human-residual))
-  '(rule :analogy-tier-2-warrant
+  (rule :analogy-tier-2-warrant
     (iff (seq (:epistemic/residual %))
          (= (:analogy/tier %) :tier-2-negative-method)))]}
 ```

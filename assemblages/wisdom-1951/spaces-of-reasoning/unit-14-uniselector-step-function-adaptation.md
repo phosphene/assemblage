@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> But the limit is so chosen that the current reaches it only when the system is unstable and the magnets diverge. Hence, so long as instability remains, the uniselectors alter the feed-backs until eventually a stable arrangement comes about. If we knock out some of the uniselectors and alter the feed-backs by hand, the remaining uniselectors will find a new stable arrangement. It can adapt itself to environmental changes which the designer could not have foreseen.
+> But the limit is so chosen that the current reaches it only when the system is unstable and the magnets diverge. Hence, so long as instability remains, the uniselectors alter the feed-backs until eventually a stable arrangement comes about.
 > (§4.2, pp. 12–13)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -72,14 +72,14 @@ $$\text{Behaviors}(\mathcal{M}) \not\subseteq \text{Foresight}(\text{Designer})$
 
 ```clojure
 {:delome/thirdness
- ['(taxonomy :reverting-classes
+ [(taxonomy :reverting-classes
     {:same-steady-motion {:example :blood-temperature :cannon-term :homeostasis}
      :any-steady-motion  {:example :diet-adjustment :ashby-term :machine-with-breaks}})
-  '(isomorphism :descartes-refutation
+  (isomorphism :descartes-refutation
     {:principle  (>= [reality cause] [reality effect])
      :refuted-by (spontaneous-adaptation :homeostat)
      :ground     (novel-behaviour :not-foresighted-by :designer)})
-  '(rule :ultrastable-search
+  (rule :ultrastable-search
     (until (stable? state)
       (step-uniselector-parameters state)))]}
 ```
@@ -104,9 +104,9 @@ $$\text{Behaviors}(\mathcal{M}) \not\subseteq \text{Foresight}(\text{Designer})$
 
 ```clojure
 {:witness/selection
- {:witness/text "But the limit is so chosen that the current reaches it only when the system is unstable and the magnets diverge. Hence, so long as instability remains, the uniselectors alter the feed-backs until eventually a stable arrangement comes about. If we knock out some of the uniselectors and alter the feed-backs by hand, the remaining uniselectors will find a new stable arrangement. It can adapt itself to environmental changes which the designer could not have foreseen."
+ {:witness/text "But the limit is so chosen that the current reaches it only when the system is unstable and the magnets diverge. Hence, so long as instability remains, the uniselectors alter the feed-backs until eventually a stable arrangement comes about."
   :witness/folio 12
-  :witness/char-count 470
+  :witness/char-count 240
   :witness/zero-ellipses? true}}
 ```
 

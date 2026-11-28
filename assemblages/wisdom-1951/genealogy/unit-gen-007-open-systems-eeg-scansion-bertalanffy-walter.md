@@ -4,6 +4,11 @@ corpus: wisdom-1951
 line: genealogy
 section: "§5 / §6 Open Systems & Electro-encephalography (pp. 19–22)"
 epistemic-status: :open-system-transfer
+basis_tier: read-together
+reading_discipline:
+  style: deliberative-synthesis
+  pipeline_version: "v4-deliberative-seme"
+  target_registers: ["verbatim", "gloss", "formal-logic", "s-expressions-seme"]
 ---
 
 # GEN-007 — Open Systems, Dynamic Steady States, and Cortical Scansion: Bertalanffy and Walter

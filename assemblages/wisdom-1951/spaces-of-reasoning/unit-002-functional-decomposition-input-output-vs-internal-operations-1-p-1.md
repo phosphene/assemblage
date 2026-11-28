@@ -125,11 +125,11 @@ Provoked 1:1 by the operator decomposition $\mathcal{M} = \langle \text{In}, \te
 
 ```clojure
 {:delome/thirdness
- ['(invariant :arch/input-channel boolean?)
-  '(invariant :arch/memory-store boolean?)
-  '(invariant :arch/addressable-selection boolean?)
-  '(invariant :arch/output-channel boolean?)
-  '(rule :functional-calculating-automaton
+ [(invariant :arch/input-channel boolean?)
+  (invariant :arch/memory-store boolean?)
+  (invariant :arch/addressable-selection boolean?)
+  (invariant :arch/output-channel boolean?)
+  (rule :functional-calculating-automaton
     (iff (and (:arch/input-channel machine)
               (:arch/memory-store machine)
               (:arch/addressable-selection machine)

@@ -19,7 +19,7 @@ corpus_locus:
 
 ## 1. Verbatim Text (zero ellipses)
 
-> He points out that negative feed-back is not sufficient to describe all facets of human behaviour. It does not by itself cover learning by experience-the feed-backs have to improve with the passage of time. The corresponding problem for the brain is that as a machine it has to work out an essential part of its own wiring. Ashby describes the homeostat in some detail, but all that is needed here is to mention some of its properties. Four magnets are suspended in a field due to electric current, so that they are free to move when the current is turned on; but feed-back mechanisms are present which are operated by the movements of the magnets, and these feed-backs alter the current. This causes fresh movements of the magnets, and so on.
+> He points out that negative feed-back is not sufficient to describe all facets of human behaviour. It does not by itself cover learning by experience-the feed-backs have to improve with the passage of time. The corresponding problem for the brain is that as a machine it has to work out an essential part of its own wiring.3 Ashby describes the homeostat in some detail, but all that is needed here is to mention some of its properties. Four magnets are suspended in a field due to electric current, so that they are free to move when the current is turned on; but feed-back mechanisms are present which are operated by the movements of the magnets, and these feed-backs alter the current. This causes fresh movements of the magnets and so on.
 > (§4.2, pp. 11–12)
 
 ## 2. Epistemic Gloss & Philosophical Carve
@@ -72,16 +72,16 @@ $$I_{\text{mains}}(\mathbf{x}(t)) > I_{\text{crit}} \implies \text{CrossesInstab
 
 ```clojure
 {:delome/thirdness
- ['(taxonomy :system-order
+ [(taxonomy :system-order
     {:first-order  {:variables [:magnet-positions]
                     :parameters :fixed}
      :second-order {:variables [:magnet-positions :feed-back-settings]
                     :parameters :discrete-steps-via-uniselector}})
-  '(rule :homeostat-arrangement
+  (rule :homeostat-arrangement
     (branch :magnet-response
             :resist-and-return :stable-arrangement
             :diverge-maximally :unstable-arrangement))
-  '(rule :instability-trigger
+  (rule :instability-trigger
     (implies (> :mains-current :instability-limit)
              (and (cut-off :relay-current)
                   (step-uniselectors :feed-backs))))]}
@@ -107,9 +107,9 @@ $$I_{\text{mains}}(\mathbf{x}(t)) > I_{\text{crit}} \implies \text{CrossesInstab
 
 ```clojure
 {:witness/selection
- {:witness/text "He points out that negative feed-back is not sufficient to describe all facets of human behaviour. It does not by itself cover learning by experience-the feed-backs have to improve with the passage of time. The corresponding problem for the brain is that as a machine it has to work out an essential part of its own wiring. Ashby describes the homeostat in some detail, but all that is needed here is to mention some of its properties. Four magnets are suspended in a field due to electric current, so that they are free to move when the current is turned on; but feed-back mechanisms are present which are operated by the movements of the magnets, and these feed-backs alter the current. This causes fresh movements of the magnets, and so on."
+ {:witness/text "He points out that negative feed-back is not sufficient to describe all facets of human behaviour. It does not by itself cover learning by experience-the feed-backs have to improve with the passage of time. The corresponding problem for the brain is that as a machine it has to work out an essential part of its own wiring.3 Ashby describes the homeostat in some detail, but all that is needed here is to mention some of its properties. Four magnets are suspended in a field due to electric current, so that they are free to move when the current is turned on; but feed-back mechanisms are present which are operated by the movements of the magnets, and these feed-backs alter the current. This causes fresh movements of the magnets and so on."
   :witness/folio 11
-  :witness/char-count 734
+  :witness/char-count 743
   :witness/zero-ellipses? true}}
 ```
 
