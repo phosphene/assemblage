@@ -51,4 +51,4 @@ jobs:
       - name: Install dependencies & run pytest
         run: |
           cd python
-          uv run --python ${{ matrix.python-version }} pytest -v
+          uv run --extra test --python ${{ matrix.python-version }} pytest -v
